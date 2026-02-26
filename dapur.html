@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Dapur Produksi (Manufaktur) - Go Suite</title>
+    <meta name="description"
+        content="Pusat transformasi barang. Rencanakan jumlah tebusan resep, dan sulap bahan mentah karungan menjadi berbotol-botol produk siap jual.">
+    <meta property="og:title" content="Dapur Produksi (Manufaktur) - Go Suite">
+    <meta property="og:description"
+        content="Pusat transformasi barang. Rencanakan jumlah tebusan resep, dan sulap bahan mentah karungan menjadi berbotol-botol produk siap jual.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gosuite.id/og-image.jpg">
+
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, var(--amber), #b45309);
+            padding: 40px 20px;
+            color: white;
+            border-radius: 0 0 24px 24px;
+            margin-bottom: 24px;
+        }
+
+        .page-header h1 {
+            font-size: 28px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .page-header p {
+            font-size: 15px;
+            opacity: 0.9;
+            margin: 0;
+            color: white;
+        }
+
+        .nav-back {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-shell">
+        <nav class="top-nav">
+            <a href="index.html" class="nav-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg> Kembali
+            </a>
+            <a href="https://wa.me/6282187164364" class="nav-cta" target="_blank">Tanya Ahli</a>
+        </nav>
+
+        <main class="page-content" style="padding-top:60px;">
+            <header class="page-header fade-in">
+                <h1>Dapur Produksi (Manufaktur)</h1>
+                <p>Pusat transformasi barang. Rencanakan jumlah tebusan resep, dan sulap bahan mentah karungan menjadi
+                    berbotol-botol produk siap jual.</p>
+            </header>
+
+            <section class="section">
+                <h2 class="section-title fade-in stagger-1">Fitur Unggulan</h2>
+                <div class="feature-list mt-4">
+                    <div class="feature-link fade-in stagger-1" style="cursor:default">
+                        <div class="fl-icon cyan">🧮</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Kalkulator Kecukupan Resep</div>
+                            <div class="fl-desc">Geser slider rencana masak, sistem akan langsung menyorot merah bahan
+                                baku apa saja yang kurang di gudang.</div>
+                        </div>
+                    </div>
+                    <div class="feature-link fade-in stagger-2" style="cursor:default">
+                        <div class="fl-icon indigo">⚙️</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Auto-Konversi Satuan</div>
+                            <div class="fl-desc">Menyatukan hitungan rumit. Produksi 20 produk akan otomatis menyedot
+                                Susu kalengan dalam ukuran Mililiter (ml) dari gudang bahan.</div>
+                        </div>
+                    </div>
+                    <div class="feature-link fade-in stagger-3" style="cursor:default">
+                        <div class="fl-icon amber">🏷️</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Kendali Expired (Batch)</div>
+                            <div class="fl-desc">Beri label tanggal kedaluwarsa pada setiap gelombang masak (batch) agar
+                                Anda tahu botol mana yang wajib dijual lebih dulu.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="section section-alt">
+                <div class="section-label fade-in">Dampak Nyata</div>
+                <h2 class="section-title fade-in stagger-1">Sebelum vs Sesudah</h2>
+                <table class="compare-table mt-4 fade-in stagger-2" style="background:#fff; border-radius:12px;">
+                    <tbody>
+                        <tr>
+                            <td style="color:#ef4444; width:50%">Tebak-tebakan hitung harga modal pokok kalau harga di
+                                pasar naik</td>
+                            <td style="color:#10b981; font-weight:600">HPP resep otomatis update ngikut ditarik dari
+                                faktur belanja terbaru</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#ef4444">Bahan baku hilang tidak tahu buat apa</td>
+                            <td style="color:#10b981; font-weight:600">Log mutasi mencatat jelas "Dipakai 2 liter untuk
+                                masak Gelombang A"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="cta-section">
+                <h2 class="section-title fade-in stagger-1" style="font-size: 22px;">Cocok untuk Dapur Sentral / Kitchen
+                    Besar</h2>
+                <div class="hero-actions fade-in stagger-2">
+                    <a href="https://wa.me/6282187164364" class="btn btn-wa" target="_blank">💬 Demo Dapur Gratis</a>
+                </div>
+            </section>
+            <div class="divider"></div>
+
+            <section class="section" style="padding-bottom: 2rem;">
+                <div class="section-label fade-in">Eksplorasi Fitur</div>
+                <h2 class="section-title fade-in stagger-1">Fitur Utama Dapur & Produksi</h2>
+                <p class="section-subtitle fade-in stagger-2" style="margin-bottom: 24px;">Kontrol penuh mulai dari
+                    menimbang bahan baku hingga melabeli puluhan kotak produk siap jual:</p>
+
+                <div class="prose fade-in stagger-3"
+                    style="background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; margin-bottom: 40px; color: var(--text); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--amber); margin-bottom: 8px; font-size: 16px;">1. Kalkulator Bahan Otomatis
+                        (Anti Kurang Bahan)</h3>
+                    <p style="margin-bottom: 16px;">Chef tidak perlu lagi corat-coret kalkulator. Cukup ketik rencana
+                        masak "Mau bikin 50 botol", sistem akan membongkar resepnya dan langsung menunjukkan daftar
+                        bahan apa saja yang dibutuhkan. Lampu merah akan menyala jika ada bahan di gudang yang ternyata
+                        tidak cukup.</p>
+
+                    <h3 style="color: var(--amber); margin-bottom: 8px; font-size: 16px;">2. Konversi Bahan ke Produk
+                        (Batch Rendering)</h3>
+                    <p style="margin-bottom: 16px;">Begitu tombol <em>Mulai Produksi</em> ditekan, keajaiban terjadi.
+                        Ratusan kilogram bahan mentah di gudang langsung dipotong sistem, dan diubah wujudnya menjadi
+                        stok "Produk Jadi" siap jual. Go Suite juga langsung menghitung harga modal pokok (HPP) per
+                        porsi berdasarkan harga beli bahan-bahannya.</p>
+
+                    <h3 style="color: var(--amber); margin-bottom: 8px; font-size: 16px;">3. Pelabelan Rak & Masa
+                        Kedaluwarsa</h3>
+                    <p style="margin-bottom: 16px;">Setiap kali selesai masak besar, sistem meminta Anda memberi label
+                        kapan tanggal kedaluwarsanya, serta mencatat ke "Kulkas/Freezer" mana produk itu ditaruh. Saat
+                        produk mulai basi, Anda bisa melacak persis batch masakan hari apa itu.</p>
+
+                    <h3 style="color: var(--amber); margin-bottom: 8px; font-size: 16px;">4. Sinkronisasi Kesalahan
+                        Dapur</h3>
+                    <p>Namanya dapur pasti ada momen kue bantat atau gagal masak. Kepala Dapur punya tombol khusus untuk
+                        merevisi (koreksi) jumlah barang yang sukses jadi. Kalau targetnya 100 tapi gosong 10, catat
+                        sisa 90. Sistem memahaminya dan merapikan catatan kerugian modalnya tanpa merusak Laporan Laba
+                        Rugi akhir bulan.</p>
+                </div>
+
+                <div class="section-label fade-in">Studi Kasus</div>
+                <h2 class="section-title fade-in stagger-1">Penyelamat Kepanikan Dapur Sentral</h2>
+                <p class="section-subtitle fade-in stagger-2" style="margin-bottom: 32px;">Hilangkan kebiasaan
+                    menebak-nebak resep dan lacak kebocoran stok dari dapur belakang:</p>
+
+                <div class="faq-list fade-in stagger-3">
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>☕ Dapur Pusat Kedai Kopi (Mencegah Gagal Produksi di Tengah Jalan)</span>
+                            <span class="faq-chevron">▾</span>
+                        </button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                <p><strong>Permasalahan:</strong> Supervisor dapur percaya diri ingin memasak 200 liter
+                                    Kopi Susu Aren pagi ini. Separuh jalan mencampur adonan basah, kru baru sadar
+                                    ternyata stok sirup aren di gudang sudah mepet. Ratusan liter kopi terlanjur diseduh
+                                    sia-sia dan tidak bisa dijual akibat kurang manis.</p>
+                                <p><strong>Solusi:</strong> Saat pagi hari membuka halaman Perencanaan Dapur Go Suite,
+                                    layar sistem akan menampilkan rekomendasi <em>Batas Maksimal</em> (Max Limit).
+                                    Sistem memberitahu: "Dengan ketersediaan sirup aren saat ini, Anda hanya sanggup
+                                    memproduksi maksimal 120 liter". Peringatan otomatis ini menyelamatkan modal bahan
+                                    baku supaya tidak terbuang sia-sia jadi produk gagal.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>🥟 Pabrik Dimsum Frozen (Manajemen Penempatan Freezer)</span>
+                            <span class="faq-chevron">▾</span>
+                        </button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                <p><strong>Permasalahan:</strong> Setelah selesai membungkus 500 pak dimsum, staf
+                                    bingung menaruhnya karena Freezer A sudah penuh. Akhirnya ratusan pak dimsum
+                                    dititipkan menyebar ke Freezer B dan Freezer D lorong pojok tanpa memberitahu
+                                    siapapun.</p>
+                                <p><strong>Solusi:</strong> Selepas mencatat hasil masak di layar Go Suite, staf
+                                    diwajibkan mengisi kolom <em>Lokasi Penempatan Produk</em>. Ketika esok pagi kasir
+                                    restoran depan komplain soal sisa stok, manajer bisa mengecek langsung dari layar
+                                    komputer kamarnya bahwa staf Dapur shift malam mendaratkan produk tersebut di
+                                    Freezer bagian D.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>📦 Pabrik Roti (Fleksibilitas Mengakui Roti Bantat & Gosong)</span>
+                            <span class="faq-chevron">▾</span>
+                        </button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                <p><strong>Permasalahan:</strong> Resep standar 10 kg tepung harusnya jadi 100 bungkus
+                                    roti tawar. Sayangnya, oven terlalu kepanasan sehingga 10 bungkus roti gosong
+                                    terpaksa dibuang. Jika admin memaksakan pencatatan 100 bungkus laku di sistem kasir
+                                    reguler, stok sisa akan rancu.</p>
+                                <p><strong>Solusi:</strong> Sistem produksi Go Suite fleksibel dan sadar realita. Lewat
+                                    Tombol Koreksi, Kepala Chef merivisi angka target matang dari 100 menjadi 90 bungkus
+                                    saja. Hebatnya, sistem otomatis mentolerir pembuangan itu dengan menaikkan Harga
+                                    Modal Dasar (HPP) per-satuan roti sisa. Roti Anda mungkin sedikit lebih mahal
+                                    modalnya hari itu, tapi laporan stok etalase tetap sinkron mutlak tanpa kecurangan
+                                    data semu.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <footer class="footer">
+                <p>© 2026 Go Suite</p>
+            </footer>
+        </main>
+        <!-- BOTTOM NAV -->
+        <nav class="bottom-nav">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                    <path
+                        d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-fitur-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+                    <path d="M2 7h20" />
+                </svg>
+                <span>Fitur</span>
+            </a>
+            <a href="harga.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20" />
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>Harga</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- PULL UP MODAL (16 MODULES) -->
+    <div class="modal-backdrop" id="fiturModalBackdrop"></div>
+    <div class="bottom-sheet" id="fiturBottomSheet">
+        <div class="sheet-header">
+            <div class="sheet-drag-handle"></div>
+            <h3>Semua Fitur Go Suite</h3>
+            <button class="sheet-close" id="closeFiturBtn">&times;</button>
+        </div>
+        <div class="sheet-content">
+            <div class="module-grid">
+                <a href="kasir.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🏪</div><span>Kasir &
+                        Penjualan</span>
+                </a>
+                <a href="mobile-rider.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">🏍️</div><span>Sales
+                        Keliling</span>
+                </a>
+                <a href="order-mitra.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">🤝</div><span>Order Mitra
+                        B2B</span>
+                </a>
+                <a href="katering.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(22,163,74,0.1);color:#16a34a;">🎪</div>
+                    <span>Katering/Event</span>
+                </a>
+                <a href="form-publik.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">📄</div><span>Form
+                        Publik</span>
+                </a>
+
+                <a href="dapur.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🍳</div><span>Dapur
+                        Produksi</span>
+                </a>
+                <a href="stok.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(234,88,12,0.1);color:#ea580c;">📦</div><span>Stok &
+                        Gudang</span>
+                </a>
+                <a href="pembelian.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🛒</div><span>Pembelian
+                        Supplier</span>
+                </a>
+                <a href="waste-log.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">🗑️</div><span>Pencatatan
+                        Rusak</span>
+                </a>
+
+                <a href="buku-besar.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">📒</div><span>Buku Besar
+                        & Kas</span>
+                </a>
+                <a href="rekening-bank.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">🏦</div><span>Rekening
+                        Bank</span>
+                </a>
+                <a href="laporan.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📈</div><span>Lap. Laba
+                        Rugi</span>
+                </a>
+                <a href="resep-hpp.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🧮</div><span>Resep &
+                        Modal</span>
+                </a>
+                <a href="investor.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(234,88,12,0.1);color:#ea580c;">🤝</div><span>Lap.
+                        Investor</span>
+                </a>
+
+                <a href="payroll.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">💸</div><span>Gaji &
+                        Komisi</span>
+                </a>
+                <a href="jadwal-kerja.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📅</div><span>Jadwal
+                        Kerja</span>
+                </a>
+                <a href="riderhub.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">📱</div><span>RiderHub
+                        (Tim)</span>
+                </a>
+                <a href="staff-role.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">👥</div><span>Akses &
+                        Peran</span>
+                </a>
+                <a href="log-hapus.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🕵️</div><span>Log
+                        Hapus</span>
+                </a>
+                <a href="multi-cabang.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🏢</div>
+                    <span>Multi-Cabang</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Payroll (Gaji & Komisi Khusus) - Go Suite</title>
+    <meta name="description"
+        content="Jangan hitung komisi pakai kalkulator. Sistem menggoreng performa rekap penjualan harian menjadi draf slip slip gaji siap transfer tiap bulan.">
+    <meta property="og:title" content="Payroll (Gaji & Komisi Khusus) - Go Suite">
+    <meta property="og:description"
+        content="Jangan hitung komisi pakai kalkulator. Sistem menggoreng performa rekap penjualan harian menjadi draf slip slip gaji siap transfer tiap bulan.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gosuite.id/og-image.jpg">
+
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, var(--violet), #6d28d9);
+            padding: 40px 20px;
+            color: white;
+            border-radius: 0 0 24px 24px;
+            margin-bottom: 24px;
+        }
+
+        .page-header h1 {
+            font-size: 28px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .page-header p {
+            font-size: 15px;
+            opacity: 0.9;
+            margin: 0;
+            color: white;
+        }
+
+        .nav-back {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-shell">
+        <nav class="top-nav">
+            <a href="index.html" class="nav-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg> Kembali
+            </a>
+            <a href="https://wa.me/6282187164364" class="nav-cta" target="_blank">Tanya Ahli</a>
+        </nav>
+
+        <main class="page-content" style="padding-top:60px;">
+            <header class="page-header fade-in">
+                <h1>Payroll (Gaji & Komisi Khusus)</h1>
+                <p>Jangan hitung komisi pakai kalkulator. Sistem menggoreng performa rekap penjualan harian menjadi draf
+                    slip slip gaji siap transfer tiap bulan.</p>
+            </header>
+
+            <section class="section">
+                <h2 class="section-title fade-in stagger-1">Fitur Unggulan</h2>
+                <div class="feature-list mt-4">
+                    <div class="feature-link fade-in stagger-1" style="cursor:default">
+                        <div class="fl-icon violet">🧠</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Prediksi Gaji Pintar</div>
+                            <div class="fl-desc">Sistem otomatis membaca total 'Cup Terjual' staf tersebut dan
+                                mengalikannya dengan Komisi persenan yang Anda atur sebelumnya.</div>
+                        </div>
+                    </div>
+                    <div class="feature-link fade-in stagger-2" style="cursor:default">
+                        <div class="fl-icon amber">✂️</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Potong Utang Kasbon Otomatis</div>
+                            <div class="fl-desc">Jika staf punya lilitan kasbon/pinjaman di Buku Besar, modul slip gaji
+                                otomatis memotong hak transferannya agar cicilan utang lunas.</div>
+                        </div>
+                    </div>
+                    <div class="feature-link fade-in stagger-3" style="cursor:default">
+                        <div class="fl-icon emerald">✏️</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Ekstra Koreksi Manual</div>
+                            <div class="fl-desc">Ada uang bonus kerajinan atau potongan denda absen? Tambahkan kolom
+                                ekstra manual sebelum slip gaji disetujui (Approve) untuk lunas.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="section section-alt">
+                <div class="section-label fade-in">Dampak Nyata</div>
+                <h2 class="section-title fade-in stagger-1">Sebelum vs Sesudah</h2>
+                <table class="compare-table mt-4 fade-in stagger-2" style="background:#fff; border-radius:12px;">
+                    <tbody>
+                        <tr>
+                            <td style="color:#ef4444; width:50%">Rekap utang kasbon karyawan dan hitung komisi manual
+                                sampai 3 jam</td>
+                            <td style="color:#10b981; font-weight:600">Klik "Proses Slip Gaji", semua dihitung mesin
+                                dalam 10 detik.</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#ef4444">Tahu untung atau rugi cuma feeling dari sisa saldo di bank</td>
+                            <td style="color:#10b981; font-weight:600">Terbaca jelas Laba Bersih setiap hari setelah
+                                potong HPP & pengeluaran.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="cta-section">
+                <h2 class="section-title fade-in stagger-1" style="font-size: 22px;">Ingin keuangan transparan?</h2>
+                <div class="hero-actions fade-in stagger-2">
+                    <a href="https://wa.me/6282187164364" class="btn btn-wa" target="_blank">💬 Konsultasi Sekarang</a>
+                </div>
+            </section>
+            <div class="divider"></div>
+
+            <section class="section" style="padding-bottom: 2rem;">
+                <div class="section-label fade-in">Eksplorasi Fitur</div>
+                <h2 class="section-title fade-in stagger-1">Fitur Utama Penggajian & Komisi</h2>
+                <p class="section-subtitle fade-in stagger-2" style="margin-bottom: 24px;">Hitung gaji, komisi penjualan
+                    ritel, denda, dan kasbon secara otomatis dalam hitungan detik tanpa pusing memakai kalkulator atau
+                    Excel:</p>
+
+                <div class="prose fade-in stagger-3"
+                    style="background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; margin-bottom: 40px; color: var(--text); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--violet); margin-bottom: 8px; font-size: 16px;">1. Perhitungan Komisi Pintar
+                        (Smart-Commissioning)</h3>
+                    <p style="margin-bottom: 16px;">Selamat tinggal rekap manual. Saat Anda memproses Slip Gaji bulanan,
+                        sistem akan langsung menarik data penjualan tiap pegawai (misal: armada keliling Mobile Rider)
+                        selama sebulan terakhir. Sistem langsung menghitung jumlah "cup/botol" yang berhasil dijual oleh
+                        masing-masing Rider dan mengalikannya dengan rasio komisi yang sudah disepakati. Sangat akurat,
+                        tidak ada lagi perselisihan beda angka antara catatan bos dan catatan kurir.</p>
+
+                    <h3 style="color: var(--violet); margin-bottom: 8px; font-size: 16px;">2. Pemotongan Kasbon Otomatis
+                        (Auto-Deduction)</h3>
+                    <p style="margin-bottom: 16px;">Go Suite tidak akan lupa mencatat. Jika seorang staf pernah mencetak
+                        bon pinjaman kas/kasbon di tengah bulan, sistem akan mendeteksinya. Pada saat gajian, sistem
+                        secara otomatis akan menarik potongan angsuran pinjaman tersebut di slip gaji mereka tanpa
+                        memicu adu argumen. Perusahaan mengamankan dananya kembali, sementara staf mendapatkan bukti
+                        pemotongan utang yang transparan.</p>
+
+                    <h3 style="color: var(--violet); margin-bottom: 8px; font-size: 16px;">3. Penambahan Bonus atau
+                        Denda Manual</h3>
+                    <p style="margin-bottom: 16px;">Walau mesin menghitung secara otomatis, HRD atau Manajer tetap
+                        memegang kendali penuh. Sebelum Slip Gaji dicairkan, Anda bisa menyisipkan penyesuaian
+                        (Adjustment) seperti tambahan "Bonus Kerajinan" atau menembakkan potongan "Denda Keterlambatan
+                        Absen". Total akhir atau "Take Home Pay" akan disesuaikan pada saat itu juga.</p>
+
+                    <h3 style="color: var(--violet); margin-bottom: 8px; font-size: 16px;">4. Sinkronisasi Laba Rugi
+                        Otomatis</h3>
+                    <p>Setelah Anda menyetujui dan memproses pencairan gaji ke seluruh pegawai (Approve Payroll), total
+                        dana puluhan juta rupiah yang keluar akan langsung diakui dan dipotong dari Saldo Kas kedai
+                        Anda. Transaksi pencairan ini pun langsung tercatat rapi di Laporan Laba Rugi (P&L) bulanan di
+                        bawah kategori "Biaya Tenaga Kerja", meringankan beban kerja Anda dari entri data berulang kali.
+                    </p>
+                </div>
+
+                <div class="section-label fade-in">Deep Dive</div>
+                <h2 class="section-title fade-in stagger-1">Penyelamat Waktu HRD dan Operasional Bisnis</h2>
+                <p class="section-subtitle fade-in stagger-2" style="margin-bottom: 32px;">Modul Penggajian kami rancang
+                    untuk menghindari miskalkulasi yang memicu konflik antara perusahaan dan karyawan:</p>
+
+                <div class="faq-list fade-in stagger-3">
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>🥤 Agen Es Kopi Gerobak Keliling (Problem Rekapitulasi Komisi Bulanan)</span>
+                            <span class="faq-chevron">▾</span>
+                        </button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                <p><strong>Permasalahan:</strong> Seorang pengusaha memiliki 5 armada Rider Es Kopi
+                                    keliling. Sistem gajinya mengandalkan komisi penjualan, di mana tiap cup yang laku
+                                    akan memberikan Rp 2.000 untuk Rider. Setiap akhir bulan, Bos dan Rider kerap
+                                    berselisih paham karena catatan penjualan manual di kertas mereka berbeda, memicu
+                                    mogok kerja karena salah paham masalah uang.</p>
+                                <p><strong>Solusi:</strong> Dengan Go Suite, hanya perlu satu kali klik tombol "Proses
+                                    Slip Gaji Rider A". Sistem langsung menarik data riwayat transaksi penjualan Rider A
+                                    langsung dari aplikasi Mobile Rider-nya. Muncul rincian instan: misal "Terjual 421
+                                    Cup x Komisi Rp 2.000". Angka mutlak berupa bukti cetak kuitansi e-slip ini langsung
+                                    muncul tanpa keraguan. Pertikaian hitung-hitungan ambyar dalam lima detik berkat
+                                    data langsung dari pusat.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>🧊 Rumah Makan Modern (Tragedi Kasbon Lupa Dicatat)</span>
+                            <span class="faq-chevron">▾</span>
+                        </button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                <p><strong>Permasalahan:</strong> Ada asisten dapur yang gaji bulanannya Rp 2 Juta. Di
+                                    tengah bulan, ia meminta pinjaman uang kas atau kasbon Rp 1 Juta utuh hari itu juga
+                                    karena kebutuhan mendesak. Sayangnya bos lupa mencatat atau memo catatannya hilang
+                                    dari meja. Tibalah akhir bulan, sang asisten dapur tetap menerima Rp 2 Juta
+                                    berhubung tidak ada catatan potong kasbon. Bos rugi sejuta perak karena lupa ihwal
+                                    pemberian subsidi halus tersebut.</p>
+                                <p><strong>Solusi:</strong> Kejadian seperti ini tidak akan Anda alami di ekosistem Go
+                                    Suite. Saat kasbon ditarik di akun karyawan, pencatatan otomatis menancap sebagai
+                                    piutang sementara di laporan. Pada saat eksekusi slip gaji rutin di akhir bulan,
+                                    sistem otomatis akan mengurangi gaji pokok karyawan dengan menampilkan rincian:
+                                    "Potongan Kasbon Terdahulu: -Rp 1.000.000". Sang asisten menerima gaji Rp 1 Juta
+                                    bersih. Baik uang tunai maupun martabat bos pun aman dikelola rapi oleh sistem
+                                    secara non-konfrontatif.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>🏢 Kedai Kopi 24 Jam (Kasus Potong Denda Keterlambatan)</span>
+                            <span class="faq-chevron">▾</span>
+                        </button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                <p><strong>Permasalahan:</strong> Barista kedai sering sengaja masuk shift terlambat
+                                    dengan alasan klasik. Aturan SP restoran menyebut denda tilang uang senilai Rp
+                                    50.000 per satu kali jadwal keterlambatan. Namun, mesin kasir (POS) restoran tidak
+                                    mampu menjalankan peranan menghukum sosial seperti itu, alhasil pemotongan gaji
+                                    kembali direkap lembaran secara manual di mana sering kali ada kehilafan
+                                    penghitungan.</p>
+                                <p><strong>Solusi:</strong> Sesaat sebelum HRD mengetok tombol hijau pencairan draf uang
+                                    Gaji bulan ini, ia dapat menyelinap membedah lembaran draft gaji Barista tersebut.
+                                    Tinggal memencet opsi kustom "Tambah Koreksi Manual", HRD tersebut mengisikan nama
+                                    komponen: "Potongan Tilang Denda Telat Shift 3x" dengan total minus "Rp -150.000".
+                                    Potongan nominal akan ter-update otomatis pada kertas e-slip gaji yang sudah bisa
+                                    dibaca oleh si Barista di aplikasi HP-nya besok pagi, memberinya pelajaran disiplin
+                                    secara transparan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <footer class="footer">
+                <p>© 2026 Go Suite</p>
+            </footer>
+        </main>
+        <!-- BOTTOM NAV -->
+        <nav class="bottom-nav">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                    <path
+                        d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-fitur-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+                    <path d="M2 7h20" />
+                </svg>
+                <span>Fitur</span>
+            </a>
+            <a href="harga.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20" />
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>Harga</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- PULL UP MODAL (16 MODULES) -->
+    <div class="modal-backdrop" id="fiturModalBackdrop"></div>
+    <div class="bottom-sheet" id="fiturBottomSheet">
+        <div class="sheet-header">
+            <div class="sheet-drag-handle"></div>
+            <h3>Semua Fitur Go Suite</h3>
+            <button class="sheet-close" id="closeFiturBtn">&times;</button>
+        </div>
+        <div class="sheet-content">
+            <div class="module-grid">
+                <a href="kasir.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🏪</div><span>Kasir &
+                        Penjualan</span>
+                </a>
+                <a href="mobile-rider.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">🏍️</div><span>Sales
+                        Keliling</span>
+                </a>
+                <a href="order-mitra.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">🤝</div><span>Order Mitra
+                        B2B</span>
+                </a>
+                <a href="katering.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(22,163,74,0.1);color:#16a34a;">🎪</div>
+                    <span>Katering/Event</span>
+                </a>
+                <a href="form-publik.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">📄</div><span>Form
+                        Publik</span>
+                </a>
+
+                <a href="dapur.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🍳</div><span>Dapur
+                        Produksi</span>
+                </a>
+                <a href="stok.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(234,88,12,0.1);color:#ea580c;">📦</div><span>Stok &
+                        Gudang</span>
+                </a>
+                <a href="pembelian.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🛒</div><span>Pembelian
+                        Supplier</span>
+                </a>
+                <a href="waste-log.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">🗑️</div><span>Pencatatan
+                        Rusak</span>
+                </a>
+
+                <a href="buku-besar.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">📒</div><span>Buku Besar
+                        & Kas</span>
+                </a>
+                <a href="rekening-bank.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">🏦</div><span>Rekening
+                        Bank</span>
+                </a>
+                <a href="laporan.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📈</div><span>Lap. Laba
+                        Rugi</span>
+                </a>
+                <a href="resep-hpp.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🧮</div><span>Resep &
+                        Modal</span>
+                </a>
+                <a href="investor.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(234,88,12,0.1);color:#ea580c;">🤝</div><span>Lap.
+                        Investor</span>
+                </a>
+
+                <a href="payroll.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">💸</div><span>Gaji &
+                        Komisi</span>
+                </a>
+                <a href="jadwal-kerja.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📅</div><span>Jadwal
+                        Kerja</span>
+                </a>
+                <a href="riderhub.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">📱</div><span>RiderHub
+                        (Tim)</span>
+                </a>
+                <a href="staff-role.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">👥</div><span>Akses &
+                        Peran</span>
+                </a>
+                <a href="log-hapus.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🕵️</div><span>Log
+                        Hapus</span>
+                </a>
+                <a href="multi-cabang.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🏢</div>
+                    <span>Multi-Cabang</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

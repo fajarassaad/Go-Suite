@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Stok & Gudang (Inventori) - Go Suite</title>
+    <meta name="description"
+        content="Buku besar fisik Anda. Muka sistem yang memisahkan gudang penyimpanan dan mencatat setiap tetes tumpahan maupun tambahan belanja.">
+    <meta property="og:title" content="Stok & Gudang (Inventori) - Go Suite">
+    <meta property="og:description"
+        content="Buku besar fisik Anda. Muka sistem yang memisahkan gudang penyimpanan dan mencatat setiap tetes tumpahan maupun tambahan belanja.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gosuite.id/og-image.jpg">
+
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, var(--emerald), #047857);
+            padding: 40px 20px;
+            color: white;
+            border-radius: 0 0 24px 24px;
+            margin-bottom: 24px;
+        }
+
+        .page-header h1 {
+            font-size: 28px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .page-header p {
+            font-size: 15px;
+            opacity: 0.9;
+            margin: 0;
+            color: white;
+        }
+
+        .nav-back {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-shell">
+        <nav class="top-nav">
+            <a href="index.html" class="nav-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg> Kembali
+            </a>
+            <a href="https://wa.me/6282187164364" class="nav-cta" target="_blank">Tanya Ahli</a>
+        </nav>
+
+        <main class="page-content" style="padding-top:60px;">
+            <header class="page-header fade-in">
+                <h1>Stok & Gudang (Inventori)</h1>
+                <p>Buku besar fisik Anda. Muka sistem yang memisahkan gudang penyimpanan dan mencatat setiap tetes
+                    tumpahan maupun tambahan belanja.</p>
+            </header>
+
+            <section class="section">
+                <h2 class="section-title fade-in stagger-1">Fitur Unggulan</h2>
+                <div class="feature-list mt-4">
+                    <div class="feature-link fade-in stagger-1" style="cursor:default">
+                        <div class="fl-icon violet">📍</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Pemisah Multi-Lokasi</div>
+                            <div class="fl-desc">Pantau lokasi pasti barang Anda, apakah kopi 5kg itu ada di Kulkas
+                                Depan (Kasir) atau masih membeku di Freezer Gudang Belakang.</div>
+                        </div>
+                    </div>
+                    <div class="feature-link fade-in stagger-2" style="cursor:default">
+                        <div class="fl-icon emerald">✏️</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Koreksi Opname Langsung</div>
+                            <div class="fl-desc">Angka sistem tidak cocok dengan hitungan fisik riil? Ketik ulang angka
+                                benarnya, sistem akan percaya dan menyetel saldo baru.</div>
+                        </div>
+                    </div>
+                    <div class="feature-link fade-in stagger-3" style="cursor:default">
+                        <div class="fl-icon rose">🕵️</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Pelacakan Jejak (Mutasi)</div>
+                            <div class="fl-desc">Tab log yang mencatat riwayat seperti: 'Dikurangi 2 Liter oleh Produksi
+                                Kopi tanggal sekian' agar manajer tidak saling curiga.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="section section-alt">
+                <div class="section-label fade-in">Dampak Nyata</div>
+                <h2 class="section-title fade-in stagger-1">Sebelum vs Sesudah</h2>
+                <table class="compare-table mt-4 fade-in stagger-2" style="background:#fff; border-radius:12px;">
+                    <tbody>
+                        <tr>
+                            <td style="color:#ef4444; width:50%">Gudang kosong tiba-tiba ditipu tebakan stok di otak
+                                owner</td>
+                            <td style="color:#10b981; font-weight:600">Catatan log lengkap: "Dikurangi 2 karton oleh
+                                Dapur kemarin sore"</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#ef4444">Kelupaan mana invoice supplier yang udah dibayar vs yang utang
+                            </td>
+                            <td style="color:#10b981; font-weight:600">Terarsip status LUNAS / BELUM (merah) dengan 1x
+                                klik tap lunas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="cta-section">
+                <h2 class="section-title fade-in stagger-1" style="font-size: 22px;">Stop kehabisan barang.</h2>
+                <div class="hero-actions fade-in stagger-2">
+                    <a href="https://wa.me/6282187164364" class="btn btn-wa" target="_blank">💬 Chat WhatsApp
+                        Sekarang</a>
+                </div>
+            </section>
+            <div class="divider"></div>
+
+            <section class="section" style="padding-bottom: 2rem;">
+                <div class="section-label fade-in">Eksplorasi Fitur</div>
+                <h2 class="section-title fade-in stagger-1">Fitur Utama Stok & Gudang</h2>
+                <p class="section-subtitle fade-in stagger-2" style="margin-bottom: 24px;">Lacak pergerakan barang
+                    sampai ke letak lorong raknya, dan hilangkan stres saat Stock Opname bulanan:</p>
+
+                <div class="prose fade-in stagger-3"
+                    style="background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; margin-bottom: 40px; color: var(--text); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--emerald); margin-bottom: 8px; font-size: 16px;">1. Pemisahan Gudang
+                        Multi-Lokasi</h3>
+                    <p style="margin-bottom: 16px;">Go Suite tidak sekadar memunculkan "total barang". Anda bisa
+                        mencatat secara pasti, misalnya: Kopi 10 kg ada di "Gudang Belakang", sedangkan 5 kg lagi ada di
+                        "Kulkas Barista". Saat mencari barang fisik, karyawan tidak perlu menebak-nebak rak mana yang
+                        harus dibuka.</p>
+
+                    <h3 style="color: var(--emerald); margin-bottom: 8px; font-size: 16px;">2. Tabulasi Terpisah (Stok
+                        Etalase vs Bahan Mentah)</h3>
+                    <p style="margin-bottom: 16px;">Agar tidak bingung, layar gudang dipisah menjadi dua bagian:
+                        <strong>Stok Bahan Baku</strong> (Kopi karungan, Gula, Cup) dan <strong>Stok Produk
+                            Jadi</strong> (Minuman Botol Siap Jual, Box Roti). Keteraturan ini mencegah selisih hitung
+                        modal belanja barang.</p>
+
+                    <h3 style="color: var(--emerald); margin-bottom: 8px; font-size: 16px;">3. Stock Opname & Koreksi
+                        Cepat</h3>
+                    <p style="margin-bottom: 16px;">Di lapangan, barang kadang tumpah, hilang, atau dikerubutin semut.
+                        Saat menghitung fisik, karyawan Anda cukup memasukkan "Angka Riil" langsung dari layar HP atau
+                        tablet mereka. Sistem akan otomatis membuang angka selisihnya dari pembukuan, tanpa perlu
+                        bolak-balik mencetak kertas tabel Excel.</p>
+
+                    <h3 style="color: var(--emerald); margin-bottom: 8px; font-size: 16px;">4. Rekaman Mutasi Layaknya
+                        CCTV (Audit Trail)</h3>
+                    <p>Curiga kenapa stok Gula 10 sak bisa habis dalam 2 hari? Buka menu Riwayat Mutasi. Setiap
+                        pergerakan persediaan dilacak dengan ketat, dari jam berapa sampai siapa pelakunya. Misalnya:
+                        "Dikurangi 2 karung oleh modul Dapur kemarin" atau "Ditambah 5 karung karena nota Pembelian pagi
+                        ini". Tidak ada ceritanya barang raib tanpa jejak.</p>
+                </div>
+
+                <div class="section-label fade-in">Studi Kasus</div>
+                <h2 class="section-title fade-in stagger-1">Menuntaskan Penyakit Kronis Gudang</h2>
+                <p class="section-subtitle fade-in stagger-2" style="margin-bottom: 32px;">Hilangkan drama saling tuduh
+                    kelihangan barang dan hemat waktu tutup toko saat Stock Opname:</p>
+
+                <div class="faq-list fade-in stagger-3">
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>📦 Perusahaan Distributor (Membongkar Pencurian Internal)</span>
+                            <span class="faq-chevron">▾</span>
+                        </button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                <p><strong>Permasalahan:</strong> Pemilik bisnis curiga stok mentega bermerek mahal
+                                    selalu berkurang tanpa pesanan yang jelas minggu ini. Karena tidak ada bukti CCTV,
+                                    kasir menuduh bagian dapur yang boros bahan, dan dapur menuduh admin yang salah
+                                    catat nota.</p>
+                                <p><strong>Solusi:</strong> Pemilik membuka halaman <em>Riwayat Mutasi Barang</em>
+                                    khusus untuk Mentega. Bukti valid langsung tampil: Pada tanggal 12 jam 2 dini hari,
+                                    akun berinisial Staff A diam-diam melakukan "Koreksi Stok Minus 3 Box" dari sistem
+                                    tanpa membuat laporan kerusakan. Modul rekaman mutasi menghentikan aksi kriminal
+                                    sebelum menjadi kebiasaan kronis.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>🛒 Minimarket & Toko Grosir (Stock Opname Tanpa Tutup Toko)</span>
+                            <span class="faq-chevron">▾</span>
+                        </button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                <p><strong>Permasalahan:</strong> Sebulan sekali karyawan meminta "Tutup Cabang Setengah
+                                    Hari" gajian untuk melakukan rutinitas merapikan dan menghitung stok. Proses ini
+                                    sangat lambat karena harus memegang kertas cetak panjang, memeriksa rak per rak,
+                                    lalu menyalin coretannya lagi ke komputer Excel.</p>
+                                <p><strong>Solusi:</strong> Go Suite menghadirkan fitur Stok Cepat (Quick Adjustment).
+                                    Staf cukup membawa HP ke lorong, menghitung jumlah riil Sabun Mandi (misal ketemunya
+                                    tinggal 14 dari harusnya 15). Staf tinggal mengetik angka 14 di HP. Modul otomatis
+                                    membukukan selisih hilangnya (-1), merapikan total nilai aset bisnis, tanpa perlu
+                                    menyuruh pembeli pulang. Opname bisa dicicil satu lorong tiap hari dengan tenang.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>🏪 Restoran Dapur Besar (Menyelesaikan Panik Lokasi Freezer)</span>
+                            <span class="faq-chevron">▾</span>
+                        </button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                <p><strong>Permasalahan:</strong> Saat jam sibuk makan siang, pelanggan komplain steak
+                                    daging tidak tersedia. Kasir berteriak panik ke belakang karena kulkas kaca
+                                    (showcase) depan kosong melompong, padahal di komputer jumlah Daging Steak tertera
+                                    sisa 50 porsi.</p>
+                                <p><strong>Solusi:</strong> Lewat fitur <em>Multi-Lokasi</em>, Manajer tidak perlu ikut
+                                    ribut ke belakang. Manajer cukup klik detail Daging Steak di layar dan sistem
+                                    menjabarkan posisinya: "0 porsi di Kulkas Kasir" dan "50 porsi tertidur lelap di
+                                    Freezer Beku Gudang Bawah". Manajer tinggal menyuruh staf mengambil barang tersebut
+                                    ke lumbung sesungguhnya tanpa ada pelanggan yang batal dilayani.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <footer class="footer">
+                <p>© 2026 Go Suite</p>
+            </footer>
+        </main>
+        <!-- BOTTOM NAV -->
+        <nav class="bottom-nav">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                    <path
+                        d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-fitur-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+                    <path d="M2 7h20" />
+                </svg>
+                <span>Fitur</span>
+            </a>
+            <a href="harga.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20" />
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>Harga</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- PULL UP MODAL (16 MODULES) -->
+    <div class="modal-backdrop" id="fiturModalBackdrop"></div>
+    <div class="bottom-sheet" id="fiturBottomSheet">
+        <div class="sheet-header">
+            <div class="sheet-drag-handle"></div>
+            <h3>Semua Fitur Go Suite</h3>
+            <button class="sheet-close" id="closeFiturBtn">&times;</button>
+        </div>
+        <div class="sheet-content">
+            <div class="module-grid">
+                <a href="kasir.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🏪</div><span>Kasir &
+                        Penjualan</span>
+                </a>
+                <a href="mobile-rider.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">🏍️</div><span>Sales
+                        Keliling</span>
+                </a>
+                <a href="order-mitra.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">🤝</div><span>Order Mitra
+                        B2B</span>
+                </a>
+                <a href="katering.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(22,163,74,0.1);color:#16a34a;">🎪</div>
+                    <span>Katering/Event</span>
+                </a>
+                <a href="form-publik.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">📄</div><span>Form
+                        Publik</span>
+                </a>
+
+                <a href="dapur.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🍳</div><span>Dapur
+                        Produksi</span>
+                </a>
+                <a href="stok.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(234,88,12,0.1);color:#ea580c;">📦</div><span>Stok &
+                        Gudang</span>
+                </a>
+                <a href="pembelian.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🛒</div><span>Pembelian
+                        Supplier</span>
+                </a>
+                <a href="waste-log.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">🗑️</div><span>Pencatatan
+                        Rusak</span>
+                </a>
+
+                <a href="buku-besar.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">📒</div><span>Buku Besar
+                        & Kas</span>
+                </a>
+                <a href="rekening-bank.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">🏦</div><span>Rekening
+                        Bank</span>
+                </a>
+                <a href="laporan.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📈</div><span>Lap. Laba
+                        Rugi</span>
+                </a>
+                <a href="resep-hpp.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🧮</div><span>Resep &
+                        Modal</span>
+                </a>
+                <a href="investor.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(234,88,12,0.1);color:#ea580c;">🤝</div><span>Lap.
+                        Investor</span>
+                </a>
+
+                <a href="payroll.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">💸</div><span>Gaji &
+                        Komisi</span>
+                </a>
+                <a href="jadwal-kerja.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📅</div><span>Jadwal
+                        Kerja</span>
+                </a>
+                <a href="riderhub.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">📱</div><span>RiderHub
+                        (Tim)</span>
+                </a>
+                <a href="staff-role.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">👥</div><span>Akses &
+                        Peran</span>
+                </a>
+                <a href="log-hapus.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🕵️</div><span>Log
+                        Hapus</span>
+                </a>
+                <a href="multi-cabang.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🏢</div>
+                    <span>Multi-Cabang</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

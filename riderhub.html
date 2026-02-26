@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>RiderHub (Aplikasi Kurir Ekstra) - Go Suite</title>
+    <meta name="description"
+        content="Web-App terpisah bernuansa seluler (Subdomain) murni untuk kurir asongan. Berisi Modul Kasir terputus dan kompetisi Peringkat Leaderboard Cupps Terbanyak.">
+    <meta property="og:title" content="RiderHub (Aplikasi Kurir Ekstra) - Go Suite">
+    <meta property="og:description"
+        content="Web-App terpisah bernuansa seluler (Subdomain) murni untuk kurir asongan. Berisi Modul Kasir terputus dan kompetisi Peringkat Leaderboard Cupps Terbanyak.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gosuite.id/og-image.jpg">
+
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, var(--cyan), #0891b2);
+            padding: 40px 20px;
+            color: white;
+            border-radius: 0 0 24px 24px;
+            margin-bottom: 24px;
+        }
+
+        .page-header h1 {
+            font-size: 28px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .page-header p {
+            font-size: 15px;
+            opacity: 0.9;
+            margin: 0;
+            color: white;
+        }
+
+        .nav-back {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-shell">
+        <nav class="top-nav">
+            <a href="index.html" class="nav-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg> Kembali
+            </a>
+            <a href="https://wa.me/6282187164364?text=Halo%20Go%20Suite%2C%20tanya%20fitur%20Sales%20Keliling"
+                class="nav-cta" target="_blank">Tanya Ahli</a>
+        </nav>
+
+        <main class="page-content" style="padding-top:60px;">
+            <header class="page-header fade-in">
+                <h1>RiderHub (Aplikasi Kurir Ekstra)</h1>
+                <p>Web-App terpisah bernuansa seluler (Subdomain) murni untuk kurir asongan. Berisi Modul Kasir terputus
+                    dan kompetisi Peringkat Leaderboard Cupps Terbanyak.</p>
+            </header>
+
+            <section class="section">
+                <h2 class="section-title fade-in stagger-1">Fitur Unggulan</h2>
+                <div class="feature-list mt-4">
+                    <div class="feature-link fade-in stagger-1" style="cursor:default">
+                        <div class="fl-icon emerald">📶</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Mode Terputus Sinyal (Offline PWA)</div>
+                            <div class="fl-desc">Sinyal desa buruk terpelosok? Rider tetap sah memposting jualan ketikan
+                                Kasir, database ponsel nahan sementara, lalu Otomatis-Sync saat dapet internet MIFI.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-link fade-in stagger-2" style="cursor:default">
+                        <div class="fl-icon amber">🏆</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Bintang Klasemen Penjualan Mingguan</div>
+                            <div class="fl-desc">Papan kompetisi performa Rider satu kota. Menghadiahi siapa saja yang
+                                tembus target rutin dengan label api 'Hot Streak', pacu adrenalin dagang.</div>
+                        </div>
+                    </div>
+                    <div class="feature-link fade-in stagger-3" style="cursor:default">
+                        <div class="fl-icon rose">👀</div>
+                        <div class="fl-body">
+                            <div class="fl-title">Observer Mode Pemilik (Mata-mata)</div>
+                            <div class="fl-desc">Manajer tidak perlu dikirimi Lokasi WA sharelive mulu. Cukup tap mode
+                                observer, seketika layar manajer mengikuti titik lapor omzet sales buron di kampung
+                                sana.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="section section-alt">
+                <div class="section-label fade-in">Dampak Nyata</div>
+                <h2 class="section-title fade-in stagger-1">Sebelum vs Sesudah</h2>
+                <table class="compare-table mt-4 fade-in stagger-2" style="background:#fff; border-radius:12px;">
+                    <tbody>
+                        <tr>
+                            <td style="color:#ef4444; width:50%">Lapor laku lewat chat WA, sering pusing hitung uang di
+                                akhir</td>
+                            <td style="color:#10b981; font-weight:600">Setoran dihitung mesin. Selisih uang langsung
+                                ketahuan.</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#ef4444">Sales nombok uang bensin lupa diganti</td>
+                            <td style="color:#10b981; font-weight:600">Ada input "Cashbon/Bensin" waktu berangkat, gaji
+                                otomatis potong penyesuaian.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="section" style="padding-bottom: 2rem;">
+                <div class="section-label fade-in">Eksplorasi Fitur</div>
+                <h2 class="section-title fade-in stagger-1">Fitur Utama Mobile Rider (Sales Keliling)</h2>
+                <p class="section-subtitle fade-in stagger-2" style="margin-bottom: 24px;">Kelola armada penjualan
+                    keliling (motoris/starling) dengan aplikasi portabel yang mudah digunakan di HP mereka:</p>
+
+                <div class="prose fade-in stagger-3"
+                    style="background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; margin-bottom: 40px; color: var(--text); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--cyan); margin-bottom: 8px; font-size: 16px;">1. Aplikasi Web Portabel (PWA)
+                    </h3>
+                    <p style="margin-bottom: 16px;">RiderHub dirancang khusus untuk layar HP secara responsif. Kru
+                        armada keliling Anda cukup membuka tautan, memasukkan Nomor HP dan PIN untuk login. Mereka juga
+                        bisa menambahkan ikon situs tersebut ke layar utama HP (Add to Home Screen) sehingga berfungsi
+                        layaknya aplikasi mandiri tanpa perlu repot instalasi dari App Store atau Play Store.</p>
+
+                    <h3 style="color: var(--cyan); margin-bottom: 8px; font-size: 16px;">2. Tangguh Meski Tanpa Sinyal
+                        (Offline Kasir)</h3>
+                    <p style="margin-bottom: 16px;">Rider keliling sering melewati rute *blank spot* atau area susah
+                        sinyal. Go Suite memahami ini dengan memberikan fitur Kasir Offline. Saat pelanggan membeli kopi
+                        di pinggir jalan dan HP kehilangan sinyal, rider tetap bisa mencatat transaksi. Sistem akan
+                        menyimpannya sementara dan otomatis mengirimkannya ke server pusat (Auto-Upload) ketika HP
+                        kembali mendapatkan jaringan internet.</p>
+
+                    <h3 style="color: var(--cyan); margin-bottom: 8px; font-size: 16px;">3. Gamifikasi & Papan Peringkat
+                        (Leaderboard)</h3>
+                    <p style="margin-bottom: 16px;">Bangkitkan semangat kompetisi di antara tim penjualan keliling Anda.
+                        RiderHub menyediakan papan peringkat (Leaderboard) agar sesama rider saling adu performa
+                        penjualan setiap hari. Rider yang mencapai target (misalnya gelar "Hot Streak🔥" atau
+                        "Consistency Star⭐") akan mendapatkan bonus komisi otomatis yang terhubung ke modul Penggajian
+                        di akhir bulan.</p>
+
+                    <h3 style="color: var(--cyan); margin-bottom: 8px; font-size: 16px;">4. Pantauan Real-Time (Observer
+                        Mode)</h3>
+                    <p>Sebagai manajer, Anda tidak perlu lagi menelepon rider satu per satu sekadar menanyakan "Hari ini
+                        sudah laku berapa?". Dengan fitur *Observer Mode*, Anda bisa memantau aplikasi RiderHub
+                        masing-masing armada langsung dari HP atau layar komputer Anda. Anda bisa melihat kordinat
+                        lokasi terakhir saat mereka menginput transaksi (disertai GPS), jumlah produk yang sudah terjual
+                        hari ini, dan sisa stok barang di boks motornya.</p>
+                </div>
+
+                <div class="section-label fade-in">Deep Dive</div>
+                <h2 class="section-title fade-in stagger-1">Penyelamat Rekap Setoran Armada Keliling</h2>
+                <p class="section-subtitle fade-in stagger-2" style="margin-bottom: 32px;">Lupakan rekap setoran manual
+                    dengan kertas lecek setiap sore hari. RiderHub menyinkronkan data otomatis tanpa celah penipuan:</p>
+
+                <div class="faq-list fade-in stagger-3">
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>🏍️ Armada Kopi Keliling (Problem Setoran dan Catatan Penjualan Harian)</span>
+                            <span class="faq-chevron">▾</span>
+                        </button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                <p><strong>Permasalahan:</strong> Seorang pengusaha menaungi 10 armada motor kopi
+                                    keliling. Setiap sore ketika armada pulang ke pos (markas), suasana selalu ricuh.
+                                    Para rider melaporkan setoran secara bersahutan: ada yang menyetorkan uang tunai
+                                    lecek dengan nota yang basah terkena hujan, ada yang merekap di WhatsApp dengan
+                                    tulisan panjang yang membingungkan. Pemilik usaha membutuhkan waktu 4 jam setiap
+                                    malam hanya untuk menghitung ulang dan memastikan tidak ada stok barang yang
+                                    berkurang tanpa uang pemasukan.</p>
+                                <p><strong>Solusi:</strong> Pengusaha mewajibkan penggunaan RiderHub. Kini, di jalanan,
+                                    setiap kali rider mendapatkan pembeli, mereka cukup mengeluarkan HP dan mengetuk
+                                    "Jual 1 Cup" di aplikasi. Papan Peringkat (Leaderboard) di aplikasi memacu para
+                                    rider bersaing mencetak rekor harian tertinggi untuk mengejar titel bonus. Saat sore
+                                    menjelang dan seluruh armada kembali ke pos, sang pengusaha tidak perlu lagi pusing
+                                    mencocokkan nota kertas. Ia cukup membuka layar utama dan melihat rekap absolut dari
+                                    sistem yang menyatakan: "Rider A laku 70 cup, setor kas Rp X; Rider B laku 65 cup,
+                                    setor kas Rp Y." Rekap selesai dalam hitungan detik tanpa perdebatan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <h2 class="section-title fade-in stagger-1" style="font-size: 22px;">Punya tim sales kanvas/motoris?
+                </h2>
+                <div class="hero-actions fade-in stagger-2">
+                    <a href="https://wa.me/6282187164364?text=Halo%2C%20saya%20butuh%20solusi%20untuk%20sales%20motoris"
+                        class="btn btn-wa" target="_blank">💬 Chat WhatsApp Kami</a>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>© 2026 Go Suite</p>
+            </footer>
+        </main>
+        <!-- BOTTOM NAV -->
+        <nav class="bottom-nav">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                    <path
+                        d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-fitur-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+                    <path d="M2 7h20" />
+                </svg>
+                <span>Fitur</span>
+            </a>
+            <a href="harga.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20" />
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>Harga</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- PULL UP MODAL (16 MODULES) -->
+    <div class="modal-backdrop" id="fiturModalBackdrop"></div>
+    <div class="bottom-sheet" id="fiturBottomSheet">
+        <div class="sheet-header">
+            <div class="sheet-drag-handle"></div>
+            <h3>Semua Fitur Go Suite</h3>
+            <button class="sheet-close" id="closeFiturBtn">&times;</button>
+        </div>
+        <div class="sheet-content">
+            <div class="module-grid">
+                <a href="kasir.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🏪</div><span>Kasir &
+                        Penjualan</span>
+                </a>
+                <a href="mobile-rider.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">🏍️</div><span>Sales
+                        Keliling</span>
+                </a>
+                <a href="order-mitra.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">🤝</div><span>Order Mitra
+                        B2B</span>
+                </a>
+                <a href="katering.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(22,163,74,0.1);color:#16a34a;">🎪</div>
+                    <span>Katering/Event</span>
+                </a>
+                <a href="form-publik.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">📄</div><span>Form
+                        Publik</span>
+                </a>
+
+                <a href="dapur.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🍳</div><span>Dapur
+                        Produksi</span>
+                </a>
+                <a href="stok.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(234,88,12,0.1);color:#ea580c;">📦</div><span>Stok &
+                        Gudang</span>
+                </a>
+                <a href="pembelian.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🛒</div><span>Pembelian
+                        Supplier</span>
+                </a>
+                <a href="waste-log.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">🗑️</div><span>Pencatatan
+                        Rusak</span>
+                </a>
+
+                <a href="buku-besar.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">📒</div><span>Buku Besar
+                        & Kas</span>
+                </a>
+                <a href="rekening-bank.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">🏦</div><span>Rekening
+                        Bank</span>
+                </a>
+                <a href="laporan.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📈</div><span>Lap. Laba
+                        Rugi</span>
+                </a>
+                <a href="resep-hpp.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🧮</div><span>Resep &
+                        Modal</span>
+                </a>
+                <a href="investor.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(234,88,12,0.1);color:#ea580c;">🤝</div><span>Lap.
+                        Investor</span>
+                </a>
+
+                <a href="payroll.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">💸</div><span>Gaji &
+                        Komisi</span>
+                </a>
+                <a href="jadwal-kerja.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📅</div><span>Jadwal
+                        Kerja</span>
+                </a>
+                <a href="riderhub.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">📱</div><span>RiderHub
+                        (Tim)</span>
+                </a>
+                <a href="staff-role.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">👥</div><span>Akses &
+                        Peran</span>
+                </a>
+                <a href="log-hapus.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🕵️</div><span>Log
+                        Hapus</span>
+                </a>
+                <a href="multi-cabang.html" class="module-card">
+                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🏢</div>
+                    <span>Multi-Cabang</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
