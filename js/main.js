@@ -140,6 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalSlides = sliderTrack ? sliderTrack.children.length : 0;
         let currentSlide = 0;
         let sliderTimer;
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchDeltaX = 0;
+        let isSwiping = false;
+        let isHorizontalSwipe = false;
 
         const activateSlide = (index) => {
             if (!sliderTrack) return;
@@ -169,6 +174,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
             sliderWrapper.addEventListener('mouseenter', () => clearInterval(sliderTimer));
             sliderWrapper.addEventListener('mouseleave', () => startSlider());
+
+            sliderWrapper.addEventListener('touchstart', (event) => {
+                const touch = event.touches[0];
+                touchStartX = touch.clientX;
+                touchStartY = touch.clientY;
+                touchDeltaX = 0;
+                isSwiping = true;
+                isHorizontalSwipe = false;
+                sliderTrack.style.transition = 'none';
+                clearInterval(sliderTimer);
+            }, { passive: true });
+
+            sliderWrapper.addEventListener('touchmove', (event) => {
+                if (!isSwiping) return;
+                const touch = event.touches[0];
+                const deltaX = touch.clientX - touchStartX;
+                const deltaY = touch.clientY - touchStartY;
+
+                if (!isHorizontalSwipe) {
+                    isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10;
+                }
+
+                if (!isHorizontalSwipe) return;
+
+                event.preventDefault();
+                touchDeltaX = deltaX;
+                sliderTrack.style.transform = `translateX(calc(-${currentSlide * 100}% + ${touchDeltaX}px))`;
+            }, { passive: false });
+
+            sliderWrapper.addEventListener('touchend', () => {
+                if (!isSwiping) return;
+                isSwiping = false;
+                sliderTrack.style.transition = '';
+
+                if (isHorizontalSwipe) {
+                    const threshold = Math.min(80, sliderWrapper.clientWidth * 0.18);
+                    if (touchDeltaX <= -threshold) {
+                        activateSlide((currentSlide + 1) % totalSlides);
+                    } else if (touchDeltaX >= threshold) {
+                        activateSlide((currentSlide - 1 + totalSlides) % totalSlides);
+                    } else {
+                        activateSlide(currentSlide);
+                    }
+                } else {
+                    activateSlide(currentSlide);
+                }
+
+                touchDeltaX = 0;
+                startSlider();
+            });
+
+            sliderWrapper.addEventListener('touchcancel', () => {
+                isSwiping = false;
+                touchDeltaX = 0;
+                sliderTrack.style.transition = '';
+                activateSlide(currentSlide);
+                startSlider();
+            });
             startSlider();
         }
     }
@@ -178,11 +241,59 @@ document.addEventListener('DOMContentLoaded', () => {
         const lightboxImage = lightbox.querySelector('.lightbox-image');
         const lightboxCaption = lightbox.querySelector('.lightbox-caption');
         const closeButton = lightbox.querySelector('.lightbox-close');
+        let zoomScale = 1;
+        let panX = 0;
+        let panY = 0;
+        let pointerStartX = 0;
+        let pointerStartY = 0;
+        let panStartX = 0;
+        let panStartY = 0;
+        let isPanning = false;
+        let panMoved = false;
+        let suppressNextZoomToggle = false;
+
+        const applyZoomTransform = () => {
+            if (!lightboxImage) return;
+            lightboxImage.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomScale})`;
+            lightboxImage.setAttribute('data-zoomed', zoomScale > 1 ? 'true' : 'false');
+        };
+
+        const clampPan = () => {
+            if (!lightboxImage) return;
+            const baseWidth = lightboxImage.clientWidth;
+            const baseHeight = lightboxImage.clientHeight;
+            const maxPanX = ((baseWidth * zoomScale) - baseWidth) / 2;
+            const maxPanY = ((baseHeight * zoomScale) - baseHeight) / 2;
+            panX = Math.min(maxPanX, Math.max(-maxPanX, panX));
+            panY = Math.min(maxPanY, Math.max(-maxPanY, panY));
+        };
+
+        const resetZoom = () => {
+            zoomScale = 1;
+            panX = 0;
+            panY = 0;
+            applyZoomTransform();
+        };
+
+        const toggleZoom = () => {
+            if (!lightboxImage) return;
+            if (zoomScale === 1) {
+                zoomScale = 2;
+            } else {
+                zoomScale = 1;
+                panX = 0;
+                panY = 0;
+            }
+            clampPan();
+            applyZoomTransform();
+        };
+
         const openLightbox = (img, captionText) => {
             if (!lightboxImage || !lightboxCaption) return;
             lightboxImage.src = img.src;
             lightboxImage.alt = img.alt;
             lightboxCaption.textContent = captionText;
+            resetZoom();
             lightbox.setAttribute('data-open', 'true');
             lightbox.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
@@ -191,6 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.setAttribute('data-open', 'false');
             lightbox.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            resetZoom();
         };
 
         document.querySelectorAll('.integrated-slider-slide img').forEach(img => {
@@ -214,6 +326,75 @@ document.addEventListener('DOMContentLoaded', () => {
             if (event.key === 'Escape' && lightbox.getAttribute('data-open') === 'true') {
                 closeLightbox();
             }
+        });
+
+        lightboxImage?.addEventListener('click', () => {
+            if (suppressNextZoomToggle) {
+                suppressNextZoomToggle = false;
+                return;
+            }
+            toggleZoom();
+        });
+
+        lightboxImage?.addEventListener('touchstart', (event) => {
+            if (zoomScale <= 1) return;
+            const touch = event.touches[0];
+            isPanning = true;
+            panMoved = false;
+            pointerStartX = touch.clientX;
+            pointerStartY = touch.clientY;
+            panStartX = panX;
+            panStartY = panY;
+        }, { passive: true });
+
+        lightboxImage?.addEventListener('touchmove', (event) => {
+            if (!isPanning || zoomScale <= 1) return;
+            const touch = event.touches[0];
+            panX = panStartX + (touch.clientX - pointerStartX);
+            panY = panStartY + (touch.clientY - pointerStartY);
+            if (Math.abs(touch.clientX - pointerStartX) > 4 || Math.abs(touch.clientY - pointerStartY) > 4) {
+                panMoved = true;
+            }
+            clampPan();
+            applyZoomTransform();
+            event.preventDefault();
+        }, { passive: false });
+
+        lightboxImage?.addEventListener('touchend', () => {
+            isPanning = false;
+            if (panMoved) suppressNextZoomToggle = true;
+            panMoved = false;
+        });
+
+        lightboxImage?.addEventListener('mousedown', (event) => {
+            if (zoomScale <= 1) return;
+            event.preventDefault();
+            isPanning = true;
+            panMoved = false;
+            pointerStartX = event.clientX;
+            pointerStartY = event.clientY;
+            panStartX = panX;
+            panStartY = panY;
+            lightboxImage.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mousemove', (event) => {
+            if (!isPanning || zoomScale <= 1) return;
+            panX = panStartX + (event.clientX - pointerStartX);
+            panY = panStartY + (event.clientY - pointerStartY);
+            if (Math.abs(event.clientX - pointerStartX) > 4 || Math.abs(event.clientY - pointerStartY) > 4) {
+                panMoved = true;
+            }
+            clampPan();
+            applyZoomTransform();
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (!isPanning) return;
+            isPanning = false;
+            if (panMoved) suppressNextZoomToggle = true;
+            panMoved = false;
+            lightboxImage.style.cursor = zoomScale > 1 ? 'grab' : 'zoom-in';
         });
     }
 

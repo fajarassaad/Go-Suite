@@ -312,6 +312,7 @@ body {
     border-radius: var(--radius-xl);
     background: linear-gradient(160deg, rgba(79, 70, 229, 0.08), rgba(15, 23, 42, 0.03));
     box-shadow: var(--shadow-sm);
+    touch-action: pan-y;
 }
 
 .integrated-slider-track {
@@ -319,6 +320,7 @@ body {
     gap: 16px;
     transition: transform 0.4s var(--ease-out);
     will-change: transform;
+    user-select: none;
 }
 
 .integrated-slider-slide {
@@ -334,6 +336,7 @@ body {
     width: 100%;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
+    touch-action: manipulation;
 }
 
 .integrated-slider-slide figcaption {
@@ -406,6 +409,16 @@ body {
     width: 100%;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
+    cursor: zoom-in;
+    transform-origin: center center;
+    transition: transform 0.24s var(--ease-out);
+    will-change: transform;
+    user-select: none;
+    touch-action: none;
+}
+
+.integrated-slider-lightbox img[data-zoomed="true"] {
+    cursor: grab;
 }
 
 .integrated-slider-lightbox .lightbox-caption {
