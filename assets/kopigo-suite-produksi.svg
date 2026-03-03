@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" fill="none">
+  <rect width="900" height="560" rx="16" fill="#F8F9FC"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="190" height="560" rx="16" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="22" y="34" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#6C5CE7">⚡ KOPIGO</text>
+  <text x="95" y="34" font-family="system-ui,sans-serif" font-size="11" fill="#6C5CE7">Suite</text>
+
+  <text x="22" y="60" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#9CA3AF" letter-spacing="0.8">LOKASI AKTIF</text>
+  <rect x="14" y="67" width="162" height="26" rx="6" fill="#F3F4F6"/>
+  <text x="30" y="84" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#374151">KOPIGO Pusat</text>
+
+  <text x="22" y="110" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Katering &amp; Event</text>
+
+  <text x="22" y="134" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#9CA3AF" letter-spacing="0.8">OPERASIONAL &amp; STOK</text>
+  <rect x="10" y="140" width="170" height="26" rx="8" fill="#6C5CE7"/>
+  <text x="36" y="157" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#fff">Dapur Produksi</text>
+  <text x="22" y="180" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Stok Bahan</text>
+  <text x="22" y="197" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Pembelian</text>
+  <text x="22" y="214" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Catatan Waste</text>
+
+  <text x="22" y="240" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#9CA3AF" letter-spacing="0.8">KEUANGAN &amp; LAPORAN</text>
+  <text x="22" y="258" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Buku Besar</text>
+  <text x="22" y="275" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Payroll &amp; Gaji</text>
+  <text x="22" y="292" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Laporan</text>
+  <text x="22" y="309" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Master Resep &amp; HPP</text>
+
+  <rect x="10" y="510" width="170" height="36" rx="8" fill="#F3F4F6"/>
+  <circle cx="30" cy="528" r="10" fill="#6C5CE7" opacity="0.2"/>
+  <text x="46" y="525" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">Fajar Assaad</text>
+  <text x="46" y="536" font-family="system-ui,sans-serif" font-size="8" fill="#9CA3AF">Owner</text>
+
+  <!-- Main Content -->
+  <!-- Tabs -->
+  <rect x="210" y="20" width="110" height="30" rx="10" fill="#6C5CE7" opacity="0.1"/>
+  <text x="240" y="39" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#6C5CE7">PRODUKSI</text>
+  <text x="350" y="39" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#9CA3AF">RIWAYAT</text>
+  <text x="440" y="39" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#9CA3AF">PERENCANAAN</text>
+
+  <!-- Stok Dapur Produksi Header -->
+  <rect x="210" y="62" width="680" height="30" rx="8" fill="#EEF2FF"/>
+  <text x="240" y="81" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#374151" letter-spacing="0.5">STOK DAPUR PRODUKSI</text>
+
+  <!-- Stock Cards Row 1 -->
+  <!-- Kopi Sahabat -->
+  <rect x="210" y="100" width="130" height="100" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="220" y="117" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#374151">KOPI SAHABAT</text>
+  <text x="310" y="117" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Total: 14</text>
+  <rect x="220" y="122" width="110" height="3" rx="1.5" fill="#10B981"/>
+  <text x="220" y="142" font-family="system-ui,sans-serif" font-size="16" font-weight="800" fill="#10B981">14</text>
+  <text x="242" y="142" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">Cup</text>
+  <text x="220" y="160" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur Meranti</text>
+  <text x="320" y="160" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">14</text>
+
+  <!-- Kopi Aren Premium -->
+  <rect x="348" y="100" width="130" height="100" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="358" y="113" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#059669">[NEW]</text>
+  <text x="388" y="113" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#374151">KOPI AREN</text>
+  <text x="358" y="122" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#374151">PREMIUM</text>
+  <text x="448" y="113" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Total: 50</text>
+  <rect x="358" y="127" width="110" height="3" rx="1.5" fill="#10B981"/>
+  <text x="358" y="148" font-family="system-ui,sans-serif" font-size="16" font-weight="800" fill="#10B981">50</text>
+  <text x="380" y="148" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">Cup</text>
+  <text x="358" y="164" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur Meranti</text>
+  <text x="458" y="164" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">48</text>
+  <text x="358" y="176" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur BTP</text>
+  <text x="458" y="176" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">2</text>
+
+  <!-- Citrus Cold Brew -->
+  <rect x="486" y="100" width="130" height="100" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="496" y="117" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#374151">CITRUS COLD BREW</text>
+  <text x="596" y="117" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Total: 4</text>
+  <rect x="496" y="122" width="110" height="3" rx="1.5" fill="#10B981"/>
+  <text x="496" y="142" font-family="system-ui,sans-serif" font-size="16" font-weight="800" fill="#10B981">4</text>
+  <text x="510" y="142" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">Cup</text>
+  <text x="496" y="160" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur Meranti</text>
+  <text x="596" y="160" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">3</text>
+  <text x="496" y="172" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur BTP</text>
+  <text x="596" y="172" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">1</text>
+
+  <!-- Kopi Hitam -->
+  <rect x="624" y="100" width="130" height="100" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="634" y="117" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#374151">KOPI HITAM ARABIKA</text>
+  <text x="734" y="117" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Total: 4</text>
+  <rect x="634" y="122" width="110" height="3" rx="1.5" fill="#10B981"/>
+  <text x="634" y="142" font-family="system-ui,sans-serif" font-size="16" font-weight="800" fill="#10B981">4</text>
+  <text x="648" y="142" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">Cup</text>
+  <text x="634" y="160" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur Meranti</text>
+  <text x="734" y="160" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">3</text>
+  <text x="634" y="172" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur BTP</text>
+  <text x="734" y="172" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">1</text>
+
+  <!-- Kopi Susu Creamy (partial) -->
+  <rect x="762" y="100" width="130" height="100" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="772" y="113" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#059669">[NEW]</text>
+  <text x="802" y="113" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#374151">KOPI SUSU</text>
+  <text x="772" y="122" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#374151">CREAMY</text>
+  <text x="862" y="113" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Total: 37</text>
+  <rect x="772" y="127" width="110" height="3" rx="1.5" fill="#10B981"/>
+  <text x="772" y="148" font-family="system-ui,sans-serif" font-size="16" font-weight="800" fill="#10B981">37</text>
+  <text x="796" y="148" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">Cup</text>
+  <text x="772" y="164" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur Meranti</text>
+  <text x="872" y="164" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">25</text>
+  <text x="772" y="176" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur BTP</text>
+  <text x="872" y="176" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">12</text>
+
+  <!-- Stock Cards Row 2 -->
+  <!-- Kopi Pandan Creamy -->
+  <rect x="210" y="210" width="130" height="100" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="220" y="223" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#059669">[NEW]</text>
+  <text x="250" y="223" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#374151">KOPI PANDAN</text>
+  <text x="220" y="232" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#374151">CREAMY</text>
+  <text x="310" y="223" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Total: 9</text>
+  <rect x="220" y="237" width="110" height="3" rx="1.5" fill="#10B981"/>
+  <text x="220" y="258" font-family="system-ui,sans-serif" font-size="16" font-weight="800" fill="#10B981">9</text>
+  <text x="234" y="258" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">Cup</text>
+  <text x="220" y="274" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur Meranti</text>
+  <text x="320" y="274" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">8</text>
+  <text x="220" y="286" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur BTP</text>
+  <text x="320" y="286" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">1</text>
+
+  <!-- Creamy Matcha Latte -->
+  <rect x="348" y="210" width="130" height="100" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="358" y="223" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#059669">[NEW]</text>
+  <text x="388" y="223" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#374151">CREAMY MATCHA</text>
+  <text x="358" y="232" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#374151">LATTE</text>
+  <text x="448" y="223" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Total: 4</text>
+  <rect x="358" y="237" width="110" height="3" rx="1.5" fill="#10B981"/>
+  <text x="358" y="258" font-family="system-ui,sans-serif" font-size="16" font-weight="800" fill="#10B981">4</text>
+  <text x="372" y="258" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">Cup</text>
+  <text x="358" y="274" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur Meranti</text>
+  <text x="458" y="274" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">3</text>
+  <text x="358" y="286" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur BTP</text>
+  <text x="458" y="286" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">1</text>
+
+  <!-- Kopi Caramel Creamy -->
+  <rect x="486" y="210" width="130" height="100" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="496" y="223" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#059669">[NEW]</text>
+  <text x="526" y="223" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#374151">KOPI CARAMEL</text>
+  <text x="496" y="232" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#374151">CREAMY</text>
+  <text x="596" y="223" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Total: 6</text>
+  <rect x="496" y="237" width="110" height="3" rx="1.5" fill="#10B981"/>
+  <text x="496" y="258" font-family="system-ui,sans-serif" font-size="16" font-weight="800" fill="#10B981">6</text>
+  <text x="510" y="258" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">Cup</text>
+  <text x="496" y="274" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur Meranti</text>
+  <text x="596" y="274" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">5</text>
+  <text x="496" y="286" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">Dapur BTP</text>
+  <text x="596" y="286" font-family="system-ui,sans-serif" font-size="7" fill="#374151" text-anchor="end">1</text>
+
+  <!-- Mulai Produksi Section -->
+  <rect x="210" y="330" width="680" height="70" rx="10" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <circle cx="240" cy="360" r="16" fill="#FEF3C7"/>
+  <text x="240" y="364" font-family="system-ui,sans-serif" font-size="12" text-anchor="middle">🏭</text>
+  <text x="268" y="352" font-family="system-ui,sans-serif" font-size="11" font-weight="900" fill="#1F2937">MULAI PRODUKSI</text>
+  <text x="268" y="366" font-family="system-ui,sans-serif" font-size="8" fill="#9CA3AF" letter-spacing="0.5">KONVERSI BAHAN BAKU KE PRODUK JADI</text>
+  <rect x="268" y="374" width="120" height="20" rx="6" fill="#EEF2FF"/>
+  <text x="296" y="388" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#6C5CE7">↔ TRANSFER STOK</text>
+
+  <!-- Form Section -->
+  <text x="210" y="428" font-family="system-ui,sans-serif" font-size="8" font-weight="800" fill="#374151" letter-spacing="0.5">PILIH PRODUK</text>
+  <text x="560" y="428" font-family="system-ui,sans-serif" font-size="8" font-weight="800" fill="#374151" letter-spacing="0.5">JUMLAH MASAK (CUP)</text>
+  <rect x="210" y="436" width="330" height="36" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="226" y="459" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#374151">Kopi Sahabat</text>
+  <text x="520" y="459" font-family="system-ui,sans-serif" font-size="9" fill="#D1D5DB">▼</text>
+  <rect x="560" y="436" width="330" height="36" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="720" y="459" font-family="system-ui,sans-serif" font-size="10" fill="#D1D5DB" text-anchor="middle">0</text>
+
+  <!-- Simpan ke Lokasi -->
+  <text x="210" y="498" font-family="system-ui,sans-serif" font-size="8" font-weight="800" fill="#374151" letter-spacing="0.5">SIMPAN KE LOKASI</text>
+  <rect x="210" y="506" width="680" height="36" rx="8" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="226" y="529" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#374151">Dapur Meranti (Default)</text>
+  <text x="870" y="529" font-family="system-ui,sans-serif" font-size="9" fill="#D1D5DB">▼</text>
+</svg>

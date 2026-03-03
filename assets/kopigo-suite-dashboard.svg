@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" fill="none">
+  <!-- Background -->
+  <rect width="900" height="560" rx="16" fill="#F8F9FC"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="190" height="560" rx="16" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <!-- Logo -->
+  <text x="22" y="34" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#6C5CE7">⚡ KOPIGO</text>
+  <text x="95" y="34" font-family="system-ui,sans-serif" font-size="11" font-weight="400" fill="#6C5CE7">Suite</text>
+
+  <!-- Lokasi -->
+  <text x="22" y="60" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#9CA3AF" letter-spacing="0.8">LOKASI AKTIF</text>
+  <rect x="14" y="67" width="162" height="26" rx="6" fill="#F3F4F6"/>
+  <text x="30" y="84" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#374151">KOPIGO Pusat</text>
+
+  <!-- Penjualan -->
+  <text x="22" y="112" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#9CA3AF" letter-spacing="0.8">PENJUALAN</text>
+  <rect x="10" y="118" width="170" height="26" rx="8" fill="#6C5CE7"/>
+  <text x="36" y="135" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#fff">Kasir Outlet</text>
+  <text x="22" y="158" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Logistik Mobile</text>
+  <text x="22" y="175" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Order Mitra</text>
+  <text x="22" y="192" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Katering &amp; Event</text>
+
+  <!-- Operasional -->
+  <text x="22" y="218" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#9CA3AF" letter-spacing="0.8">OPERASIONAL &amp; STOK</text>
+  <text x="22" y="236" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Dapur Produksi</text>
+  <text x="22" y="253" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Stok Bahan</text>
+  <text x="22" y="270" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Pembelian</text>
+  <text x="22" y="287" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Catatan Waste</text>
+
+  <!-- Keuangan -->
+  <text x="22" y="313" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#9CA3AF" letter-spacing="0.8">KEUANGAN &amp; LAPORAN</text>
+  <text x="22" y="331" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Buku Besar</text>
+  <text x="22" y="348" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Payroll &amp; Gaji</text>
+
+  <!-- User -->
+  <rect x="10" y="510" width="170" height="36" rx="8" fill="#F3F4F6"/>
+  <circle cx="30" cy="528" r="10" fill="#6C5CE7" opacity="0.2"/>
+  <text x="46" y="525" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">Fajar Assaad</text>
+  <text x="46" y="536" font-family="system-ui,sans-serif" font-size="8" fill="#9CA3AF">Owner</text>
+
+  <!-- Main Content Area -->
+  <!-- Top bar -->
+  <text x="210" y="28" font-family="system-ui,sans-serif" font-size="8" fill="#9CA3AF">WAKTU CABANG (WITA)</text>
+  <text x="640" y="28" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#6C5CE7">02.17.33</text>
+
+  <!-- Tabs -->
+  <rect x="210" y="40" width="70" height="28" rx="8" fill="#6C5CE7" opacity="0.1"/>
+  <text x="230" y="58" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#6C5CE7">POS</text>
+  <text x="300" y="58" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#9CA3AF">RIWAYAT</text>
+  <text x="370" y="58" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#9CA3AF">MANUAL</text>
+
+  <!-- Setor & Pengeluaran buttons -->
+  <rect x="510" y="40" width="100" height="28" rx="8" fill="#6C5CE7"/>
+  <text x="525" y="58" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#fff">SETOR RP 94,000</text>
+  <rect x="618" y="40" width="90" height="28" rx="8" fill="#EF4444"/>
+  <text x="630" y="58" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#fff">PENGELUARAN</text>
+
+  <!-- Search bar -->
+  <rect x="210" y="80" width="500" height="30" rx="10" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="232" y="99" font-family="system-ui,sans-serif" font-size="9" fill="#D1D5DB">Cari menu...</text>
+  <text x="490" y="99" font-family="system-ui,sans-serif" font-size="9" fill="#6B7280">Angie</text>
+
+  <!-- Product Grid Row 1 -->
+  <!-- Card 1: Kopi Sahabat -->
+  <rect x="210" y="122" width="160" height="110" rx="10" fill="#EEF2FF" stroke="#6C5CE7" stroke-width="1.5"/>
+  <circle cx="360" cy="132" r="10" fill="#6C5CE7"/>
+  <text x="357" y="136" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#fff">1</text>
+  <rect x="240" y="142" width="40" height="36" rx="6" fill="#D1D5DB" opacity="0.4"/>
+  <text x="222" y="155" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">KOPI</text>
+  <text x="222" y="166" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">SAHABAT</text>
+  <text x="222" y="194" font-family="system-ui,sans-serif" font-size="8" fill="#9CA3AF">STOK: 14</text>
+  <text x="222" y="218" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6C5CE7">Rp 12,000</text>
+
+  <!-- Card 2: Kopi Aren Premium -->
+  <rect x="380" y="122" width="160" height="110" rx="10" fill="#EEF2FF" stroke="#6C5CE7" stroke-width="1.5"/>
+  <circle cx="530" cy="132" r="10" fill="#6C5CE7"/>
+  <text x="527" y="136" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#fff">5</text>
+  <text x="392" y="148" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#059669">[NEW]</text>
+  <text x="392" y="160" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">KOPI AREN</text>
+  <text x="392" y="172" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">PREMIUM</text>
+  <text x="392" y="194" font-family="system-ui,sans-serif" font-size="8" fill="#9CA3AF">STOK: 50</text>
+  <text x="392" y="218" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6C5CE7">Rp 12,000</text>
+
+  <!-- Card 3: Citrus Cold Brew -->
+  <rect x="550" y="122" width="160" height="110" rx="10" fill="#EEF2FF" stroke="#6C5CE7" stroke-width="1.5"/>
+  <circle cx="700" cy="132" r="10" fill="#6C5CE7"/>
+  <text x="697" y="136" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#fff">1</text>
+  <text x="562" y="155" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">CITRUS</text>
+  <text x="562" y="167" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">COLD BREW</text>
+  <text x="562" y="194" font-family="system-ui,sans-serif" font-size="8" fill="#EF4444">STOK: 4</text>
+  <text x="562" y="218" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6C5CE7">Rp 10,000</text>
+
+  <!-- Product Grid Row 2 -->
+  <!-- Card 4: Kopi Hitam -->
+  <rect x="210" y="242" width="160" height="110" rx="10" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="222" y="272" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">KOPI HITAM</text>
+  <text x="222" y="284" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">ARABIKA</text>
+  <text x="222" y="310" font-family="system-ui,sans-serif" font-size="8" fill="#EF4444">STOK: 4</text>
+  <text x="222" y="338" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6C5CE7">Rp 8,000</text>
+
+  <!-- Card 5: Kopi Susu Creamy -->
+  <rect x="380" y="242" width="160" height="110" rx="10" fill="#EEF2FF" stroke="#6C5CE7" stroke-width="1.5"/>
+  <circle cx="530" cy="252" r="10" fill="#6C5CE7"/>
+  <text x="527" y="256" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#fff">2</text>
+  <text x="392" y="268" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#059669">[NEW]</text>
+  <text x="392" y="280" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">KOPI SUSU</text>
+  <text x="392" y="292" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">CREAMY</text>
+  <text x="392" y="314" font-family="system-ui,sans-serif" font-size="8" fill="#9CA3AF">STOK: 37</text>
+  <text x="392" y="338" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6C5CE7">Rp 10,000</text>
+
+  <!-- Card 6: Kopi Pandan -->
+  <rect x="550" y="242" width="160" height="110" rx="10" fill="#EEF2FF" stroke="#6C5CE7" stroke-width="1.5"/>
+  <circle cx="700" cy="252" r="10" fill="#6C5CE7"/>
+  <text x="697" y="256" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#fff">2</text>
+  <text x="562" y="268" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#059669">[NEW]</text>
+  <text x="562" y="280" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">KOPI PANDAN</text>
+  <text x="562" y="292" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">CREAMY</text>
+  <text x="562" y="314" font-family="system-ui,sans-serif" font-size="8" fill="#9CA3AF">STOK: 9</text>
+  <text x="562" y="338" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6C5CE7">Rp 13,000</text>
+
+  <!-- Product Grid Row 3 (partial) -->
+  <rect x="210" y="362" width="160" height="110" rx="10" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="222" y="388" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#059669">[NEW]</text>
+  <text x="222" y="400" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">CREAMY MATCHA</text>
+  <text x="222" y="412" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">LATTE</text>
+  <text x="222" y="434" font-family="system-ui,sans-serif" font-size="8" fill="#EF4444">STOK: 4</text>
+  <text x="222" y="458" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6C5CE7">Rp 13,000</text>
+
+  <rect x="380" y="362" width="160" height="110" rx="10" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="392" y="388" font-family="system-ui,sans-serif" font-size="7" font-weight="700" fill="#059669">[NEW]</text>
+  <text x="392" y="400" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">KOPI CARAMEL</text>
+  <text x="392" y="412" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937">CREAMY</text>
+  <text x="392" y="434" font-family="system-ui,sans-serif" font-size="8" fill="#9CA3AF">STOK: 6</text>
+  <text x="392" y="458" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6C5CE7">Rp 13,000</text>
+
+  <!-- Cart Panel -->
+  <rect x="720" y="72" width="175" height="488" rx="12" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Cart Header -->
+  <text x="742" y="100" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#1F2937" letter-spacing="1">KERANJANG</text>
+  <text x="845" y="100" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#EF4444">BERSIHKAN</text>
+
+  <!-- Cart Item 1 -->
+  <text x="732" y="128" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#1F2937">[NEW] Kopi Aren Premium</text>
+  <text x="860" y="128" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#059669" text-anchor="end">Rp 60,000</text>
+  <text x="732" y="140" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">5 x Rp 12,000</text>
+  <rect x="830" y="132" width="50" height="16" rx="4" fill="#F3F4F6"/>
+  <text x="838" y="143" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">— 5 +</text>
+
+  <!-- Divider -->
+  <line x1="732" y1="152" x2="883" y2="152" stroke="#F3F4F6" stroke-width="1"/>
+
+  <!-- Cart Item 2 -->
+  <text x="732" y="170" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#1F2937">Citrus Cold Brew</text>
+  <text x="860" y="170" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#059669" text-anchor="end">Rp 10,000</text>
+  <text x="732" y="182" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">1 x Rp 10,000</text>
+  <rect x="830" y="174" width="50" height="16" rx="4" fill="#F3F4F6"/>
+  <text x="838" y="185" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">— 1 +</text>
+
+  <line x1="732" y1="194" x2="883" y2="194" stroke="#F3F4F6" stroke-width="1"/>
+
+  <!-- Cart Item 3 -->
+  <text x="732" y="212" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#1F2937">[NEW] Kopi Pandan Creamy</text>
+  <text x="860" y="212" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#059669" text-anchor="end">Rp 26,000</text>
+  <text x="732" y="224" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">2 x Rp 13,000</text>
+  <rect x="830" y="216" width="50" height="16" rx="4" fill="#F3F4F6"/>
+  <text x="838" y="227" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">— 2 +</text>
+
+  <line x1="732" y1="238" x2="883" y2="238" stroke="#F3F4F6" stroke-width="1"/>
+
+  <!-- Cart Item 4 -->
+  <text x="732" y="256" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#1F2937">[NEW] Kopi Susu Creamy</text>
+  <text x="860" y="256" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#059669" text-anchor="end">Rp 20,000</text>
+  <text x="732" y="268" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">2 x Rp 10,000</text>
+  <rect x="830" y="260" width="50" height="16" rx="4" fill="#F3F4F6"/>
+  <text x="838" y="271" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">— 2 +</text>
+
+  <line x1="732" y1="282" x2="883" y2="282" stroke="#F3F4F6" stroke-width="1"/>
+
+  <!-- Cart Item 5 -->
+  <text x="732" y="300" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#1F2937">Kopi Sahabat</text>
+  <text x="860" y="300" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#059669" text-anchor="end">Rp 12,000</text>
+  <text x="732" y="312" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">1 x Rp 12,000</text>
+  <rect x="830" y="304" width="50" height="16" rx="4" fill="#F3F4F6"/>
+  <text x="838" y="315" font-family="system-ui,sans-serif" font-size="8" fill="#6B7280">— 1 +</text>
+
+  <!-- Total -->
+  <line x1="732" y1="340" x2="883" y2="340" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="732" y="362" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#9CA3AF" letter-spacing="1">TOTAL TAGIHAN</text>
+  <text x="732" y="374" font-family="system-ui,sans-serif" font-size="7" fill="#9CA3AF">11 ITEM</text>
+  <text x="883" y="376" font-family="system-ui,sans-serif" font-size="16" font-weight="900" fill="#1F2937" text-anchor="end">Rp 128,000</text>
+
+  <!-- Pay Button -->
+  <rect x="732" y="394" width="151" height="36" rx="10" fill="#059669"/>
+  <text x="807" y="416" font-family="system-ui,sans-serif" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">PROSES BAYAR</text>
+</svg>

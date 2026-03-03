@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -64,12 +64,41 @@
                 target="_blank">Tanya Ahli</a>
         </nav>
 
-        <main class="page-content" style="padding-top:60px;">
+        <main class="page-content">
             <header class="page-header fade-in">
                 <h1>Role & Akses Staf (RBAC)</h1>
                 <p>Tidak semua karyawan jujur. Buat tembok tak kasat mata melalui Matriks Izin Akses (Read/Manage),
                     batasi siapa yang boleh hapus omzet.</p>
             </header>
+
+            <div class="integrated-slider fade-in stagger-5">
+                <div class="integrated-slider-track">
+                    <figure class="integrated-slider-slide">
+                        <img src="assets/kopigo-suite-dashboard.svg" alt="Dashboard Go Suite dengan overview omzet dan stok">
+                        <figcaption>Overview penjualan & stok terkoneksi</figcaption>
+                    </figure>
+                    <figure class="integrated-slider-slide">
+                        <img src="assets/kopigo-suite-produksi.svg" alt="Panel produksi dengan resep dan batch cooking">
+                        <figcaption>Produksi otomatis berdasarkan resep dan batch</figcaption>
+                    </figure>
+                    <figure class="integrated-slider-slide">
+                        <img src="assets/kopigo-suite-audit.svg" alt="Audit dan pencatatan transaksi terverifikasi">
+                        <figcaption>Audit, keuangan, & keamanan dalam satu layar</figcaption>
+                    </figure>
+                </div>
+                <div class="integrated-slider-dots" role="tablist">
+                    <button type="button" class="integrated-slider-dot" data-slide-dot="0" aria-label="Slide 1" aria-selected="true"></button>
+                    <button type="button" class="integrated-slider-dot" data-slide-dot="1" aria-label="Slide 2"></button>
+                    <button type="button" class="integrated-slider-dot" data-slide-dot="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+            <div class="integrated-slider-lightbox" id="integratedSliderLightbox" aria-hidden="true" data-open="false">
+                <div class="integrated-slider-lightbox__inner">
+                    <button type="button" class="lightbox-close" aria-label="Tutup tampilan besar">&times;</button>
+                    <img class="lightbox-image" src="" alt="">
+                    <p class="lightbox-caption"></p>
+                </div>
+            </div>
 
             <section class="section">
                 <h2 class="section-title fade-in stagger-1">Fitur Unggulan</h2>
@@ -350,3 +379,4 @@
 </body>
 
 </html>
+

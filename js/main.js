@@ -48,7 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---- Smooth scroll for anchor links ----
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
-            const target = document.querySelector(link.getAttribute('href'));
+            const targetSelector = link.getAttribute('href');
+            if (!targetSelector || targetSelector === '#') return;
+            const target = document.querySelector(targetSelector);
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -131,6 +133,90 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const sliderWrapper = document.querySelector('.integrated-slider');
+    if (sliderWrapper) {
+        const sliderTrack = sliderWrapper.querySelector('.integrated-slider-track');
+        const sliderDots = sliderWrapper.querySelectorAll('.integrated-slider-dot');
+        const totalSlides = sliderTrack ? sliderTrack.children.length : 0;
+        let currentSlide = 0;
+        let sliderTimer;
+
+        const activateSlide = (index) => {
+            if (!sliderTrack) return;
+            currentSlide = index;
+            sliderTrack.style.transform = `translateX(-${index * 100}%)`;
+            sliderDots.forEach(dot => {
+                const isActive = Number(dot.getAttribute('data-slide-dot')) === index;
+                dot.setAttribute('aria-selected', String(isActive));
+            });
+        };
+
+        const startSlider = () => {
+            sliderTimer = setInterval(() => {
+                activateSlide((currentSlide + 1) % totalSlides);
+            }, 6000);
+        };
+
+        if (totalSlides > 0) {
+            sliderDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const targetIndex = Number(dot.getAttribute('data-slide-dot'));
+                    activateSlide(targetIndex);
+                    clearInterval(sliderTimer);
+                    startSlider();
+                });
+            });
+
+            sliderWrapper.addEventListener('mouseenter', () => clearInterval(sliderTimer));
+            sliderWrapper.addEventListener('mouseleave', () => startSlider());
+            startSlider();
+        }
+    }
+
+    const lightbox = document.getElementById('integratedSliderLightbox');
+    if (lightbox) {
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const closeButton = lightbox.querySelector('.lightbox-close');
+        const openLightbox = (img, captionText) => {
+            if (!lightboxImage || !lightboxCaption) return;
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxCaption.textContent = captionText;
+            lightbox.setAttribute('data-open', 'true');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeLightbox = () => {
+            lightbox.setAttribute('data-open', 'false');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
+
+        document.querySelectorAll('.integrated-slider-slide img').forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                const slide = img.closest('.integrated-slider-slide');
+                const caption = slide ? slide.querySelector('figcaption')?.textContent : '';
+                openLightbox(img, caption || img.alt || '');
+            });
+        });
+
+        const overlayCloseHandler = (event) => {
+            if (event.target === lightbox || event.target === closeButton) {
+                closeLightbox();
+            }
+        };
+
+        lightbox.addEventListener('click', overlayCloseHandler);
+        closeButton?.addEventListener('click', () => closeLightbox());
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && lightbox.getAttribute('data-open') === 'true') {
+                closeLightbox();
+            }
+        });
+    }
+
 });
 
 // ---- Bottom Sheet Modal (16 Modules) ----
@@ -140,6 +226,15 @@ const bottomSheet = document.getElementById('fiturBottomSheet');
 const closeBtn = document.getElementById('closeFiturBtn');
 
 if (backdrop && bottomSheet) {
+    btnFitur.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+
+    const setFiturNavActive = (isActive) => {
+        btnFitur.forEach(btn => {
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-expanded', String(isActive));
+        });
+    };
+
     const toggleFiturModal = (e) => {
         if (e) e.preventDefault();
         const isOpen = bottomSheet.classList.contains('show');
@@ -147,10 +242,12 @@ if (backdrop && bottomSheet) {
             bottomSheet.classList.remove('show');
             backdrop.classList.remove('show');
             document.body.style.overflow = '';
+            setFiturNavActive(false);
         } else {
             bottomSheet.classList.add('show');
             backdrop.classList.add('show');
             document.body.style.overflow = 'hidden';
+            setFiturNavActive(true);
         }
     };
 
