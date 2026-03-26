@@ -1,875 +1,622 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Go Suite - Aplikasi Manajemen Usaha Lengkap (Kasir, Keuangan, Operasional)</title>
+    <title>KOPIGO — Kopi Keliling Makassar | Link Resmi</title>
     <meta name="description"
-        content="Solusi Go Suite - Aplikasi Manajemen Usaha Lengkap (Kasir, Keuangan, Operasional) dengan antarmuka yang mudah digunakan. Catat transaksi, stok bahan baku, dan laporan otomatis.">
-    <meta property="og:title" content="Go Suite - Aplikasi Manajemen Usaha Lengkap (Kasir, Keuangan, Operasional)">
+        content="#1 Penggerak Pertama Kopi Keliling dengan Sepeda Listrik di Makassar. Nikmati Sensasi Kopi Berkualitas Langsung di Tempatmu!">
+    <meta property="og:title" content="KOPIGO — Kopi Keliling Makassar">
     <meta property="og:description"
-        content="Solusi Go Suite - Aplikasi Manajemen Usaha Lengkap (Kasir, Keuangan, Operasional) dengan antarmuka yang mudah digunakan. Catat transaksi, stok bahan baku, dan laporan otomatis.">
+        content="#1 Penggerak Pertama Kopi Keliling dengan Sepeda Listrik di Makassar. Belanja bahan F&B, catering, franchise, dan lainnya.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://gosuite.id/og-image.jpg">
-
-    <meta name="description"
-        content="Kasir, produksi, stok, keuangan, dan gaji karyawan — semua jadi satu. Dipasang di server Anda sendiri. Lebih hemat dari langganan bulanan.">
+    <meta property="og:image" content="assets/kopigo-logo.png">
     <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ============================================================
+           KOPIGO LINKTREE — iOS Glassmorphism (Stark White & True Red)
+           ============================================================ */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow-x: hidden;
+            /* Cisp white background and pure black text for maximum contrast (ketegasan) */
+            color: #000000;
+            background: #ffffff;
+            position: relative;
+        }
+
+        /* ============ Pure White Background + Strong Red Orbs ============ */
+        .glass-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        /* 3 Animated Red Blobs to move behind the buttons */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            /* Subtler blur to prevent color flooding the mobile screen */
+            will-change: transform;
+            opacity: 0.8;
+        }
+
+        .orb-1 {
+            width: 250px;
+            /* Reduced for bento grid spacing */
+            height: 250px;
+            background: #e4002aaf;
+            /* Solid True Kopigo red */
+            top: -40px;
+            left: -40px;
+            animation: orbMove1 12s ease-in-out infinite alternate;
+        }
+
+        .orb-2 {
+            width: 200px;
+            height: 200px;
+            background: #e4002ae1;
+            bottom: -20px;
+            right: -20px;
+            animation: orbMove2 15s ease-in-out infinite alternate-reverse;
+        }
+
+        .orb-3 {
+            width: 180px;
+            height: 180px;
+            background: #0048e4d5;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: orbMove3 18s ease-in-out infinite alternate;
+        }
+
+        @keyframes orbMove1 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(80px, 60px) scale(1.1);
+            }
+        }
+
+        @keyframes orbMove2 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(-80px, -60px) scale(1.15);
+            }
+        }
+
+        @keyframes orbMove3 {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            100% {
+                transform: translate(-20%, -30%) scale(1.2);
+            }
+        }
+
+        /* ============ Container ============ */
+        .linktree {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            min-height: 100dvh;
+            padding: 48px 24px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ============ Profile Section ============ */
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 32px;
+            animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            /* Cleaned up logo presentation */
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            /* Sharp, clean, simple shadow */
+            box-shadow: 0 16px 40px rgba(228, 0, 43, 0.2), 0 4px 12px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+            /* Ensures transparency looks clean */
+        }
+
+        .profile-avatar img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 26px;
+            font-weight: 800;
+            /* Bolder contrast */
+            letter-spacing: 0.5px;
+            color: #000000;
+            margin-bottom: 6px;
+        }
+
+        .verified-icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .profile-handle {
+            font-size: 15px;
+            font-weight: 600;
+            color: #666666;
+            /* Steely dark grey */
+            margin-bottom: 16px;
+        }
+
+        .profile-bio {
+            font-size: 14.5px;
+            color: #333333;
+            /* Darker grey for legibility */
+            line-height: 1.6;
+            max-width: 320px;
+            font-weight: 600;
+        }
+
+        .profile-bio strong {
+            color: #000000;
+            /* Solid Black for maximum emphasis */
+            font-weight: 800;
+        }
+
+        /* ============ Stats Bar - Crisp iOS Glass ============ */
+        .stats-bar {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 380px;
+            padding: 18px 0;
+            margin-bottom: 36px;
+            border-radius: 24px;
+            /* Squircle */
+
+            /* High Transparency Glass Core to show the red blobs */
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 1);
+            box-shadow:
+                0 16px 40px rgba(0, 0, 0, 0.06),
+                inset 0 1px 2px rgba(255, 255, 255, 0.8);
+
+            animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+        }
+
+        .stats-bar .stat {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stats-bar .stat-value {
+            font-size: 19px;
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 2px;
+        }
+
+        .stats-bar .stat-label {
+            font-size: 12px;
+            color: #666666;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .stats-bar .stat-divider {
+            width: 1px;
+            height: 36px;
+            background: rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+
+        /* ============ Links ============ */
+        .links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* Bento grid tight spacing */
+            margin-bottom: 40px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 20px;
+            /* Bento grid style tighter radius */
+            text-decoration: none;
+            color: #000000;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+
+            /* High Transparency Glass Core to show the red blobs */
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(28px) saturate(200%);
+            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 1);
+            box-shadow:
+                0 4px 24px rgba(0, 0, 0, 0.05),
+                inset 0 1px 2px rgba(255, 255, 255, 0.9);
+
+            transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .link-btn:hover,
+        .link-btn:focus {
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(0.98) translateY(-2px);
+            border-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 1);
+            outline: none;
+        }
+
+        .link-btn:active {
+            transform: scale(0.95);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .link-btn .link-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            /* Circle icon inside squircle like iOS Control Center */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.8);
+            /* Solid white base for icon */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .link-btn .link-text {
+            flex: 1;
+        }
+
+        .link-btn .link-text .link-title {
+            font-size: 16px;
+            font-weight: 800;
+            /* Maximum contrast */
+            line-height: 1.25;
+            color: #000000;
+            margin-bottom: 2px;
+        }
+
+        .link-btn .link-text .link-subtitle {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #444444;
+        }
+
+        .link-btn .link-arrow {
+            font-size: 22px;
+            color: #888888;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+
+        .link-btn:hover .link-arrow {
+            transform: translateX(4px);
+            color: #000000;
+        }
+
+        /* Custom Colors for Icons (Bolder for white background) */
+        .link-shop .link-icon {
+            color: #f39c12;
+        }
+
+        .link-catering .link-icon {
+            color: #e67e22;
+        }
+
+        .link-franchise .link-icon {
+            color: #27ae60;
+        }
+
+        .link-app .link-icon {
+            color: #2980b9;
+        }
+
+        .link-instagram .link-icon {
+            color: #e84393;
+        }
+
+        .link-whatsapp .link-icon {
+            color: #27ae60;
+        }
+
+        /* Stagger animations */
+        .link-btn:nth-child(1) {
+            animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;
+        }
+
+        .link-btn:nth-child(2) {
+            animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.22s both;
+        }
+
+        .link-btn:nth-child(3) {
+            animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.29s both;
+        }
+
+        .link-btn:nth-child(4) {
+            animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.36s both;
+        }
+
+        .link-btn:nth-child(5) {
+            animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.43s both;
+        }
+
+        .link-btn:nth-child(6) {
+            animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.50s both;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ============ Footer ============ */
+        .linktree-footer {
+            margin-top: auto;
+            text-align: center;
+            animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.7s both;
+        }
+
+        .footer-brand {
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #2c2c2c;
+            margin-bottom: 6px;
+        }
+
+        .footer-copy {
+            font-size: 12.5px;
+            color: #2c2c2c;
+            font-weight: 500;
+        }
+
+        /* ============ Responsive Adjustments ============ */
+        @media (max-width: 380px) {
+            .linktree {
+                padding: 32px 16px;
+            }
+
+            .profile-avatar {
+                width: 96px;
+                height: 96px;
+            }
+
+            .profile-avatar img {
+                width: 96px;
+                height: 96px;
+            }
+
+            .profile-name {
+                font-size: 22px;
+            }
+
+            .link-btn {
+                padding: 12px 14px;
+                gap: 12px;
+                border-radius: 18px;
+            }
+
+            .link-btn .link-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 18px;
+            }
+
+            .stats-bar {
+                border-radius: 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="app-shell">
+    <div class="glass-background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
 
-        <!-- TOP NAV -->
-        <nav class="top-nav">
-            <a href="index.html" class="nav-logo">
-                <div class="nav-logo-icon">⚡</div>
-                <div class="nav-logo-text">Go <span>Suite</span></div>
-            </a>
-            <a href="https://wa.me/6282187164364?text=Halo%20Go%20Suite%2C%20saya%20mau%20tanya-tanya%20dulu"
-                class="nav-cta" target="_blank">Hubungi Kami</a>
-        </nav>
+    <div class="linktree">
 
-        <!-- PAGE -->
-        <main class="page-content">
-
-            <!-- ===== HERO ===== -->
-            <section class="hero">
-                <div class="hero-badge fade-in">✦ Setup Sekali · Hemat Hingga Rp 4 Juta/Tahun</div>
-                <h1 class="hero-title fade-in stagger-1">
-                    Ganti 5 Aplikasi<br>Berbeda Jadi 1.<br>
-                    <span class="gradient-text">Mulai Rp 1.500.000,-</span>
-                </h1>
-                <p class="hero-desc fade-in stagger-2">
-                    Kasir, produksi, stok, keuangan, gaji karyawan — semua terhubung otomatis. Di server Anda sendiri. Tidak ada biaya bulanan yang mencekik.
-                </p>
-                <div class="hero-actions fade-in stagger-3">
-                    <a href="https://wa.me/6282187164364?text=Halo%20Go%20Suite%2C%20saya%20mau%20tanya-tanya%20dulu" class="btn btn-primary" target="_blank">💬 Tanya Gratis via WhatsApp</a>
-                    <a href="harga.html" class="btn btn-secondary">Lihat Paket & Harga →</a>
-                </div>
-            </section>
-
-            <!-- ===== STATS STRIP ===== -->
-            <div class="stats-strip fade-in">
-                <div class="stat-item">
-                    <div class="stat-num">20+</div>
-                    <div class="stat-label">Modul Fitur</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-num">12+</div>
-                    <div class="stat-label">Jenis Usaha</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-num">1 App</div>
-                    <div class="stat-label">Semua Beres</div>
-                </div>
+        <!-- PROFILE -->
+        <div class="profile">
+            <div class="profile-avatar">
+                <img src="assets/kopigo-logo.svg" alt="KOPIGO Logo - Kopi Keliling Makassar">
             </div>
-
-            <div class="divider"></div>
-
-            <!-- ===== FAKTA: Realita Pahit ===== -->
-            <section class="section">
-                <div class="section-label fade-in">Realita Pahit</div>
-                <h2 class="section-title fade-in stagger-1">Usaha Anda Mungkin<br><span class="gradient-text">Sedang Bocor Diam-diam.</span></h2>
-                <p class="section-subtitle fade-in stagger-2">Bukan karena produknya jelek. Tapi karena tidak ada sistem yang menjaga setiap celah kebocoran.</p>
-
-                <div class="alert-box danger fade-in stagger-3">
-                    <div class="alert-stat">😰 Omzet ramai, uang habis entah ke mana</div>
-                    <div class="alert-desc">Kasir ambil uang operasional dari laci tanpa catat. QRIS, EDC, tunai tercampur. Akhir bulan selalu ada selisih — dan selalu ada yang disalahkan.</div>
-                </div>
-
-                <div class="alert-box warning fade-in stagger-4">
-                    <div class="alert-stat">🕵️ Karyawan curang, tapi tidak bisa dibuktikan</div>
-                    <div class="alert-desc">Struk di-void setelah pembayaran diterima, uangnya masuk kantong. Owner curiga, tapi tidak ada jejak. Tanpa sistem, Anda tidak akan pernah tahu.</div>
-                </div>
-
-                <div class="alert-box orange fade-in stagger-5">
-                    <div class="alert-stat">📉 Harga bahan naik, margin terkikis diam-diam</div>
-                    <div class="alert-desc">Harga bahan baku naik tapi harga jual tidak diupdate. HPP tidak pernah dihitung ulang. Jualan makin ramai, tapi untungnya makin tipis — tanpa Anda sadari.</div>
-                </div>
-
-                <div class="fact-bridge fade-in stagger-6">
-                    <div class="fact-bridge-icon">✅</div>
-                    <div class="fact-bridge-text">Usaha yang punya sistem pencatatan terintegrasi <strong>bertahan lebih lama</strong> dan tumbuh lebih cepat — karena setiap keputusan berdasarkan data, bukan perasaan.</div>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <!-- ===== MASALAH SEHARI-HARI ===== -->
-            <section class="section section-alt">
-                <div class="section-label fade-in">Pernah Mengalami?</div>
-                <h2 class="section-title fade-in stagger-1">Bukan Cuma<br><span class="gradient-text">Usaha Anda.</span></h2>
-                <p class="section-subtitle fade-in stagger-2">77.5% UMKM Indonesia tidak punya laporan keuangan sama sekali. Ini masalah yang dirasakan hampir semua pemilik usaha.</p>
-
-                <div class="pain-grid">
-                    <div class="pain-card fade-in stagger-2">
-                        <div class="pain-icon">📋</div>
-                        <div class="pain-content">
-                            <h4>Tidak ada pembukuan yang benar</h4>
-                            <p>Semua dicatat di buku tulis atau Excel. Akhir bulan hitung manual berjam-jam, hasilnya tetap tidak akurat.</p>
-                            <div class="pain-tag">Buku Besar · Laporan L/R</div>
-                        </div>
-                    </div>
-                    <div class="pain-card fade-in stagger-3">
-                        <div class="pain-icon">📦</div>
-                        <div class="pain-content">
-                            <h4>Stok tidak pernah cocok dengan catatan</h4>
-                            <p>Beli bahan pakai perkiraan. Kadang mubazir, kadang kurang dan batal produksi. Tidak ada yang bisa dimintai pertanggungjawaban.</p>
-                            <div class="pain-tag">Stok & Gudang · Pencatatan Rusak</div>
-                        </div>
-                    </div>
-                    <div class="pain-card fade-in stagger-4">
-                        <div class="pain-icon">🕵️</div>
-                        <div class="pain-content">
-                            <h4>Ada yang curang, tapi tidak bisa dibuktikan</h4>
-                            <p>Penjualan ramai tapi uang selalu kurang. Staf saling tuduh. Tanpa jejak digital, Anda tidak pernah tahu siapa pelakunya.</p>
-                            <div class="pain-tag">Log Hapus · Akses & Peran Staf</div>
-                        </div>
-                    </div>
-                    <div class="pain-card fade-in stagger-5">
-                        <div class="pain-icon">💬</div>
-                        <div class="pain-content">
-                            <h4>Semua koordinasi lewat WhatsApp</h4>
-                            <p>Order masuk di WA, laporan dikirim lewat chat, stok dikabari manual. Informasi berceceran, mudah terlewat, tidak bisa diaudit.</p>
-                            <div class="pain-tag">Order Mitra · Sales Keliling · Katering</div>
-                        </div>
-                    </div>
-                    <div class="pain-card fade-in stagger-6">
-                        <div class="pain-icon">🧮</div>
-                        <div class="pain-content">
-                            <h4>Hitung gaji tiap bulan selalu ribut</h4>
-                            <p>Pokok + komisi + kasbon + lembur dihitung manual. Rawan salah, rawan protes, rawan sengketa yang merusak kepercayaan tim.</p>
-                            <div class="pain-tag">Payroll & Gaji · Jadwal Kerja</div>
-                        </div>
-                    </div>
-                    <div class="pain-card fade-in stagger-7">
-                        <div class="pain-icon">📉</div>
-                        <div class="pain-content">
-                            <h4>Jualan laris tapi tidak tahu untung berapa</h4>
-                            <p>Modal per produk tidak pernah dihitung. Harga bahan naik tapi harga jual tidak berubah. Untung tipis — atau bahkan rugi — tanpa sadar.</p>
-                            <div class="pain-tag">Resep & HPP · Laporan L/R</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <!-- ===== FITUR ===== -->
-            <section class="section" id="fitur">
-                <div class="section-label fade-in stagger-2">Solusi Terintegrasi</div>
-                <h2 class="section-title fade-in stagger-3">Satu Aplikasi,<br>Banyak Urusan Beres.</h2>
-                <p class="section-subtitle fade-in stagger-4">Semua modul terhubung satu sama lain — data tidak perlu diinput dua kali.</p>
-
-                <div class="integrated-slider fade-in stagger-5">
-                    <div class="integrated-slider-track">
-                        <figure class="integrated-slider-slide">
-                            <img src="assets/kopigo-suite-dashboard.svg" alt="Dashboard Go Suite dengan overview omzet dan stok">
-                            <figcaption>Overview penjualan & stok terkoneksi</figcaption>
-                        </figure>
-                        <figure class="integrated-slider-slide">
-                            <img src="assets/kopigo-suite-produksi.svg" alt="Panel produksi dengan resep dan batch cooking">
-                            <figcaption>Produksi otomatis berdasarkan resep dan batch</figcaption>
-                        </figure>
-                        <figure class="integrated-slider-slide">
-                            <img src="assets/kopigo-suite-audit.svg" alt="Audit dan pencatatan transaksi terverifikasi">
-                            <figcaption>Audit, keuangan, & keamanan dalam satu layar</figcaption>
-                        </figure>
-                    </div>
-                    <div class="integrated-slider-dots" role="tablist">
-                        <button type="button" class="integrated-slider-dot" data-slide-dot="0" aria-label="Slide 1" aria-selected="true"></button>
-                        <button type="button" class="integrated-slider-dot" data-slide-dot="1" aria-label="Slide 2"></button>
-                        <button type="button" class="integrated-slider-dot" data-slide-dot="2" aria-label="Slide 3"></button>
-                    </div>
-                </div>
-                <div class="integrated-slider-lightbox" id="integratedSliderLightbox" aria-hidden="true" data-open="false">
-                    <div class="integrated-slider-lightbox__inner">
-                        <button type="button" class="lightbox-close" aria-label="Tutup tampilan besar">&times;</button>
-                        <img class="lightbox-image" src="" alt="">
-                        <p class="lightbox-caption"></p>
-                    </div>
-                </div>
-
-                <div class="tabs-container fade-in stagger-2">
-                    <div class="tab-list">
-                        <button class="tab-btn active" data-tab="tab-penjualan">Jual & Terima Bayar</button>
-                        <button class="tab-btn" data-tab="tab-operasional">Produksi & Stok</button>
-                        <button class="tab-btn" data-tab="tab-keuangan">Keuangan & Laporan</button>
-                        <button class="tab-btn" data-tab="tab-admin">Tim & Keamanan</button>
-                    </div>
-                </div>
-
-                <div class="tab-content fade-in stagger-3">
-                    <!-- Penjualan -->
-                    <div class="tab-pane active" id="tab-penjualan">
-                        <div class="feature-list">
-                            <a href="kasir.html" class="feature-link">
-                                <div class="fl-icon indigo">🏪</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Kasir & Penjualan</div>
-                                    <div class="fl-desc">Catat transaksi tunai atau QRIS, tutup shift dengan perbandingan uang fisik vs sistem. Selisih langsung tercatat otomatis.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="mobile-rider.html" class="feature-link">
-                                <div class="fl-icon cyan">🏍️</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Sales Keliling</div>
-                                    <div class="fl-desc">Catat stok yang dibawa sales pagi hari, tambah stok di tengah jalan, dan hitung setoran akhir hari otomatis: Dibawa − Retur = Terjual.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="order-mitra.html" class="feature-link">
-                                <div class="fl-icon rose">🤝</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Order Agen & Reseller</div>
-                                    <div class="fl-desc">Kelola pesanan agen atau reseller dengan cicilan DP. Stok baru berkurang saat barang benar-benar diserahkan, bukan saat order masuk.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="katering.html" class="feature-link">
-                                <div class="fl-icon emerald">🎪</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Katering & Event</div>
-                                    <div class="fl-desc">Terima pesanan ratusan porsi jauh hari sebelumnya. Stok tidak langsung berkurang — baru terpotong di hari pengiriman.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="form-publik.html" class="feature-link">
-                                <div class="fl-icon violet">📄</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Form Order Publik</div>
-                                    <div class="fl-desc">Link order yang bisa dipasang di bio Instagram. Pelanggan pesan sendiri 24 jam, diskon otomatis terhitung, invoice langsung jadi.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Operasional -->
-                    <div class="tab-pane" id="tab-operasional">
-                        <div class="feature-list">
-                            <a href="dapur.html" class="feature-link">
-                                <div class="fl-icon amber">🍳</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Produksi & Dapur</div>
-                                    <div class="fl-desc">Sebelum mulai produksi, sistem tampilkan bahan mana yang kurang dan berapa maksimal yang bisa dibuat dari stok saat ini.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="stok.html" class="feature-link">
-                                <div class="fl-icon emerald">📦</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Stok & Gudang</div>
-                                    <div class="fl-desc">Lihat stok per lokasi penyimpanan secara langsung. Setiap penambahan dan pengurangan tercatat beserta sumbernya — produksi, pembelian, atau penjualan.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="pembelian.html" class="feature-link">
-                                <div class="fl-icon indigo">🛒</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Pembelian Supplier</div>
-                                    <div class="fl-desc">Catat pembelian dalam satuan dus atau karton — sistem otomatis hitung harga per gram/ml untuk resep. Hutang supplier langsung tercatat.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="waste-log.html" class="feature-link">
-                                <div class="fl-icon rose">🗑️</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Catatan Barang Rusak</div>
-                                    <div class="fl-desc">Catat bahan atau produk yang rusak, kadaluarsa, atau terbuang. Stok langsung berkurang dan kerugiannya masuk ke laporan laba rugi.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Keuangan -->
-                    <div class="tab-pane" id="tab-keuangan">
-                        <div class="feature-list">
-                            <a href="buku-besar.html" class="feature-link">
-                                <div class="fl-icon violet">📒</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Buku Besar & Kas</div>
-                                    <div class="fl-desc">Semua uang masuk dan keluar dari kasir, pembelian, gaji, dan pengeluaran terkumpul di satu tempat secara otomatis — tanpa input manual.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="rekening-bank.html" class="feature-link">
-                                <div class="fl-icon cyan">🏦</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Rekening & Kas</div>
-                                    <div class="fl-desc">Daftarkan semua rekening (BCA, QRIS, OVO, GoPay). Setiap transaksi otomatis masuk ke rekening yang tepat, saldo selalu akurat.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="laporan.html" class="feature-link">
-                                <div class="fl-icon emerald">📈</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Laporan Laba Rugi</div>
-                                    <div class="fl-desc">Lihat omzet, biaya bahan, biaya operasional, dan laba bersih — dihitung otomatis, bisa difilter per hari, minggu, atau bulan.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="resep-hpp.html" class="feature-link">
-                                <div class="fl-icon amber">🧮</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Resep & Modal (HPP)</div>
-                                    <div class="fl-desc">Masukkan resep produk sekali. Setiap harga bahan berubah, modal per produk otomatis terupdate. Indikator warna tunjukkan mana yang marginnya tipis.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="investor.html" class="feature-link">
-                                <div class="fl-icon orange">🤝</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Laporan Investor</div>
-                                    <div class="fl-desc">Investor bisa lihat laporan omzet dan bagi hasil mereka sendiri lewat portal khusus — tanpa bisa mengubah data apapun.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Admin & Tim -->
-                    <div class="tab-pane" id="tab-admin">
-                        <div class="feature-list">
-                            <a href="payroll.html" class="feature-link">
-                                <div class="fl-icon violet">💸</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Gaji & Komisi</div>
-                                    <div class="fl-desc">Hitung slip gaji otomatis: gaji pokok + komisi penjualan + kasbon yang belum lunas sudah terpotong sendiri. Bayar — langsung tercatat di keuangan.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="jadwal-kerja.html" class="feature-link">
-                                <div class="fl-icon emerald">📅</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Jadwal Kerja</div>
-                                    <div class="fl-desc">Buat jadwal shift karyawan di kalender mingguan. Karyawan bisa lihat jadwal mereka langsung dari hp tanpa perlu chat atau kirim foto jadwal.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="riderhub.html" class="feature-link">
-                                <div class="fl-icon cyan">📱</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Aplikasi Sales (RiderHub)</div>
-                                    <div class="fl-desc">Aplikasi khusus untuk sales keliling: catat penjualan dari hp, bisa dipakai tanpa internet, dan ada peringkat penjualan antar sales.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="staff-role.html" class="feature-link">
-                                <div class="fl-icon rose">👥</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Hak Akses Karyawan</div>
-                                    <div class="fl-desc">Atur siapa boleh lihat apa dan siapa boleh ubah apa — per modul, per jabatan. Kasir tidak bisa buka laporan keuangan kalau tidak diberi izin.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="log-hapus.html" class="feature-link">
-                                <div class="fl-icon amber">🕵️</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Riwayat Hapus & Void</div>
-                                    <div class="fl-desc">Setiap data yang dihapus atau dibatalkan tersimpan permanen: siapa yang hapus, kapan, dan datanya apa. Tidak bisa diedit oleh siapapun.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                            <a href="multi-cabang.html" class="feature-link">
-                                <div class="fl-icon indigo">🏢</div>
-                                <div class="fl-body">
-                                    <div class="fl-title">Multi-Cabang</div>
-                                    <div class="fl-desc">Kelola beberapa toko dari satu akun. Ganti cabang lewat dropdown — semua data kasir, stok, dan laporan langsung berganti sesuai cabang yang dipilih.</div>
-                                </div>
-                                <div class="fl-arrow">›</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <!-- ===== COCOK UNTUK SIAPA ===== -->
-            <section class="section section-alt">
-                <div class="section-label fade-in">Cocok Untuk</div>
-                <h2 class="section-title fade-in stagger-1">Usaha Anda<br>Ada di Sini?</h2>
-                <p class="section-subtitle fade-in stagger-2">Go Suite cocok untuk usaha yang beli bahan baku, proses jadi produk, lalu jual — apapun industrinya.</p>
-
-                <div class="industry-grid fade-in stagger-3">
-                    <div class="industry-chip">
-                        <div class="ic-emoji">☕</div>
-                        <div class="ic-label">Kedai Kopi & Minuman</div>
-                        <div class="ic-tags">Kasir · Produksi · Rider</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">🍩</div>
-                        <div class="ic-label">Roti, Donat & Kue</div>
-                        <div class="ic-tags">Produksi · HPP · Stok</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">🥟</div>
-                        <div class="ic-label">Dimsum & Frozen Food</div>
-                        <div class="ic-tags">Stok · Sales Keliling · Mitra</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">🍱</div>
-                        <div class="ic-label">Katering & Nasi Box</div>
-                        <div class="ic-tags">Form Order · Katering · Rider</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">🍗</div>
-                        <div class="ic-label">Franchise & Cabang</div>
-                        <div class="ic-tags">Multi-Cabang · Laporan · RBAC</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">🧼</div>
-                        <div class="ic-label">Sabun & Kosmetik</div>
-                        <div class="ic-tags">HPP · Reseller · Stok</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">🧪</div>
-                        <div class="ic-label">Deterjen & Kimia RT</div>
-                        <div class="ic-tags">Produksi · Sales Keliling · HPP</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">👕</div>
-                        <div class="ic-label">Konveksi & Garmen</div>
-                        <div class="ic-tags">Stok Bahan · HPP · Payroll</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">🪑</div>
-                        <div class="ic-label">Kerajinan & Furnitur</div>
-                        <div class="ic-tags">HPP · Pembelian · Laporan</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">🧱</div>
-                        <div class="ic-label">Bahan Bangunan</div>
-                        <div class="ic-tags">Stok · Supplier · Piutang</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">🌿</div>
-                        <div class="ic-label">Jamu & Herbal</div>
-                        <div class="ic-tags">Produksi · HPP · Mitra</div>
-                    </div>
-                    <div class="industry-chip">
-                        <div class="ic-emoji">🏠</div>
-                        <div class="ic-label">Usaha Rumahan</div>
-                        <div class="ic-tags">Kasir · HPP · Laporan L/R</div>
-                    </div>
-                </div>
-
-                <div class="industry-note fade-in stagger-4">
-                    <span>Intinya:</span> kalau usaha Anda punya <strong>bahan baku, proses, dan penjualan</strong> — Go Suite bisa bantu dari awal sampai akhir.
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <!-- ===== KENAPA GO SUITE ===== -->
-            <section class="section">
-                <div class="section-label fade-in">Bedanya Apa?</div>
-                <h2 class="section-title fade-in stagger-1">Kenapa Go Suite,<br>Bukan yang Lain?</h2>
-                <p class="section-subtitle fade-in stagger-2">Aplikasi kasir banyak — tapi hampir tidak ada yang bisa urus operasional usaha dari awal sampai akhir.</p>
-
-                <div class="fade-in stagger-3" style="overflow-x: auto;">
-                    <table class="compare-table">
-                        <thead>
-                            <tr>
-                                <th style="width:42%">Fitur</th>
-                                <th>Aplikasi Kasir Biasa</th>
-                                <th class="highlight">Go Suite</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Biaya Tahun Pertama</td>
-                                <td class="cross">Rp 3–6 juta/tahun</td>
-                                <td class="check">Rp 1.500.000,-</td>
-                            </tr>
-                            <tr>
-                                <td>Data Anda</td>
-                                <td class="cross">Milik mereka</td>
-                                <td class="check">Milik Anda</td>
-                            </tr>
-                            <tr>
-                                <td>Kasir & QRIS</td>
-                                <td class="check">✓</td>
-                                <td class="check">✓</td>
-                            </tr>
-                            <tr>
-                                <td>Hitung Modal (HPP)</td>
-                                <td class="cross">✗</td>
-                                <td class="check">✓ Otomatis</td>
-                            </tr>
-                            <tr>
-                                <td>Produksi & Stok</td>
-                                <td class="cross">✗</td>
-                                <td class="check">✓</td>
-                            </tr>
-                            <tr>
-                                <td>Sales Keliling</td>
-                                <td class="cross">✗</td>
-                                <td class="check">✓</td>
-                            </tr>
-                            <tr>
-                                <td>Gaji & Komisi</td>
-                                <td class="cross">Terbatas</td>
-                                <td class="check">✓ Lengkap</td>
-                            </tr>
-                            <tr>
-                                <td>Pembukuan Otomatis</td>
-                                <td class="cross">✗</td>
-                                <td class="check">✓</td>
-                            </tr>
-                            <tr>
-                                <td>Lacak Karyawan Curang</td>
-                                <td class="cross">✗</td>
-                                <td class="check">✓ Log Audit</td>
-                            </tr>
-                            <tr>
-                                <td>Multi-Cabang</td>
-                                <td class="cross">Berbayar ekstra</td>
-                                <td class="check">✓ Termasuk</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <!-- ===== BIAYA ===== -->
-            <section class="section section-alt">
-                <div class="section-label fade-in">Hemat Nyata</div>
-                <h2 class="section-title fade-in stagger-1">Bandingkan<br>Biaya 1 Tahun</h2>
-                <p class="section-subtitle fade-in stagger-2">Biaya operasional IT tahunan Anda dipangkas habis-habisan.</p>
-
-                <div class="cost-bars fade-in stagger-3">
-                    <div class="cost-bar">
-                        <div class="cost-bar-label">
-                            <span style="color: var(--primary); font-weight:700;">Go Suite</span>
-                            <span>Rp 1.500.000,- (Tahun ke-1)</span>
-                        </div>
-                        <div class="cost-bar-track">
-                            <div class="cost-bar-fill gosuite" data-width="25%"></div>
-                        </div>
-                    </div>
-                    <div class="cost-bar">
-                        <div class="cost-bar-label">
-                            <span>Kompetitor A</span>
-                            <span>Rp 3.6 jt / tahun</span>
-                        </div>
-                        <div class="cost-bar-track">
-                            <div class="cost-bar-fill moka" data-width="60%"></div>
-                        </div>
-                    </div>
-                    <div class="cost-bar">
-                        <div class="cost-bar-label">
-                            <span>Kompetitor B</span>
-                            <span>Rp 6 jt / tahun</span>
-                        </div>
-                        <div class="cost-bar-track">
-                            <div class="cost-bar-fill majoo" data-width="100%"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <!-- ===== CARA KERJA ===== -->
-            <section class="section">
-                <div class="section-label fade-in">Simpel</div>
-                <h2 class="section-title fade-in stagger-1">Mulainya<br>Gampang Banget</h2>
-                <div class="steps fade-in stagger-2">
-                    <div class="step">
-                        <div class="step-num">1</div>
-                        <div class="step-body">
-                            <h4>Chat Kami</h4>
-                            <p>Ceritakan usaha Anda lewat WhatsApp. Kami bantu pilih paket yang pas.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-num">2</div>
-                        <div class="step-body">
-                            <h4>Kami Pasangkan</h4>
-                            <p>Tim kami yang install semuanya. Anda tinggal terima beres. Tidak perlu mengerti IT.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-num">3</div>
-                        <div class="step-body">
-                            <h4>Langsung Pakai</h4>
-                            <p>Kami ajarkan lewat video call gratis. Masukkan produk, nyalakan kasir, jalan!</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <!-- ===== FAQ ===== -->
-            <section class="section section-alt">
-                <div class="section-label fade-in">Tanya Jawab</div>
-                <h2 class="section-title fade-in stagger-1">Yang Sering<br>Ditanyakan</h2>
-                <div class="faq-list fade-in stagger-2">
-                    <div class="faq-item">
-                        <button class="faq-q">
-                            <span>Apakah ada biaya bulanan?</span>
-                            <span class="faq-chevron">▾</span>
-                        </button>
-                        <div class="faq-a">
-                            <div class="faq-a-inner">Tidak ada biaya bulanan. Anda hanya bayar biaya setup di awal (Rp 1.500.000,- untuk tahun pertama) dan perpanjangan sangat ringan (Rp 300.000,-/tahun) di tahun berikutnya. Di luar biaya domain & hosting yang Anda sewa sendiri.</div>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q">
-                            <span>Berapa lama proses setup-nya?</span>
-                            <span class="faq-chevron">▾</span>
-                        </button>
-                        <div class="faq-a">
-                            <div class="faq-a-inner">Proses setup biasanya selesai dalam 1–3 hari kerja setelah pembayaran. Tim kami yang mengerjakan semuanya — Anda tidak perlu mengerti teknis sama sekali. Setelah siap, kami ajari cara pakainya lewat video call.</div>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q">
-                            <span>Saya gaptek, bisa pakai?</span>
-                            <span class="faq-chevron">▾</span>
-                        </button>
-                        <div class="faq-a">
-                            <div class="faq-a-inner">Bisa. Tampilan Go Suite dibuat sesederhana mungkin. Kami juga dampingi lewat video call sampai Anda dan tim benar-benar bisa menggunakannya.</div>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q">
-                            <span>Butuh komputer atau perangkat khusus?</span>
-                            <span class="faq-chevron">▾</span>
-                        </button>
-                        <div class="faq-a">
-                            <div class="faq-a-inner">Tidak. Cukup HP atau tablet yang bisa buka browser dan ada koneksi internet. Bisa juga dipakai di laptop atau komputer kasir biasa.</div>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q">
-                            <span>Data saya aman?</span>
-                            <span class="faq-chevron">▾</span>
-                        </button>
-                        <div class="faq-a">
-                            <div class="faq-a-inner">Aman. Data usaha Anda tersimpan di database yang Anda kelola sendiri — bukan milik kami. Kami tidak bisa mengakses data Anda tanpa izin Anda.</div>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q">
-                            <span>Bisa untuk lebih dari 1 toko?</span>
-                            <span class="faq-chevron">▾</span>
-                        </button>
-                        <div class="faq-a">
-                            <div class="faq-a-inner">Bisa. Go Suite mendukung multi-cabang. Setiap cabang datanya terpisah dan bisa dipantau kapan saja dari satu akun yang sama.</div>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q">
-                            <span>Usaha saya bukan makanan, bisa pakai?</span>
-                            <span class="faq-chevron">▾</span>
-                        </button>
-                        <div class="faq-a">
-                            <div class="faq-a-inner">Bisa. Go Suite cocok untuk usaha apapun yang punya alur: beli bahan baku → proses → jual. Contoh yang sudah cocok: konveksi, sabun, frozen food, kerajinan, deterjen, jamu, dan bahan bangunan.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <!-- ===== CTA AKHIR ===== -->
-            <section class="cta-section">
-                <div class="section-label fade-in">Siap Mulai?</div>
-                <h2 class="section-title fade-in stagger-1" style="font-size: 24px;">
-                    Siap Benahi<br><span class="gradient-text">Operasional Usaha Anda?</span>
-                </h2>
-                <p class="section-subtitle fade-in stagger-2" style="max-width: 300px; margin: 0 auto 20px;">Setup sekali, pakai selamanya. Mulai dari <strong>Rp 1.500.000,-</strong> — tanpa biaya bulanan.</p>
-                <div class="hero-actions fade-in stagger-3">
-                    <a href="https://wa.me/6282187164364?text=Halo%20Go%20Suite%2C%20saya%20mau%20tanya-tanya.%20Jenis%20usaha%20saya%3A%20"
-                        class="btn btn-wa" target="_blank">
-                        💬 Chat WhatsApp Sekarang
-                    </a>
-                    <a href="harga.html" class="btn btn-secondary">Lihat Paket & Harga →</a>
-                </div>
-            </section>
-
-            <!-- FOOTER -->
-            <footer class="footer">
-                <div class="footer-logo">Go <span>Suite</span></div>
-                <p class="footer-tagline">Satu sistem untuk semua operasional usaha Anda.</p>
-                <div class="footer-links">
-                    <a href="harga.html">Harga</a>
-                    <a href="kasir.html">Kasir</a>
-                    <a href="laporan.html">Laporan</a>
-                    <a href="stok.html">Stok</a>
-                    <a href="payroll.html">Payroll</a>
-                    <a href="https://wa.me/6282187164364" target="_blank">Kontak</a>
-                    <a href="https://kemitraan.kopigo.id" target="_blank">Kemitraan KOPIGO</a>
-                </div>
-                <p class="footer-copy">© 2026 Go Suite · Sistem Operasional Usaha</p>
-            </footer>
-
-        </main>
-
-        <!-- BOTTOM NAV -->
-        <nav class="bottom-nav">
-            <a href="index.html" class="active">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+            <div class="profile-name">
+                KOPIGO
+                <svg class="verified-icon" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
                     <path
-                        d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                </svg>
-                <span>Home</span>
-            </a>
-            <a href="#" class="nav-fitur-trigger">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
-                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
-                    <path d="M2 7h20" />
-                </svg>
-                <span>Fitur</span>
-            </a>
-            <a href="harga.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" x2="12" y1="2" y2="22" />
-                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                </svg>
-                <span>Harga</span>
-            </a>
-            <a href="https://wa.me/6282187164364?text=Halo%20Go%20Suite" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        d="M12.95 2.18c-.52-.71-1.38-.71-1.9 0l-1.15 1.55c-.24.33-.67.47-1.07.36l-1.85-.53c-.88-.26-1.57.43-1.31 1.31l.53 1.85c.11.4-.03.83-.36 1.07L4.29 8.94c-.71.52-.71 1.38 0 1.9l1.55 1.15c.33.24.47.67.36 1.07l-.53 1.85c-.26.88.43 1.57 1.31 1.31l1.85-.53c.4-.11.83.03 1.07.36l1.15 1.55c.52.71 1.38.71 1.9 0l1.15-1.55c.24-.33.67-.47 1.07-.36l1.85.53c.88.26 1.57-.43 1.31-1.31l-.53-1.85c-.11-.4.03-.83.36-1.07l1.55-1.15c.71-.52.71-1.38 0-1.9l-1.55-1.15c-.33-.24-.47-.67-.36-1.07l.53-1.85c.26-.88-.43-1.57-1.31-1.31l-1.85.53c-.4.11-.83-.03-1.07-.36L12.95 2.18z"
+                        fill="#1877F2" />
                     <path
-                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        d="M10.15 15.65a.75.75 0 01-1.06 0l-2.65-2.65a.75.75 0 111.06-1.06l2.12 2.12 5.65-5.65a.75.75 0 011.06 1.06l-6.18 6.18z"
+                        fill="#FFFFFF" />
                 </svg>
-                <span>Kontak</span>
+            </div>
+            <div class="profile-handle">@kopigo.makassar</div>
+            <p class="profile-bio">
+                <strong>#1 Penggerak Pertama</strong> Kopi Keliling dengan Sepeda Listrik di Makassar 🛵⚡<br>
+                Nikmati Sensasi Kopi Berkualitas Langsung di Tempatmu! ☕
+            </p>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value">148</div>
+                <div class="stat-label">Kiriman</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <div class="stat-value">14,9rb</div>
+                <div class="stat-label">Pengikut</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <div class="stat-value">65</div>
+                <div class="stat-label">Diikuti</div>
+            </div>
+        </div>
+
+        <!-- LINKS -->
+        <div class="links">
+
+            <a href="https://www.kopigo.id" target="_blank" rel="noopener" class="link-btn link-shop" id="link-shop">
+                <div class="link-icon">🛒</div>
+                <div class="link-text">
+                    <div class="link-title">Belanja Bahan F&B</div>
+                    <div class="link-subtitle">coming soon — Supplier bahan berkualitas</div>
+                </div>
+                <span class="link-arrow">›</span>
             </a>
-            <a href="https://kemitraan.kopigo.id" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-                <span>Kemitraan</span>
+
+            <a href="https://katering.kopigo.id" target="_blank" rel="noopener" class="link-btn link-catering"
+                id="link-catering">
+                <div class="link-icon">☕</div>
+                <div class="link-text">
+                    <div class="link-title">Catering Service</div>
+                    <div class="link-subtitle">Layanan katering untuk acara & harian</div>
+                </div>
+                <span class="link-arrow">›</span>
             </a>
-        </nav>
+
+            <a href="https://kemitraan.kopigo.id" target="_blank" rel="noopener" class="link-btn link-franchise"
+                id="link-franchise">
+                <div class="link-icon">🤝🏻</div>
+                <div class="link-text">
+                    <div class="link-title">Franchise Signature</div>
+                    <div class="link-subtitle">Bergabung jadi mitra KOPIGO</div>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://www.kopigo.id/suite.html" target="_blank" rel="noopener" class="link-btn link-app"
+                id="link-app">
+                <div class="link-icon">📊</div>
+                <div class="link-text">
+                    <div class="link-title">Aplikasi Manajemen Usaha</div>
+                    <div class="link-subtitle">Go Suite — Kasir, Stok, Keuangan</div>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://www.instagram.com/kopigo.makassar" target="_blank" rel="noopener"
+                class="link-btn link-instagram" id="link-instagram">
+                <div class="link-icon">📸</div>
+                <div class="link-text">
+                    <div class="link-title">Instagram</div>
+                    <div class="link-subtitle">@kopigo.makassar — Follow kami!</div>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://wa.me/6282187164364" target="_blank" rel="noopener" class="link-btn link-whatsapp"
+                id="link-whatsapp">
+                <div class="link-icon">💬</div>
+                <div class="link-text">
+                    <div class="link-title">WhatsApp</div>
+                    <div class="link-subtitle">Chat langsung untuk info & pemesanan</div>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="linktree-footer">
+            <div class="footer-brand">KOPIGO</div>
+            <p class="footer-copy">© 2026 KOPIGO · Kopi Keliling Makassar</p>
+        </div>
 
     </div>
 
-    <!-- PULL UP MODAL (16 MODULES) -->
-    <div class="modal-backdrop" id="fiturModalBackdrop"></div>
-    <div class="bottom-sheet" id="fiturBottomSheet">
-        <div class="sheet-header">
-            <div class="sheet-drag-handle"></div>
-            <h3>Semua Fitur Go Suite</h3>
-            <button class="sheet-close" id="closeFiturBtn">&times;</button>
-        </div>
-        <div class="sheet-content">
-            <div class="module-grid">
-                <a href="kasir.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🏪</div><span>Kasir &
-                        Penjualan</span>
-                </a>
-                <a href="mobile-rider.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">🏍️</div><span>Sales
-                        Keliling</span>
-                </a>
-                <a href="order-mitra.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">🤝</div><span>Order Mitra
-                        B2B</span>
-                </a>
-                <a href="katering.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(22,163,74,0.1);color:#16a34a;">🎪</div>
-                    <span>Katering/Event</span>
-                </a>
-                <a href="form-publik.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">📄</div><span>Form
-                        Publik</span>
-                </a>
-
-                <a href="dapur.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🍳</div><span>Dapur
-                        Produksi</span>
-                </a>
-                <a href="stok.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(234,88,12,0.1);color:#ea580c;">📦</div><span>Stok &
-                        Gudang</span>
-                </a>
-                <a href="pembelian.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🛒</div><span>Pembelian
-                        Supplier</span>
-                </a>
-                <a href="waste-log.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">🗑️</div><span>Pencatatan
-                        Rusak</span>
-                </a>
-
-                <a href="buku-besar.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">📒</div><span>Buku Besar
-                        & Kas</span>
-                </a>
-                <a href="rekening-bank.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">🏦</div><span>Rekening
-                        Bank</span>
-                </a>
-                <a href="laporan.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📈</div><span>Lap. Laba
-                        Rugi</span>
-                </a>
-                <a href="resep-hpp.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🧮</div><span>Resep &
-                        Modal</span>
-                </a>
-                <a href="investor.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(234,88,12,0.1);color:#ea580c;">🤝</div><span>Lap.
-                        Investor</span>
-                </a>
-
-                <a href="payroll.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;">💸</div><span>Gaji &
-                        Komisi</span>
-                </a>
-                <a href="jadwal-kerja.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📅</div><span>Jadwal
-                        Kerja</span>
-                </a>
-                <a href="riderhub.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(8,145,178,0.1);color:#0891b2;">📱</div><span>RiderHub
-                        (Tim)</span>
-                </a>
-                <a href="staff-role.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(225,29,72,0.1);color:#e11d48;">👥</div><span>Akses &
-                        Peran</span>
-                </a>
-                <a href="log-hapus.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(217,119,6,0.1);color:#d97706;">🕵️</div><span>Log
-                        Hapus</span>
-                </a>
-                <a href="multi-cabang.html" class="module-card">
-                    <div class="mc-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5;">🏢</div>
-                    <span>Multi-Cabang</span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <script src="js/main.js"></script>
 </body>
 
 </html>
