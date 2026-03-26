@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // GO SUITE — Mobile-Native Landing Page Scripts
 // ============================================================
 
@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---- Active bottom nav based on current page ----
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'suite.html';
     document.querySelectorAll('.bottom-nav a').forEach(a => {
         const href = a.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        if (href === currentPage || (currentPage === '' && href === 'suite.html')) {
             a.classList.add('active');
         }
     });
