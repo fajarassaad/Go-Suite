@@ -1,0 +1,62 @@
+name: Update Instagram stats
+
+# Mengambil jumlah kiriman/pengikut/diikuti @kopigo.makassar dari Instagram Graph API
+# lalu menyimpannya ke data/instagram.json, yang dibaca oleh index.html.
+#
+# Butuh dua repository secret (Settings > Secrets and variables > Actions):
+#   IG_USER_ID       ID akun Instagram Business/Creator
+#   IG_ACCESS_TOKEN  Access token dengan izin instagram_basic
+# Tanpa kedua secret itu, workflow berhenti tanpa mengubah apa pun.
+
+on:
+  schedule:
+    - cron: "17 22 * * *" # setiap hari 06.17 WITA
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-stats
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch stats
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${IG_USER_ID:-}" ] || [ -z "${IG_ACCESS_TOKEN:-}" ]; then
+            echo "::warning::IG_USER_ID / IG_ACCESS_TOKEN belum diisi, lewati."
+            exit 0
+          fi
+          curl -fsS --get "https://graph.facebook.com/${IG_USER_ID}" \
+            --data-urlencode "fields=username,media_count,followers_count,follows_count" \
+            --data-urlencode "access_token=${IG_ACCESS_TOKEN}" \
+            -o /tmp/ig.json
+          # Tolak respons yang tidak berisi tiga angka yang valid
+          jq -e '[.media_count, .followers_count, .follows_count] | all(type == "number" and . >= 0)' /tmp/ig.json > /dev/null
+          jq --arg now "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            '{username, media_count, followers_count, follows_count, updated_at: $now, source: "instagram-graph-api"}' \
+            /tmp/ig.json > data/instagram.json
+
+      - name: Commit if changed
+        run: |
+          set -euo pipefail
+          # Abaikan perubahan yang hanya pada updated_at
+          if git diff --quiet -I'"updated_at"' -- data/instagram.json; then
+            git checkout -- data/instagram.json
+            echo "Tidak ada perubahan angka."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/instagram.json
+          git commit -m "chore: update Instagram stats"
+          git push
