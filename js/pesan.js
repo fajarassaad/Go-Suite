@@ -3,66 +3,91 @@
     'use strict';
 
     var WA_NUMBER = '6282187164364';
-    var STORAGE_KEY = 'kopigo_pesanan_v1';
+    var CART_KEY = 'kopigo_pesanan_v1';
+    var PROFILE_KEY = 'kopigo_pemesan_v1';      // nama, alamat, lokasi, metode: hanya di perangkat ini
+    var LAST_KEY = 'kopigo_pesanan_terakhir';   // dibaca pesan-terkirim.html
     var MAX_QTY = 50;
+    var BULK_FROM = 20;                          // mulai jumlah ini, tawarkan layanan katering
 
     var products = {};
     var order = [];   // urutan id sesuai menu
     var cart = {};    // id -> jumlah
 
+    function $(id) { return document.getElementById(id); }
+
     var els = {
-        cart: document.getElementById('cart'),
-        backdrop: document.getElementById('backdrop'),
-        close: document.getElementById('cart-close'),
-        empty: document.getElementById('cart-empty'),
-        items: document.getElementById('cart-items'),
-        form: document.getElementById('order-form'),
-        foot: document.getElementById('cart-foot'),
-        count: document.getElementById('cart-count'),
-        total: document.getElementById('cart-total'),
-        bar: document.getElementById('cartbar'),
-        barCount: document.getElementById('bar-count'),
-        barTotal: document.getElementById('bar-total'),
-        menu: document.getElementById('menu')
+        cart: $('cart'), backdrop: $('backdrop'), close: $('cart-close'),
+        empty: $('cart-empty'), items: $('cart-items'), form: $('order-form'),
+        foot: $('cart-foot'), count: $('cart-count'), total: $('cart-total'),
+        bar: $('cartbar'), barCount: $('bar-count'), barTotal: $('bar-total'),
+        menu: $('menu'), tools: $('cart-tools'), bulk: $('bulk-hint'),
+        btnClear: $('btn-clear'), clearConfirm: $('clear-confirm'),
+        clearYes: $('clear-yes'), clearNo: $('clear-no'),
+        fsOutlet: $('fs-outlet'), fsMethod: $('fs-method'), pickupAt: $('pickup-at'),
+        fieldPlace: $('field-place'), btnGeo: $('btn-geo'), geoStatus: $('geo-status'),
+        fName: $('f-name'), fPlace: $('f-place'), fNote: $('f-note')
     };
 
     var desktop = window.matchMedia('(min-width: 960px)');
 
-    function rupiah(n) {
-        return 'Rp' + n.toLocaleString('id-ID');
+    function rupiah(n) { return 'Rp' + n.toLocaleString('id-ID'); }
+
+    function read(key) {
+        try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { return null; }
+    }
+    function write(key, value) {
+        try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* penyimpanan tidak tersedia */ }
+    }
+
+    function checked(name) {
+        var el = els.form.querySelector('input[name="' + name + '"]:checked');
+        return el ? el.value : '';
     }
 
     // ---------- data ----------
     var nodes = document.querySelectorAll('.product');
     for (var i = 0; i < nodes.length; i++) {
-        var n = nodes[i];
-        var id = n.getAttribute('data-id');
-        products[id] = {
+        var n = nodes[i], pid = n.getAttribute('data-id');
+        products[pid] = {
             name: n.getAttribute('data-name'),
             price: parseInt(n.getAttribute('data-price'), 10),
             node: n
         };
-        order.push(id);
+        order.push(pid);
     }
 
-    function load() {
-        try {
-            var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-            for (var id in saved) {
-                var q = parseInt(saved[id], 10);
-                if (products[id] && q > 0) cart[id] = Math.min(q, MAX_QTY);
-            }
-        } catch (e) { /* penyimpanan tidak tersedia: mulai dari kosong */ }
+    function loadCart() {
+        var saved = read(CART_KEY) || {};
+        for (var id in saved) {
+            var q = parseInt(saved[id], 10);
+            if (products[id] && q > 0) cart[id] = Math.min(q, MAX_QTY);
+        }
     }
 
-    function save() {
-        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(cart)); } catch (e) { }
+    function loadProfile() {
+        var p = read(PROFILE_KEY);
+        if (!p || typeof p !== 'object') return;
+        if (typeof p.name === 'string') els.fName.value = p.name;
+        if (typeof p.place === 'string') els.fPlace.value = p.place;
+        ['outlet', 'method'].forEach(function (name) {
+            var radios = els.form.querySelectorAll('input[name="' + name + '"]');
+            for (var i = 0; i < radios.length; i++) if (radios[i].value === p[name]) radios[i].checked = true;
+        });
+    }
+
+    function saveProfile() {
+        write(PROFILE_KEY, {
+            name: els.fName.value.trim(),
+            place: els.fPlace.value.trim(),
+            outlet: checked('outlet'),
+            method: checked('method')
+        });
     }
 
     function setQty(id, qty) {
         qty = Math.max(0, Math.min(MAX_QTY, qty));
         if (qty === 0) delete cart[id]; else cart[id] = qty;
-        save();
+        write(CART_KEY, cart);
         render();
     }
 
@@ -92,6 +117,18 @@
         inc.setAttribute('data-cart-inc', id);
         wrap.appendChild(dec); wrap.appendChild(out); wrap.appendChild(inc);
         return wrap;
+    }
+
+    function resetClearConfirm() {
+        els.btnClear.hidden = false;
+        els.clearConfirm.hidden = true;
+    }
+
+    function renderDelivery() {
+        var outlet = checked('outlet'), method = checked('method');
+        els.fsMethod.hidden = !outlet;
+        els.pickupAt.textContent = outlet ? 'Ambil di ' + outlet : 'Ambil di lokasi yang kamu pilih';
+        els.fieldPlace.hidden = !(outlet && method === 'kirim');
     }
 
     function render() {
@@ -138,6 +175,9 @@
         els.empty.hidden = has;
         els.form.hidden = !has;
         els.foot.hidden = !has;
+        els.tools.hidden = !has;
+        els.bulk.hidden = t.count < BULK_FROM;
+        if (!has) resetClearConfirm();
 
         var countText = t.count + ' gelas';
         els.count.textContent = countText;
@@ -146,6 +186,8 @@
         els.barTotal.textContent = rupiah(t.sum);
         els.bar.hidden = !has;
         els.bar.setAttribute('aria-label', 'Lihat pesanan: ' + countText + ', total ' + rupiah(t.sum));
+
+        renderDelivery();
     }
 
     // ---------- panel pesanan (HP) ----------
@@ -171,6 +213,7 @@
         els.bar.inert = false;
         document.body.style.overflow = '';
         if (!els.bar.hidden) els.bar.focus();
+        else { var first = els.menu.querySelector('.cats a'); if (first) first.focus(); }
     }
 
     // Tab tetap di dalam panel saat terbuka
@@ -222,49 +265,146 @@
         }
     });
 
+    // ---------- kosongkan pesanan ----------
+    els.btnClear.addEventListener('click', function () {
+        els.btnClear.hidden = true;
+        els.clearConfirm.hidden = false;
+        els.clearNo.focus();
+    });
+    els.clearNo.addEventListener('click', function () {
+        resetClearConfirm();
+        els.btnClear.focus();
+    });
+    els.clearYes.addEventListener('click', function () {
+        cart = {};
+        write(CART_KEY, cart);
+        render();
+        closeCart();
+    });
+
+    // ---------- lokasi KOPIGO & metode ----------
+    function setInvalid(fieldset, errorId, invalid) {
+        fieldset.classList.toggle('is-invalid', invalid);
+        $(errorId).hidden = !invalid;
+    }
+
+    els.form.addEventListener('change', function (e) {
+        if (e.target.name === 'outlet') setInvalid(els.fsOutlet, 'e-outlet', false);
+        if (e.target.name === 'method') setInvalid(els.fsMethod, 'e-method', false);
+        renderDelivery();
+        saveProfile();
+    });
+
+    // ---------- pakai lokasi saya ----------
+    var MAPS_LINK = /https:\/\/maps\.google\.com\/\?q=-?[\d.]+,-?[\d.]+/;
+
+    els.btnGeo.addEventListener('click', function () {
+        if (!navigator.geolocation) {
+            els.geoStatus.textContent = 'HP ini tidak mendukung lokasi. Tulis alamatmu secara manual.';
+            return;
+        }
+        els.btnGeo.disabled = true;
+        els.geoStatus.textContent = 'Mencari lokasimu…';
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            var link = 'https://maps.google.com/?q=' + pos.coords.latitude.toFixed(6) + ',' + pos.coords.longitude.toFixed(6);
+            var text = els.fPlace.value.trim();
+            if (MAPS_LINK.test(text)) text = text.replace(MAPS_LINK, link);
+            else text = text ? text + '\n' + link : link;
+            els.fPlace.value = text;
+            els.btnGeo.disabled = false;
+            els.geoStatus.textContent = 'Titik lokasi ditambahkan. Tambahkan patokan kalau perlu.';
+            validateField(els.fPlace, 'e-place');
+            saveProfile();
+        }, function (err) {
+            els.btnGeo.disabled = false;
+            els.geoStatus.textContent = err && err.code === 1
+                ? 'Izin lokasi ditolak. Tulis alamatmu secara manual.'
+                : 'Lokasi tidak ditemukan. Coba lagi atau tulis alamatmu secara manual.';
+        }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+    });
+
     // ---------- kirim ----------
-    function validate(field, errorId) {
+    function validateField(field, errorId) {
         var ok = field.value.trim() !== '';
         field.setAttribute('aria-invalid', ok ? 'false' : 'true');
-        document.getElementById(errorId).hidden = ok;
+        $(errorId).hidden = ok;
         return ok;
     }
 
-    var fName = document.getElementById('f-name');
-    var fPlace = document.getElementById('f-place');
-    var fNote = document.getElementById('f-note');
+    els.fName.addEventListener('input', function () {
+        if (els.fName.getAttribute('aria-invalid') === 'true') validateField(els.fName, 'e-name');
+    });
+    els.fPlace.addEventListener('input', function () {
+        if (els.fPlace.getAttribute('aria-invalid') === 'true') validateField(els.fPlace, 'e-place');
+    });
+    els.fName.addEventListener('change', saveProfile);
+    els.fPlace.addEventListener('change', saveProfile);
 
-    fName.addEventListener('input', function () { if (fName.getAttribute('aria-invalid') === 'true') validate(fName, 'e-name'); });
-    fPlace.addEventListener('input', function () { if (fPlace.getAttribute('aria-invalid') === 'true') validate(fPlace, 'e-place'); });
+    function orderCode() {
+        var d = new Date();
+        var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', tail = '';
+        for (var i = 0; i < 3; i++) tail += chars.charAt(Math.floor(Math.random() * chars.length));
+        return 'KG-' + ('0' + d.getDate()).slice(-2) + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + tail;
+    }
 
     els.form.addEventListener('submit', function (e) {
         e.preventDefault();
         var t = totals();
         if (t.count === 0) return;
 
-        var okName = validate(fName, 'e-name');
-        var okPlace = validate(fPlace, 'e-place');
-        if (!okName) { fName.focus(); return; }
-        if (!okPlace) { fPlace.focus(); return; }
+        var outlet = checked('outlet'), method = checked('method');
+        if (!outlet) {
+            setInvalid(els.fsOutlet, 'e-outlet', true);
+            els.fsOutlet.querySelector('input').focus();
+            return;
+        }
+        if (!method) {
+            setInvalid(els.fsMethod, 'e-method', true);
+            els.fsMethod.querySelector('input').focus();
+            return;
+        }
+        if (!validateField(els.fName, 'e-name')) { els.fName.focus(); return; }
+        if (method === 'kirim' && !validateField(els.fPlace, 'e-place')) { els.fPlace.focus(); return; }
 
-        var lines = ['Halo KOPIGO, saya mau pesan:', ''];
+        var code = orderCode();
+        var methodText = method === 'kirim' ? 'Dikirim (ojek online)' : 'Ambil sendiri';
+        var summary = [];
+        var lines = ['Halo KOPIGO, saya mau pesan (#' + code + '):', ''];
         var no = 1;
         order.forEach(function (id) {
             if (!cart[id]) return;
             var p = products[id];
             lines.push(no++ + '. ' + p.name + ' x' + cart[id] + ' = ' + rupiah(cart[id] * p.price));
+            summary.push({ name: p.name, qty: cart[id], sum: rupiah(cart[id] * p.price) });
         });
         lines.push('');
         lines.push('Total: ' + rupiah(t.sum) + ' (' + t.count + ' gelas)');
         lines.push('');
-        lines.push('Nama: ' + fName.value.trim());
-        lines.push('Lokasi: ' + fPlace.value.trim());
-        if (fNote.value.trim()) lines.push('Catatan: ' + fNote.value.trim());
+        lines.push('Dari: ' + outlet);
+        lines.push('Metode: ' + methodText);
+        lines.push('Nama: ' + els.fName.value.trim());
+        if (method === 'kirim') lines.push('Alamat kirim: ' + els.fPlace.value.trim());
+        if (els.fNote.value.trim()) lines.push('Catatan: ' + els.fNote.value.trim());
 
         var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
-        window.location.href = url;
+
+        saveProfile();
+        write(LAST_KEY, {
+            code: code, url: url, items: summary,
+            total: rupiah(t.sum), count: t.count,
+            outlet: outlet, method: methodText
+        });
+        cart = {};
+        write(CART_KEY, cart);
+
+        // WhatsApp dibuka di tab baru; halaman ini pindah ke ringkasan pesanan
+        // (kunjungan ke pesan-terkirim.html = satu pesanan yang sampai ke WhatsApp).
+        var win = window.open(url, '_blank');
+        if (win) win.opener = null;
+        window.location.href = 'pesan-terkirim.html' + (win ? '' : '?wa=tertutup');
     });
 
-    load();
+    loadCart();
+    loadProfile();
     render();
 })();

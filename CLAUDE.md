@@ -16,6 +16,7 @@
 index.html          → Linktree KOPIGO (homepage www.kopigo.id, CSS inline sendiri)
 suite.html          → Homepage Go Suite (landing page utama produk)
 pesan.html          → Halaman pesan KOPIGO (menu, keranjang, checkout ke WhatsApp; pakai css/pesan.css + js/pesan.js, bukan style.css)
+pesan-terkirim.html → Ringkasan setelah pesanan dikirim ke WhatsApp (js/pesan-terkirim.js); kunjungannya = jumlah pesanan terkirim
 harga.html          → Halaman harga + promo wheel + kemitraan KOPIGO
 kasir.html          → Fitur: Kasir & Penjualan
 logistik.html       → Fitur: Sales Keliling
@@ -58,6 +59,7 @@ robots.txt, sitemap.xml → SEO; tambahkan halaman baru ke sitemap.xml
 - Mobile-first design, max-width 430px centered
 - WhatsApp CTA: nomor 6282187164364
 - Link kemitraan: https://kemitraan.kopigo.id
+- Lokasi KOPIGO di pesan.html (radio "Pesan dari mana?"): Outlet Grab n Go Galesong Utara, Central Kitchen Panaikang, Titik Racing Center, Titik Jalan Malino Gowa
 
 ## Aturan Edit
 1. Jangan ubah design system (`css/style.css`) tanpa cek dampak ke semua halaman

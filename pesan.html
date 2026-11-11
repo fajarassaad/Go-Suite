@@ -32,7 +32,7 @@
         <main class="menu" id="menu">
             <div class="intro">
                 <h1>Mau ngopi apa hari ini?</h1>
-                <p>Pilih menunya, isi nama dan lokasimu, lalu kirim pesanan lewat WhatsApp.</p>
+                <p>Pilih menunya, tentukan ambil sendiri atau dikirim, lalu kirim pesanan lewat WhatsApp.</p>
             </div>
 
             <nav class="cats" aria-label="Kategori menu">
@@ -246,21 +246,73 @@
 
                 <ul class="cart-items" id="cart-items" aria-live="polite"></ul>
 
+                <div class="cart-tools" id="cart-tools" hidden>
+                    <button type="button" class="btn-text" id="btn-clear">Kosongkan pesanan</button>
+                    <span class="clear-confirm" id="clear-confirm" hidden>
+                        Hapus semua?
+                        <button type="button" class="btn-text btn-danger" id="clear-yes">Ya, kosongkan</button>
+                        <button type="button" class="btn-text" id="clear-no">Batal</button>
+                    </span>
+                </div>
+
+                <p class="bulk-hint" id="bulk-hint" hidden>Pesan banyak untuk acara?
+                    <a href="https://katering.kopigo.id" target="_blank" rel="noopener">Lihat layanan katering</a>
+                </p>
+
                 <form class="order-form" id="order-form" novalidate hidden>
+                    <fieldset class="choice" id="fs-outlet">
+                        <legend>Pesan dari mana?</legend>
+                        <label class="choice-item">
+                            <input type="radio" name="outlet" value="Outlet Grab n Go, Galesong Utara">
+                            <span><strong>Outlet Grab n Go</strong><small>Galesong Utara</small></span>
+                        </label>
+                        <label class="choice-item">
+                            <input type="radio" name="outlet" value="Central Kitchen, Panaikang, Makassar">
+                            <span><strong>Central Kitchen</strong><small>Panaikang, Makassar</small></span>
+                        </label>
+                        <label class="choice-item">
+                            <input type="radio" name="outlet" value="Titik KOPIGO Racing Center">
+                            <span><strong>Titik KOPIGO Racing Center</strong></span>
+                        </label>
+                        <label class="choice-item">
+                            <input type="radio" name="outlet" value="Titik KOPIGO Jalan Malino, Gowa">
+                            <span><strong>Titik KOPIGO Jalan Malino</strong><small>Gowa</small></span>
+                        </label>
+                        <p class="field-error" id="e-outlet" hidden>Pilih lokasi KOPIGO dulu ya.</p>
+                    </fieldset>
+
+                    <fieldset class="choice" id="fs-method" hidden>
+                        <legend>Ambil sendiri atau dikirim?</legend>
+                        <label class="choice-item">
+                            <input type="radio" name="method" value="ambil">
+                            <span><strong>Ambil sendiri</strong><small id="pickup-at">Ambil di lokasi yang kamu
+                                    pilih</small></span>
+                        </label>
+                        <label class="choice-item">
+                            <input type="radio" name="method" value="kirim">
+                            <span><strong>Dikirim</strong><small>Lewat ojek online. Ongkir dikonfirmasi admin di
+                                    WhatsApp.</small></span>
+                        </label>
+                        <p class="field-error" id="e-method" hidden>Pilih ambil sendiri atau dikirim.</p>
+                    </fieldset>
+
                     <div class="field">
                         <label for="f-name">Nama pemesan</label>
                         <input type="text" id="f-name" name="name" autocomplete="name" maxlength="60" required
                             aria-describedby="e-name">
                         <p class="field-error" id="e-name" hidden>Isi nama kamu dulu ya.</p>
                     </div>
-                    <div class="field">
-                        <label for="f-place">Lokasi kamu</label>
-                        <textarea id="f-place" name="place" rows="2" maxlength="200" required
+
+                    <div class="field" id="field-place" hidden>
+                        <label for="f-place">Alamat kirim</label>
+                        <textarea id="f-place" name="place" rows="3" maxlength="300"
                             aria-describedby="h-place e-place"></textarea>
-                        <p class="field-hint" id="h-place">Alamat atau patokan di Makassar, supaya rider tahu harus ke
-                            mana.</p>
-                        <p class="field-error" id="e-place" hidden>Isi lokasi kamu dulu ya.</p>
+                        <p class="field-hint" id="h-place">Alamat atau patokan, supaya driver tahu harus ke mana.</p>
+                        <button type="button" class="btn-outline" id="btn-geo">Pakai lokasi saya sekarang</button>
+                        <p class="field-hint" id="geo-status" role="status"></p>
+                        <p class="field-error" id="e-place" hidden>Isi alamat kirim dulu ya.</p>
                     </div>
+
                     <div class="field">
                         <label for="f-note">Catatan <span class="optional">(opsional)</span></label>
                         <textarea id="f-note" name="note" rows="2" maxlength="200"></textarea>
