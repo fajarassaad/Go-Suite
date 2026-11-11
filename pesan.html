@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Pesan Kopi KOPIGO | Menu & Harga</title>
+    <meta name="description"
+        content="Menu dan harga KOPIGO, kopi keliling Makassar. Pilih Matcha Series atau kopi favoritmu, lalu kirim pesanan lewat WhatsApp.">
+    <link rel="canonical" href="https://www.kopigo.id/pesan.html">
+    <link rel="icon" type="image/svg+xml" href="assets/kopigo-logo.svg">
+    <meta property="og:title" content="Pesan Kopi KOPIGO">
+    <meta property="og:description" content="Lihat menu dan harga, lalu kirim pesananmu lewat WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kopigo.id/pesan.html">
+    <meta property="og:image" content="https://www.kopigo.id/assets/kopigo-og.png">
+    <meta name="theme-color" content="#faf3e7">
+    <link rel="stylesheet" href="css/pesan.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <a class="topbar-brand" href="index.html" aria-label="KOPIGO, kembali ke beranda">
+            <img src="assets/kopigo-logo.svg" alt="" width="96" height="96">
+        </a>
+        <p class="topbar-tag">Menyusuri Rasa Lalu<span>Since 2024</span></p>
+    </header>
+
+    <div class="layout">
+
+        <main class="menu" id="menu">
+            <div class="intro">
+                <h1>Mau ngopi apa hari ini?</h1>
+                <p>Pilih menunya, isi nama dan lokasimu, lalu kirim pesanan lewat WhatsApp.</p>
+            </div>
+
+            <nav class="cats" aria-label="Kategori menu">
+                <a href="#matcha">Matcha Series <span>2</span></a>
+                <a href="#kopi">Coffee Based <span>7</span></a>
+            </nav>
+
+            <section class="group group-matcha" id="matcha" aria-labelledby="matcha-title">
+                <div class="group-head">
+                    <h2 id="matcha-title">Matcha Series</h2>
+                    <p>100% pure matcha. Umami dan earthy, dengan harga bersahabat.</p>
+                </div>
+                <ul class="products">
+                    <li class="product" data-id="matcha-creamy-latte" data-name="Matcha Creamy Latte" data-price="13000">
+                        <img class="product-photo" src="assets/menu/matcha-creamy-latte.jpg" alt="Foto Matcha Creamy Latte" width="400" height="400">
+                        <div class="product-body">
+                            <h3 class="product-name">Matcha Creamy Latte</h3>
+                            <p class="product-desc">Rasa creamy dan umami, terasa lembut dan menenangkan.</p>
+                            <div class="product-foot">
+                                <span class="product-price">Rp13.000</span>
+                                <div class="product-action">
+                                    <button type="button" class="btn-add" data-add aria-label="Tambah Matcha Creamy Latte ke pesanan">Tambah</button>
+                                    <div class="stepper" hidden>
+                                        <button type="button" class="stepper-btn" data-dec aria-label="Kurangi Matcha Creamy Latte">−</button>
+                                        <output class="stepper-qty" aria-label="Jumlah Matcha Creamy Latte">0</output>
+                                        <button type="button" class="stepper-btn" data-inc aria-label="Tambah Matcha Creamy Latte">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product" data-id="matcha-oat-pistachio" data-name="Matcha Oat Pistachio" data-price="13000">
+                        <img class="product-photo" src="assets/menu/matcha-oat-pistachio.jpg" alt="Foto Matcha Oat Pistachio" width="400" height="400">
+                        <div class="product-body">
+                            <h3 class="product-name">Matcha Oat Pistachio</h3>
+                            <p class="product-desc">Rasa umami yang calming, berpadu dengan gurih pistachio yang nutty dalam creamy oat yang lembut.</p>
+                            <div class="product-foot">
+                                <span class="product-price">Rp13.000</span>
+                                <div class="product-action">
+                                    <button type="button" class="btn-add" data-add aria-label="Tambah Matcha Oat Pistachio ke pesanan">Tambah</button>
+                                    <div class="stepper" hidden>
+                                        <button type="button" class="stepper-btn" data-dec aria-label="Kurangi Matcha Oat Pistachio">−</button>
+                                        <output class="stepper-qty" aria-label="Jumlah Matcha Oat Pistachio">0</output>
+                                        <button type="button" class="stepper-btn" data-inc aria-label="Tambah Matcha Oat Pistachio">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="group group-kopi" id="kopi" aria-labelledby="kopi-title">
+                <div class="group-head">
+                    <h2 id="kopi-title">Coffee Based</h2>
+                </div>
+                <ul class="products">
+                    <li class="product" data-id="kopi-susu-creamy" data-name="Kopi Susu Creamy" data-price="10000">
+                        <img class="product-photo" src="assets/menu/kopi-susu-creamy.jpg" alt="Foto Kopi Susu Creamy" width="400" height="400">
+                        <div class="product-body">
+                            <h3 class="product-name">Kopi Susu Creamy</h3>
+                            <p class="product-desc">“Simpel. Creamy. Ngena”</p>
+                            <div class="product-foot">
+                                <span class="product-price">Rp10.000</span>
+                                <div class="product-action">
+                                    <button type="button" class="btn-add" data-add aria-label="Tambah Kopi Susu Creamy ke pesanan">Tambah</button>
+                                    <div class="stepper" hidden>
+                                        <button type="button" class="stepper-btn" data-dec aria-label="Kurangi Kopi Susu Creamy">−</button>
+                                        <output class="stepper-qty" aria-label="Jumlah Kopi Susu Creamy">0</output>
+                                        <button type="button" class="stepper-btn" data-inc aria-label="Tambah Kopi Susu Creamy">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product" data-id="kopi-sahabat" data-name="Kopi Sahabat" data-price="12000">
+                        <img class="product-photo" src="assets/menu/kopi-sahabat.jpg" alt="Foto Kopi Sahabat" width="400" height="400" loading="lazy">
+                        <div class="product-body">
+                            <h3 class="product-name">Kopi Sahabat</h3>
+                            <p class="product-desc">“Sahabat sejati nggak harus mahal”</p>
+                            <div class="product-foot">
+                                <span class="product-price">Rp12.000</span>
+                                <div class="product-action">
+                                    <button type="button" class="btn-add" data-add aria-label="Tambah Kopi Sahabat ke pesanan">Tambah</button>
+                                    <div class="stepper" hidden>
+                                        <button type="button" class="stepper-btn" data-dec aria-label="Kurangi Kopi Sahabat">−</button>
+                                        <output class="stepper-qty" aria-label="Jumlah Kopi Sahabat">0</output>
+                                        <button type="button" class="stepper-btn" data-inc aria-label="Tambah Kopi Sahabat">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product" data-id="kopi-aren-premium" data-name="Kopi Aren Premium" data-price="12000">
+                        <img class="product-photo" src="assets/menu/kopi-aren-premium.jpg" alt="Foto Kopi Aren Premium" width="400" height="400" loading="lazy">
+                        <div class="product-body">
+                            <h3 class="product-name">Kopi Aren Premium</h3>
+                            <p class="product-desc">“Kalem di awal, nendang di akhir”</p>
+                            <div class="product-foot">
+                                <span class="product-price">Rp12.000</span>
+                                <div class="product-action">
+                                    <button type="button" class="btn-add" data-add aria-label="Tambah Kopi Aren Premium ke pesanan">Tambah</button>
+                                    <div class="stepper" hidden>
+                                        <button type="button" class="stepper-btn" data-dec aria-label="Kurangi Kopi Aren Premium">−</button>
+                                        <output class="stepper-qty" aria-label="Jumlah Kopi Aren Premium">0</output>
+                                        <button type="button" class="stepper-btn" data-inc aria-label="Tambah Kopi Aren Premium">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product" data-id="kopi-hitam-arabika" data-name="Kopi Hitam Arabika" data-price="8000">
+                        <img class="product-photo" src="assets/menu/kopi-hitam-arabika.jpg" alt="Foto Kopi Hitam Arabika" width="400" height="400" loading="lazy">
+                        <div class="product-body">
+                            <h3 class="product-name">Kopi Hitam Arabika</h3>
+                            <p class="product-desc">“Kalau rasa bisa jadi karakter, ini kopi yang punya prinsip.”</p>
+                            <div class="product-foot">
+                                <span class="product-price">Rp8.000</span>
+                                <div class="product-action">
+                                    <button type="button" class="btn-add" data-add aria-label="Tambah Kopi Hitam Arabika ke pesanan">Tambah</button>
+                                    <div class="stepper" hidden>
+                                        <button type="button" class="stepper-btn" data-dec aria-label="Kurangi Kopi Hitam Arabika">−</button>
+                                        <output class="stepper-qty" aria-label="Jumlah Kopi Hitam Arabika">0</output>
+                                        <button type="button" class="stepper-btn" data-inc aria-label="Tambah Kopi Hitam Arabika">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product" data-id="citrus-cold-brew" data-name="Citrus Cold Brew" data-price="10000">
+                        <img class="product-photo" src="assets/menu/citrus-cold-brew.jpg" alt="Foto Citrus Cold Brew" width="400" height="400" loading="lazy">
+                        <div class="product-body">
+                            <h3 class="product-name">Citrus Cold Brew</h3>
+                            <p class="product-desc">“Sekali teguk, langsung dapet semangat baru.”</p>
+                            <div class="product-foot">
+                                <span class="product-price">Rp10.000</span>
+                                <div class="product-action">
+                                    <button type="button" class="btn-add" data-add aria-label="Tambah Citrus Cold Brew ke pesanan">Tambah</button>
+                                    <div class="stepper" hidden>
+                                        <button type="button" class="stepper-btn" data-dec aria-label="Kurangi Citrus Cold Brew">−</button>
+                                        <output class="stepper-qty" aria-label="Jumlah Citrus Cold Brew">0</output>
+                                        <button type="button" class="stepper-btn" data-inc aria-label="Tambah Citrus Cold Brew">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product" data-id="kopi-pandan-creamy" data-name="Kopi Pandan Creamy" data-price="13000">
+                        <img class="product-photo" src="assets/menu/kopi-pandan-creamy.jpg" alt="Foto Kopi Pandan Creamy" width="400" height="400" loading="lazy">
+                        <div class="product-body">
+                            <h3 class="product-name">Kopi Pandan Creamy</h3>
+                            <p class="product-desc">“Wangi nostalgia, rasa masa kini”</p>
+                            <div class="product-foot">
+                                <span class="product-price">Rp13.000</span>
+                                <div class="product-action">
+                                    <button type="button" class="btn-add" data-add aria-label="Tambah Kopi Pandan Creamy ke pesanan">Tambah</button>
+                                    <div class="stepper" hidden>
+                                        <button type="button" class="stepper-btn" data-dec aria-label="Kurangi Kopi Pandan Creamy">−</button>
+                                        <output class="stepper-qty" aria-label="Jumlah Kopi Pandan Creamy">0</output>
+                                        <button type="button" class="stepper-btn" data-inc aria-label="Tambah Kopi Pandan Creamy">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product" data-id="kopi-caramel-creamy" data-name="Kopi Caramel Creamy" data-price="13000">
+                        <img class="product-photo" src="assets/menu/kopi-caramel-creamy.jpg" alt="Foto Kopi Caramel Creamy" width="400" height="400" loading="lazy">
+                        <div class="product-body">
+                            <h3 class="product-name">Kopi Caramel Creamy</h3>
+                            <p class="product-desc">“Kalau rasa bisa dipeluk, ini salah satunya”</p>
+                            <div class="product-foot">
+                                <span class="product-price">Rp13.000</span>
+                                <div class="product-action">
+                                    <button type="button" class="btn-add" data-add aria-label="Tambah Kopi Caramel Creamy ke pesanan">Tambah</button>
+                                    <div class="stepper" hidden>
+                                        <button type="button" class="stepper-btn" data-dec aria-label="Kurangi Kopi Caramel Creamy">−</button>
+                                        <output class="stepper-qty" aria-label="Jumlah Kopi Caramel Creamy">0</output>
+                                        <button type="button" class="stepper-btn" data-inc aria-label="Tambah Kopi Caramel Creamy">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <footer class="foot">
+                <p>Halal Indonesia No. 73110019353770824</p>
+                <p>Juga melayani bazaar, festival, konser, acara sekolah, kantor, keluarga, pernikahan, dan sunatan.
+                    <a href="https://katering.kopigo.id" target="_blank" rel="noopener">Lihat layanan katering</a>
+                </p>
+                <p>© 2026 KOPIGO · <a href="index.html">kopigo.id</a> · <a
+                        href="https://www.instagram.com/kopigo.makassar" target="_blank"
+                        rel="noopener">@kopigo.makassar</a></p>
+            </footer>
+        </main>
+
+        <div class="backdrop" id="backdrop" hidden></div>
+
+        <aside class="cart" id="cart" aria-labelledby="cart-title">
+            <div class="cart-head">
+                <h2 id="cart-title">Pesanan kamu</h2>
+                <button type="button" class="cart-close" id="cart-close" aria-label="Tutup pesanan">Tutup</button>
+            </div>
+
+            <div class="cart-scroll">
+                <div class="cart-empty" id="cart-empty">
+                    <p class="cart-empty-title">Belum ada pesanan</p>
+                    <p>Tekan “Tambah” di menu untuk mulai memesan.</p>
+                </div>
+
+                <ul class="cart-items" id="cart-items" aria-live="polite"></ul>
+
+                <form class="order-form" id="order-form" novalidate hidden>
+                    <div class="field">
+                        <label for="f-name">Nama pemesan</label>
+                        <input type="text" id="f-name" name="name" autocomplete="name" maxlength="60" required
+                            aria-describedby="e-name">
+                        <p class="field-error" id="e-name" hidden>Isi nama kamu dulu ya.</p>
+                    </div>
+                    <div class="field">
+                        <label for="f-place">Lokasi kamu</label>
+                        <textarea id="f-place" name="place" rows="2" maxlength="200" required
+                            aria-describedby="h-place e-place"></textarea>
+                        <p class="field-hint" id="h-place">Alamat atau patokan di Makassar, supaya rider tahu harus ke
+                            mana.</p>
+                        <p class="field-error" id="e-place" hidden>Isi lokasi kamu dulu ya.</p>
+                    </div>
+                    <div class="field">
+                        <label for="f-note">Catatan <span class="optional">(opsional)</span></label>
+                        <textarea id="f-note" name="note" rows="2" maxlength="200"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="cart-foot" id="cart-foot" hidden>
+                <div class="cart-total">
+                    <span id="cart-count">0 gelas</span>
+                    <strong id="cart-total">Rp0</strong>
+                </div>
+                <button type="submit" form="order-form" class="btn-send">Kirim pesanan via WhatsApp</button>
+                <p class="cart-note">WhatsApp akan terbuka dengan pesananmu. Pesanan diproses setelah admin membalas.
+                </p>
+            </div>
+        </aside>
+
+    </div>
+
+    <button type="button" class="cartbar" id="cartbar" hidden>
+        <span class="cartbar-info"><span id="bar-count">0 gelas</span><strong id="bar-total">Rp0</strong></span>
+        <span class="cartbar-cta">Lihat pesanan</span>
+    </button>
+
+    <script src="js/pesan.js" defer></script>
+</body>
+
+</html>

@@ -15,6 +15,7 @@
 ```
 index.html          → Linktree KOPIGO (homepage www.kopigo.id, CSS inline sendiri)
 suite.html          → Homepage Go Suite (landing page utama produk)
+pesan.html          → Halaman pesan KOPIGO (menu, keranjang, checkout ke WhatsApp; pakai css/pesan.css + js/pesan.js, bukan style.css)
 harga.html          → Halaman harga + promo wheel + kemitraan KOPIGO
 kasir.html          → Fitur: Kasir & Penjualan
 logistik.html       → Fitur: Sales Keliling
