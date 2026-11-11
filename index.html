@@ -347,6 +347,34 @@
             outline-offset: 3px;
         }
 
+        /* Tombol utama: satu-satunya tombol merah solid, mengarah ke halaman pesan */
+        a.link-btn.link-order {
+            background: #e4002b;
+            border-color: #e4002b;
+            color: #ffffff;
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+            box-shadow: 0 8px 24px rgba(228, 0, 43, 0.3);
+        }
+
+        a.link-btn.link-order:hover,
+        a.link-btn.link-order:focus-visible {
+            background: #b80023;
+            border-color: #b80023;
+            box-shadow: 0 12px 28px rgba(228, 0, 43, 0.35);
+        }
+
+        a.link-btn.link-order:active {
+            background: #9c001e;
+        }
+
+        a.link-btn.link-order .link-title,
+        a.link-btn.link-order .link-subtitle,
+        a.link-btn.link-order .link-arrow,
+        a.link-btn.link-order:hover .link-arrow {
+            color: #ffffff;
+        }
+
         /* Belum tersedia: bukan link, tidak bisa diklik */
         .link-btn.is-soon {
             cursor: not-allowed;

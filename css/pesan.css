@@ -102,7 +102,7 @@ button:disabled {
     border-radius: var(--r-sm);
 }
 
-/* Logo SVG berbentuk persegi dengan wordmark di tengah:
+/* Logo SVG berbentuk persegi (transparan) dengan wordmark di tengah:
    dipotong atas-bawah supaya hanya wordmark yang terlihat */
 .topbar-brand img {
     position: absolute;
