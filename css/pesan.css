@@ -306,6 +306,8 @@ button:disabled {
 .stepper {
     display: inline-flex;
     align-items: center;
+    /* 44px area sentuh di dalam garis tepi */
+    box-sizing: content-box;
     height: 44px;
     border: 1.5px solid var(--ink);
     border-radius: var(--r-sm);
@@ -607,12 +609,13 @@ button:disabled {
     background: var(--cream);
 }
 
-.choice-item:has(input:checked) {
+/* Kelas is-selected dipasang lewat JS, supaya tetap jalan di browser tanpa :has() */
+.choice-item.is-selected {
     border-color: var(--ink);
     background: var(--cream);
 }
 
-.choice-item:has(input:focus-visible) {
+.choice-item:focus-within {
     outline: 3px solid var(--ink);
     outline-offset: 2px;
 }
@@ -719,7 +722,7 @@ button:disabled {
 
 .bulk-hint a {
     display: inline-block;
-    padding: 11px 0;
+    padding: 12px 0;
     font-weight: 700;
 }
 

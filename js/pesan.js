@@ -129,6 +129,10 @@
         els.fsMethod.hidden = !outlet;
         els.pickupAt.textContent = outlet ? 'Ambil di ' + outlet : 'Ambil di lokasi yang kamu pilih';
         els.fieldPlace.hidden = !(outlet && method === 'kirim');
+        var radios = els.form.querySelectorAll('.choice-item input');
+        for (var i = 0; i < radios.length; i++) {
+            radios[i].closest('.choice-item').classList.toggle('is-selected', radios[i].checked);
+        }
     }
 
     function render() {

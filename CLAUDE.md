@@ -62,6 +62,7 @@ robots.txt, sitemap.xml → SEO; tambahkan halaman baru ke sitemap.xml
 - Lokasi KOPIGO di pesan.html (radio "Pesan dari mana?"): Outlet Grab n Go Galesong Utara, Central Kitchen Panaikang, Titik Racing Center, Titik Jalan Malino Gowa
 
 ## Aturan Edit
+0. Setiap mengubah `css/pesan.css`, `js/pesan.js`, `js/pesan-terkirim.js`, atau `assets/kopigo-logo.svg`, naikkan angka `?v=` di `pesan.html`, `pesan-terkirim.html`, dan `index.html`. Tanpa itu HP pelanggan memakai file lama dari cache (Cloudflare) dan halaman tampil berantakan.
 1. Jangan ubah design system (`css/style.css`) tanpa cek dampak ke semua halaman
 2. Pastikan bottom nav & footer konsisten di semua halaman
 3. Setiap halaman harus include bottom-sheet modal fitur (copy dari template)
