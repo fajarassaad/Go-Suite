@@ -3,6 +3,17 @@
     'use strict';
 
     var WA_NUMBER = '6282187164364';
+    var DRAFT_KEY = 'kopigo_titik_draf_v1';       // isian form, hanya di perangkat ini
+    var LAST_KEY = 'kopigo_titik_terakhir';       // dibaca titik-terkirim.html
+    var SHARE = 0.3;                              // bagi hasil mitra
+    var GROSS_PER_CUP = 6000;                     // perkiraan laba kotor per gelas (dibulatkan)
+
+    function read(key) {
+        try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { return null; }
+    }
+    function write(key, value) {
+        try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* penyimpanan tidak tersedia */ }
+    }
 
     function $(id) { return document.getElementById(id); }
     function rupiah(n) { return 'Rp' + n.toLocaleString('id-ID'); }
@@ -17,6 +28,7 @@
 
     var cups = $('c-cups'), cupsOut = $('c-cups-out'), days = $('c-days');
     var total = $('c-total'), detail = $('c-detail'), daysError = $('c-days-error');
+    var komisiOut = $('c-komisi'), shareOut = $('c-share');
 
     function calc() {
         var perDay = parseInt(cups.value, 10);
@@ -27,11 +39,18 @@
         days.setAttribute('aria-invalid', ok ? 'false' : 'true');
         if (!ok) {
             total.textContent = 'Rp0';
+            komisiOut.textContent = 'Rp0';
+            shareOut.textContent = 'Rp0';
             detail.textContent = 'Isi jumlah hari jualan dulu.';
             return;
         }
         var r = rate(perDay), sum = perDay * d;
-        total.textContent = rupiah(sum * r);
+        var komisi = sum * r;
+        // Laba bersih titik = laba kotor - komisi (es batu dan listrik belum dikurangkan)
+        var share = Math.round(sum * (GROSS_PER_CUP - r) * SHARE);
+        komisiOut.textContent = rupiah(komisi);
+        shareOut.textContent = rupiah(share);
+        total.textContent = rupiah(komisi + share);
         detail.textContent = sum.toLocaleString('id-ID') + ' gelas × ' + rupiah(r);
     }
 
@@ -69,11 +88,39 @@
         $(errorId).hidden = !invalid;
     }
 
+    // Sumber kunjungan dari link, misalnya titik.html?dari=ig
+    var source = '';
+    try {
+        source = (new URLSearchParams(window.location.search).get('dari') || '').replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 24);
+    } catch (e) { source = ''; }
+
+    function saveDraft() {
+        write(DRAFT_KEY, {
+            name: fName.value, place: fPlace.value, traffic: fTraffic.value, note: fNote.value,
+            type: checked('type'), cooler: checked('cooler')
+        });
+    }
+
+    function loadDraft() {
+        var d = read(DRAFT_KEY);
+        if (!d || typeof d !== 'object') return;
+        if (typeof d.name === 'string') fName.value = d.name;
+        if (typeof d.place === 'string') fPlace.value = d.place;
+        if (typeof d.traffic === 'string') fTraffic.value = d.traffic;
+        if (typeof d.note === 'string') fNote.value = d.note;
+        ['type', 'cooler'].forEach(function (name) {
+            var radios = form.querySelectorAll('input[name="' + name + '"]');
+            for (var i = 0; i < radios.length; i++) if (radios[i].value === d[name]) radios[i].checked = true;
+        });
+    }
+
     form.addEventListener('change', function (e) {
         if (e.target.name === 'type') setInvalid('afs-type', 'ae-type', false);
         if (e.target.name === 'cooler') setInvalid('afs-cooler', 'ae-cooler', false);
         markSelected();
+        saveDraft();
     });
+    form.addEventListener('input', saveDraft);
     fName.addEventListener('input', function () {
         if (fName.getAttribute('aria-invalid') === 'true') validateField(fName, 'ae-name');
     });
@@ -99,6 +146,7 @@
             geoBtn.disabled = false;
             geoStatus.textContent = 'Titik lokasi ditambahkan. Tambahkan patokan kalau perlu.';
             validateField(fPlace, 'ae-place');
+            saveDraft();
         }, function (err) {
             geoBtn.disabled = false;
             geoStatus.textContent = err && err.code === 1
@@ -135,11 +183,37 @@
         ];
         if (fTraffic.value.trim()) lines.push('Keramaian: ' + fTraffic.value.trim());
         if (fNote.value.trim()) lines.push('Catatan: ' + fNote.value.trim());
+        if (source) lines.push('Sumber: ' + source);
         lines.push('');
         lines.push('Foto lokasi saya kirim setelah pesan ini.');
 
-        window.location.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+        var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+        saveDraft();
+        write(LAST_KEY, {
+            url: url, name: fName.value.trim(), type: type,
+            place: fPlace.value.trim(), cooler: cooler
+        });
+
+        // WhatsApp dibuka di tab baru; halaman ini pindah ke ringkasan
+        // (kunjungan ke titik-terkirim.html = satu pengajuan yang sampai ke WhatsApp).
+        var win = window.open(url, '_blank');
+        if (win) win.opener = null;
+        window.location.href = 'titik-terkirim.html' + (win ? '' : '?wa=tertutup');
     });
 
+    // ---------- tombol menempel: sembunyikan saat form terlihat ----------
+    // Tombol disembunyikan saat form atau kalkulator terlihat, supaya tidak menutupi isinya.
+    var sticky = $('stickybar');
+    if (sticky && 'IntersectionObserver' in window) {
+        var visible = {};
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) { visible[en.target.id] = en.isIntersecting; });
+            sticky.classList.toggle('is-hidden', !!(visible.ajukan || visible.calc));
+        }, { threshold: 0.05 });
+        io.observe($('ajukan'));
+        io.observe($('calc'));
+    }
+
+    loadDraft();
     markSelected();
 })();

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Pengajuan Siap Dikirim | KOPIGO</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="assets/kopigo-logo.svg?v=2026111101">
+    <meta name="theme-color" content="#faf3e7">
+    <link rel="stylesheet" href="css/pesan.css?v=2026111101">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <a class="topbar-brand" href="index.html" aria-label="KOPIGO, kembali ke beranda">
+            <img src="assets/kopigo-logo.svg?v=2026111101" alt="" width="96" height="96">
+        </a>
+        <p class="topbar-tag">Menyusuri Rasa Lalu<span>Since 2024</span></p>
+    </header>
+
+    <main class="done">
+
+        <div id="done-ready" hidden>
+            <h1 id="done-title">Tinggal kirim di WhatsApp</h1>
+            <p class="done-lead" id="done-lead">Pengajuanmu sudah tertulis di WhatsApp. Tekan kirim di sana, lalu
+                lampirkan foto lokasimu di chat yang sama.</p>
+
+            <section class="done-card" aria-label="Ringkasan pengajuan">
+                <span class="done-code">Pengajuan Titik Jualan</span>
+                <ul class="done-list" id="done-list"></ul>
+            </section>
+
+            <div class="done-actions">
+                <a class="btn-send" id="done-wa" href="titik.html" target="_blank" rel="noopener">Buka WhatsApp lagi</a>
+                <a class="btn-outline" href="titik.html">Kembali ke halaman Titik Jualan</a>
+            </div>
+        </div>
+
+        <div id="done-empty" hidden>
+            <h1>Belum ada pengajuan</h1>
+            <p class="done-lead">Isi form pengajuan lokasi dulu, lalu kirim lewat WhatsApp.</p>
+            <div class="done-actions">
+                <a class="btn-send" href="titik.html#ajukan">Ajukan lokasi</a>
+            </div>
+        </div>
+
+        <noscript>
+            <h1>Halaman ini butuh JavaScript</h1>
+            <p class="done-lead"><a href="titik.html">Kembali ke halaman Titik Jualan</a></p>
+        </noscript>
+
+    </main>
+
+    <script src="js/titik-terkirim.js?v=2026111202" defer></script>
+</body>
+
+</html>

@@ -13,10 +13,77 @@
     <meta property="og:description" content="Punya tempat kosong? Jual KOPIGO siap minum di lokasimu, dengan komisi per gelas dan bagi hasil.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.kopigo.id/titik.html">
-    <meta property="og:image" content="https://www.kopigo.id/assets/kopigo-og.png">
+    <meta property="og:image" content="https://www.kopigo.id/assets/titik-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#faf3e7">
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Listrik dan es batu siapa yang bayar?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kamu membayarnya dulu dari uang hasil penjualan dan menyimpan notanya. Biaya itu dicatat sebagai beban operasional titik, lalu dikurangkan sebelum bagi hasil dihitung."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Apakah saya harus membuat kopinya?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tidak. Produk datang siap minum dari Central Kitchen KOPIGO. Kamu mengambil stok, menyimpannya dingin, dan menjualnya."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Bagaimana cara mengambil stok?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stok diambil di Central Kitchen KOPIGO di Panaikang, Makassar. Jumlah dan jadwalnya kita atur bersama lewat grup WhatsApp."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Bagaimana kalau produk tidak laku?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Matcha dijual paling lama 7 hari, kopi bisa 10 hari atau lebih. Setelah sekitar 7 hari, kami menanyakan produk yang tidak bergerak supaya bisa diretur."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Kapan komisi dan bagi hasil dibayar?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Mengikuti tutup buku Central Kitchen, saat ini tanggal 25 atau 26 setiap bulan."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Bagaimana saya tahu hitungannya benar?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kamu mendapat akses ke Web Laporan Mitra. Di sana terlihat omzet, harga pokok, beban operasional, komisi, dan bagianmu untuk tiap periode."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Pembeli bayar pakai apa?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tunai atau QRIS. Pembayaran QRIS masuk langsung ke KOPIGO dan kamu menerima notifikasi saat pembayaran berhasil. Uang tunai kamu setorkan sesuai jadwal di perjanjian."
+            }
+        }
+    ]
+}
+    </script>
     <link rel="stylesheet" href="css/pesan.css?v=2026111101">
-    <link rel="stylesheet" href="css/titik.css?v=2026111201">
+    <link rel="stylesheet" href="css/titik.css?v=2026111202">
 </head>
 
 <body>
@@ -37,17 +104,15 @@
                     menerima komisi per gelas dan bagi hasil.</p>
                 <div class="hero-actions">
                     <a class="btn-send" href="#ajukan">Ajukan lokasi saya</a>
-                    <a class="btn-outline" href="#hitung">Hitung komisinya</a>
+                    <a class="btn-outline" href="#hitung">Hitung perkiraannya</a>
                 </div>
             </div>
-            <ul class="hero-photos" aria-label="Contoh produk KOPIGO">
-                <li><img src="assets/menu/kopi-aren-premium.jpg" alt="Kopi Aren Premium" width="400" height="400"
-                        fetchpriority="high"></li>
-                <li><img src="assets/menu/matcha-creamy-latte.jpg" alt="Matcha Creamy Latte" width="400"
-                        height="400"></li>
-                <li><img src="assets/menu/kopi-susu-creamy.jpg" alt="Kopi Susu Creamy" width="400" height="400"></li>
-                <li><img src="assets/menu/citrus-cold-brew.jpg" alt="Citrus Cold Brew" width="400" height="400"></li>
-            </ul>
+            <figure class="hero-photo">
+                <img src="assets/titik/kios-racing-center.jpg"
+                    alt="Kios KOPIGO berwarna merah di Titik Racing Center, seorang pembeli duduk membaca menu"
+                    width="960" height="1197" fetchpriority="high">
+                <figcaption>Titik KOPIGO Racing Center, Makassar</figcaption>
+            </figure>
         </section>
 
         <section class="block" aria-labelledby="bagi-title">
@@ -113,12 +178,12 @@
                 </div>
 
                 <form class="calc" id="calc" aria-labelledby="calc-title">
-                    <h3 id="calc-title">Hitung komisimu</h3>
+                    <h3 id="calc-title">Hitung perkiraanmu</h3>
                     <div class="calc-field">
                         <label for="c-cups">Gelas terjual per hari</label>
                         <div class="calc-range">
-                            <input type="range" id="c-cups" min="5" max="100" step="5" value="30">
-                            <output id="c-cups-out" for="c-cups">30</output>
+                            <input type="range" id="c-cups" min="5" max="100" step="5" value="20">
+                            <output id="c-cups-out" for="c-cups">20</output>
                         </div>
                     </div>
                     <div class="calc-field">
@@ -127,11 +192,21 @@
                         <p class="calc-error" id="c-days-error" hidden>Isi 1 sampai 31 hari.</p>
                     </div>
                     <div class="calc-result" aria-live="polite">
-                        <span class="calc-label">Komisi satu periode</span>
-                        <strong id="c-total">Rp1.170.000</strong>
-                        <span class="calc-detail" id="c-detail">780 gelas × Rp1.500</span>
+                        <span class="calc-label">Perkiraan satu periode</span>
+                        <strong id="c-total">Rp1.300.000</strong>
+                        <dl class="calc-lines">
+                            <div>
+                                <dt>Komisi <span id="c-detail">520 gelas × Rp1.000</span></dt>
+                                <dd id="c-komisi">Rp520.000</dd>
+                            </div>
+                            <div>
+                                <dt>Bagi hasil 30%</dt>
+                                <dd id="c-share">Rp780.000</dd>
+                            </div>
+                        </dl>
                     </div>
-                    <p class="calc-note">Belum termasuk bagi hasil.</p>
+                    <p class="calc-note">Bagi hasil dihitung dengan laba kotor rata-rata sekitar Rp6.000 per gelas,
+                        sebelum es batu dan listrik. Angka sebenarnya mengikuti Web Laporan Mitra.</p>
                 </form>
             </div>
 
@@ -141,6 +216,8 @@
                     harga pokok produk, beban operasional titik, dan komisi. Rinciannya tertulis di perjanjian dan
                     terlihat di Web Laporan Mitra.</p>
                 <p>Persentase ini bisa dievaluasi setelah beberapa bulan jika penjualan dan setoran berjalan baik.</p>
+                <p>Komisi bisa kamu pakai untuk membayar penjaga titik atau keperluan lain. Komisi dan bagi hasil
+                    dibayar mengikuti tutup buku Central Kitchen, saat ini tanggal 25 atau 26 setiap bulan.</p>
             </div>
         </section>
 
@@ -153,19 +230,44 @@
                 <li><strong>Tanda tangan perjanjian.</strong> Kerja sama awal berlaku 3 bulan dan bisa
                     diperpanjang.</li>
                 <li><strong>Ambil stok dan mulai jual.</strong> Stok diambil di Central Kitchen KOPIGO di Panaikang,
-                    Makassar.</li>
+                    Makassar. Jumlah dan jadwalnya diatur lewat grup WhatsApp.</li>
             </ol>
         </section>
 
         <section class="block" aria-labelledby="cocok-title">
-            <h2 id="cocok-title">Cocok untuk</h2>
+            <h2 id="cocok-title">Lokasi yang kami cari</h2>
             <ul class="tags">
                 <li>Toko atau kios</li>
                 <li>Rumah di lokasi ramai</li>
                 <li>Kantor</li>
                 <li>Area usaha</li>
             </ul>
-            <p class="note">Titik yang sudah berjalan: Racing Center dan Jalan Malino, Gowa.</p>
+            <ul class="reqs">
+                <li>Paling jauh sekitar 10 sampai 20 km dari Central Kitchen KOPIGO di Panaikang, Makassar</li>
+                <li>Sudah punya lemari pendingin atau showcase</li>
+                <li>Ada sambungan listrik dan tempat memajang</li>
+                <li>Dilewati orang setiap hari</li>
+            </ul>
+        </section>
+
+        <section class="block" aria-labelledby="jalan-title">
+            <h2 id="jalan-title">Titik yang sudah berjalan</h2>
+            <div class="spots">
+                <figure>
+                    <img src="assets/titik/kios-jendela.jpg" alt="Seorang pembeli memesan di jendela kios KOPIGO"
+                        width="720" height="960" loading="lazy">
+                    <figcaption><strong>Titik Racing Center, Makassar.</strong> Buka setiap hari pukul 09.00 sampai
+                        21.00.</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/titik/meja-titik.jpg"
+                        alt="Meja jualan dengan spanduk merah KOPIGO, papan menu, dan kotak pendingin" width="900"
+                        height="720" loading="lazy">
+                    <figcaption><strong>Titik berupa meja.</strong> Spanduk, papan menu, dan kotak pendingin di
+                        satu meja.</figcaption>
+                </figure>
+            </div>
+            <p class="note">Titik lain yang berjalan: Jalan Malino, Gowa.</p>
         </section>
 
         <section class="block" aria-labelledby="tanya-title">
@@ -173,23 +275,31 @@
             <div class="faq">
                 <details>
                     <summary>Listrik dan es batu siapa yang bayar?</summary>
-                    <p>Kamu membayarnya dulu dari uang hasil penjualan dan menyimpan notanya. Biaya itu dicatat
-                        sebagai beban operasional titik, lalu dikurangkan sebelum bagi hasil dihitung.</p>
+                    <p>Kamu membayarnya dulu dari uang hasil penjualan dan menyimpan notanya. Biaya itu dicatat sebagai beban operasional titik, lalu dikurangkan sebelum bagi hasil dihitung.</p>
                 </details>
                 <details>
                     <summary>Apakah saya harus membuat kopinya?</summary>
-                    <p>Tidak. Produk datang siap minum dari Central Kitchen KOPIGO. Kamu mengambil stok,
-                        menyimpannya dingin, dan menjualnya.</p>
+                    <p>Tidak. Produk datang siap minum dari Central Kitchen KOPIGO. Kamu mengambil stok, menyimpannya dingin, dan menjualnya.</p>
+                </details>
+                <details>
+                    <summary>Bagaimana cara mengambil stok?</summary>
+                    <p>Stok diambil di Central Kitchen KOPIGO di Panaikang, Makassar. Jumlah dan jadwalnya kita atur bersama lewat grup WhatsApp.</p>
+                </details>
+                <details>
+                    <summary>Bagaimana kalau produk tidak laku?</summary>
+                    <p>Matcha dijual paling lama 7 hari, kopi bisa 10 hari atau lebih. Setelah sekitar 7 hari, kami menanyakan produk yang tidak bergerak supaya bisa diretur.</p>
+                </details>
+                <details>
+                    <summary>Kapan komisi dan bagi hasil dibayar?</summary>
+                    <p>Mengikuti tutup buku Central Kitchen, saat ini tanggal 25 atau 26 setiap bulan.</p>
                 </details>
                 <details>
                     <summary>Bagaimana saya tahu hitungannya benar?</summary>
-                    <p>Kamu mendapat akses ke Web Laporan Mitra. Di sana terlihat omzet, harga pokok, beban
-                        operasional, komisi, dan bagianmu untuk tiap periode.</p>
+                    <p>Kamu mendapat akses ke Web Laporan Mitra. Di sana terlihat omzet, harga pokok, beban operasional, komisi, dan bagianmu untuk tiap periode.</p>
                 </details>
                 <details>
                     <summary>Pembeli bayar pakai apa?</summary>
-                    <p>Tunai atau QRIS. Pembayaran QRIS masuk langsung ke KOPIGO dan kamu menerima notifikasi saat
-                        pembayaran berhasil. Uang tunai kamu setorkan sesuai jadwal di perjanjian.</p>
+                    <p>Tunai atau QRIS. Pembayaran QRIS masuk langsung ke KOPIGO dan kamu menerima notifikasi saat pembayaran berhasil. Uang tunai kamu setorkan sesuai jadwal di perjanjian.</p>
                 </details>
                 <details>
                     <summary>Apa bedanya dengan Franchise Signature?</summary>
@@ -274,7 +384,9 @@
 
     </main>
 
-    <script src="js/titik.js?v=2026111201" defer></script>
+    <a class="stickybar" id="stickybar" href="#ajukan">Ajukan lokasi saya</a>
+
+    <script src="js/titik.js?v=2026111202" defer></script>
 </body>
 
 </html>

@@ -77,22 +77,26 @@ html {
     font-size: 16px;
 }
 
-.hero-photos {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+.hero-photo {
     margin-top: 24px;
 }
 
-.hero-photos img {
+.hero-photo img {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: var(--r-sm);
+    object-position: center 30%;
+    border-radius: var(--r-md);
     background: var(--line);
+}
+
+.hero-photo figcaption,
+.spots figcaption {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--ink-soft);
 }
 
 /* ============ Blok umum ============ */
@@ -280,9 +284,29 @@ html {
     font-variant-numeric: tabular-nums;
 }
 
-.calc-detail {
+.calc-lines {
+    margin-top: 8px;
+    border-top: 1.5px solid var(--ink);
+}
+
+.calc-lines div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding-top: 6px;
     font-size: 14px;
     font-variant-numeric: tabular-nums;
+}
+
+.calc-lines dt span {
+    display: block;
+    font-size: 12.5px;
+}
+
+.calc-lines dd {
+    font-weight: 800;
+    white-space: nowrap;
 }
 
 .calc-note {
@@ -343,6 +367,72 @@ html {
     border-radius: var(--r-sm);
     font-size: 15px;
     font-weight: 700;
+}
+
+.reqs {
+    margin-top: 14px;
+    padding-left: 18px;
+    max-width: 60ch;
+}
+
+.reqs li {
+    padding: 3px 0;
+}
+
+/* ============ Titik yang sudah berjalan ============ */
+.spots {
+    display: grid;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.spots img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--r-md);
+    background: var(--line);
+}
+
+.spots figcaption strong {
+    color: var(--ink);
+}
+
+/* ============ Tombol menempel (HP) ============ */
+.stickybar {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    border-radius: var(--r-sm);
+    background: var(--red);
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(43, 26, 18, 0.3);
+}
+
+.stickybar:hover {
+    background: var(--red-dark);
+}
+
+.stickybar:active {
+    transform: translateY(1px);
+}
+
+.stickybar.is-hidden {
+    display: none;
+}
+
+.page {
+    padding-bottom: 96px;
 }
 
 /* ============ Tanya jawab ============ */
@@ -418,6 +508,10 @@ html {
 
 /* ============ Tablet ke atas ============ */
 @media (min-width: 640px) {
+    .spots {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .split {
         grid-template-columns: 1fr 1fr;
     }
@@ -449,9 +543,17 @@ html {
         padding-top: 48px;
     }
 
-    .hero-photos {
-        grid-template-columns: repeat(2, 1fr);
+    .hero-photo {
         margin-top: 0;
+    }
+
+    .hero-photo img {
+        aspect-ratio: 4 / 5;
+        object-position: center;
+    }
+
+    .stickybar {
+        display: none;
     }
 
     .block {
