@@ -13,7 +13,8 @@
 
 ## Struktur File
 ```
-index.html          → Homepage (landing page utama)
+index.html          → Linktree KOPIGO (homepage www.kopigo.id, CSS inline sendiri)
+suite.html          → Homepage Go Suite (landing page utama produk)
 harga.html          → Halaman harga + promo wheel + kemitraan KOPIGO
 kasir.html          → Fitur: Kasir & Penjualan
 logistik.html       → Fitur: Sales Keliling
@@ -39,6 +40,8 @@ mobile-rider.html   → Fitur: Mobile Rider
 css/style.css       → Design system (variabel, komponen, layout)
 js/main.js          → Interaksi global (nav, FAQ accordion, animasi)
 assets/             → Gambar & media
+data/instagram.json → Statistik IG untuk index.html (diperbarui oleh .github/workflows/update-instagram-stats.yml)
+robots.txt, sitemap.xml → SEO; tambahkan halaman baru ke sitemap.xml
 ```
 
 ## Navigasi
