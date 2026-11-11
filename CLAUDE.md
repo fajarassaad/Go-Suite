@@ -17,6 +17,7 @@ index.html          → Linktree KOPIGO (homepage www.kopigo.id, CSS inline send
 suite.html          → Homepage Go Suite (landing page utama produk)
 pesan.html          → Halaman pesan KOPIGO (menu, keranjang, checkout ke WhatsApp; pakai css/pesan.css + js/pesan.js, bukan style.css)
 pesan-terkirim.html → Ringkasan setelah pesanan dikirim ke WhatsApp (js/pesan-terkirim.js); kunjungannya = jumlah pesanan terkirim
+titik.html          → Halaman Titik Jualan KOPIGO (rekrutmen mitra lokasi; css/pesan.css + css/titik.css + js/titik.js; kalkulator komisi per cup dan form pengajuan ke WhatsApp)
 harga.html          → Halaman harga + promo wheel + kemitraan KOPIGO
 kasir.html          → Fitur: Kasir & Penjualan
 logistik.html       → Fitur: Sales Keliling
@@ -59,10 +60,11 @@ robots.txt, sitemap.xml → SEO; tambahkan halaman baru ke sitemap.xml
 - Mobile-first design, max-width 430px centered
 - WhatsApp CTA: nomor 6282187164364
 - Link kemitraan: https://kemitraan.kopigo.id
+- Skema mitra Titik Jualan (titik.html): komisi per gelas Rp1.000 (<30 gelas/hari), Rp1.500 (30-49), Rp2.000 (>=50); bagi hasil 30% dari laba bersih titik; perjanjian awal 3 bulan. HPP tidak boleh ditampilkan di web.
 - Lokasi KOPIGO di pesan.html (radio "Pesan dari mana?"): Outlet Grab n Go Galesong Utara, Central Kitchen Panaikang, Titik Racing Center, Titik Jalan Malino Gowa
 
 ## Aturan Edit
-0. Setiap mengubah `css/pesan.css`, `js/pesan.js`, `js/pesan-terkirim.js`, atau `assets/kopigo-logo.svg`, naikkan angka `?v=` di `pesan.html`, `pesan-terkirim.html`, dan `index.html`. Tanpa itu HP pelanggan memakai file lama dari cache (Cloudflare) dan halaman tampil berantakan.
+0. Setiap mengubah `css/pesan.css`, `css/titik.css`, `js/pesan.js`, `js/pesan-terkirim.js`, `js/titik.js`, atau `assets/kopigo-logo.svg`, naikkan angka `?v=` di `pesan.html`, `pesan-terkirim.html`, `titik.html`, dan `index.html`. Tanpa itu HP pelanggan memakai file lama dari cache (Cloudflare) dan halaman tampil berantakan.
 1. Jangan ubah design system (`css/style.css`) tanpa cek dampak ke semua halaman
 2. Pastikan bottom nav & footer konsisten di semua halaman
 3. Setiap halaman harus include bottom-sheet modal fitur (copy dari template)

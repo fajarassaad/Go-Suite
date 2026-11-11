@@ -1,0 +1,460 @@
+/* ============================================================
+   KOPIGO: halaman Titik Jualan (titik.html)
+   Dimuat setelah css/pesan.css dan memakai variabel, tombol,
+   kolom form, dan pilihan dari sana.
+
+   Alasan desain:
+   - Palet dan font sama dengan halaman pesan: satu keluarga KOPIGO.
+   - Tiap bagian punya bentuk sendiri sesuai isinya: dua kolom untuk
+     pembagian tugas, tabel untuk tarif, panel gelap untuk kalkulator
+     (satu-satunya blok gelap, karena angka itulah yang dicari mitra).
+   - Kuning hanya untuk hasil hitungan; merah hanya untuk aksi.
+   ============================================================ */
+
+html {
+    scroll-padding-top: 76px;
+}
+
+.page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 16px 48px;
+}
+
+.topbar-cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1.5px solid var(--ink);
+    border-radius: var(--r-sm);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.topbar-cta:hover {
+    background: var(--ink);
+    color: var(--cream);
+}
+
+.topbar-cta:active {
+    transform: translateY(1px);
+}
+
+/* ============ Hero ============ */
+.hero {
+    padding: 28px 0 8px;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 8vw, 46px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.hero p {
+    margin-top: 12px;
+    max-width: 46ch;
+    font-size: 17px;
+    color: var(--ink-soft);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.hero-actions .btn-send,
+.hero-actions .btn-outline {
+    width: auto;
+    min-height: 52px;
+    margin-top: 0;
+    padding: 0 20px;
+    font-size: 16px;
+}
+
+.hero-photos {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.hero-photos img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--r-sm);
+    background: var(--line);
+}
+
+/* ============ Blok umum ============ */
+.block {
+    margin-top: 40px;
+}
+
+.block h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+}
+
+.block h3 {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.lead {
+    margin-top: 6px;
+    max-width: 52ch;
+    color: var(--ink-soft);
+}
+
+.note {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--ink-soft);
+}
+
+/* ============ Siapa menyiapkan apa ============ */
+.split {
+    display: grid;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.split-col {
+    padding: 16px;
+    border: 1.5px solid var(--ink);
+    border-radius: var(--r-md);
+    background: var(--paper);
+}
+
+.split-kopigo {
+    background: var(--ink);
+    color: #ffffff;
+}
+
+.split-col ul {
+    margin-top: 10px;
+    padding-left: 18px;
+}
+
+.split-col li {
+    padding: 3px 0;
+}
+
+/* ============ Yang kamu terima ============ */
+.earn {
+    display: grid;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.earn-rates table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-radius: var(--r-sm);
+    overflow: hidden;
+    border-style: hidden;
+    box-shadow: 0 0 0 1.5px var(--ink);
+}
+
+.earn-rates th,
+.earn-rates td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+}
+
+.earn-rates th {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-soft);
+}
+
+.earn-rates td:last-child {
+    font-weight: 800;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.earn-rates tr:last-child td {
+    border-bottom: 0;
+}
+
+.calc {
+    padding: 16px;
+    border-radius: var(--r-md);
+    background: var(--ink);
+    color: #ffffff;
+}
+
+.calc-field {
+    margin-top: 14px;
+}
+
+.calc-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.calc-range {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.calc-range input {
+    flex: 1;
+    min-width: 0;
+    height: 44px;
+    accent-color: var(--yellow);
+    cursor: pointer;
+}
+
+.calc-range output {
+    min-width: 44px;
+    text-align: right;
+    font-size: 22px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.calc input[type="number"] {
+    width: 96px;
+    height: 48px;
+    padding: 0 12px;
+    border: 1.5px solid #ffffff;
+    border-radius: var(--r-sm);
+    background: transparent;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.calc :focus-visible {
+    outline-color: var(--yellow);
+}
+
+.calc-error {
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--yellow);
+}
+
+.calc-result {
+    display: grid;
+    gap: 2px;
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: var(--r-sm);
+    background: var(--yellow);
+    color: var(--ink);
+}
+
+.calc-label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.calc-result strong {
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.calc-detail {
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+}
+
+.calc-note {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #e6d9c6;
+}
+
+.share {
+    margin-top: 20px;
+    padding-left: 14px;
+    border-left: 4px solid var(--ink);
+}
+
+.share p {
+    margin-top: 6px;
+    max-width: 60ch;
+}
+
+/* ============ Cara mulai ============ */
+.steps {
+    margin-top: 12px;
+    padding-left: 0;
+    list-style: none;
+    counter-reset: step;
+}
+
+.steps li {
+    position: relative;
+    padding: 12px 0 12px 44px;
+    border-bottom: 1px solid var(--line);
+    counter-increment: step;
+}
+
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ============ Cocok untuk ============ */
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tags li {
+    padding: 8px 12px;
+    border: 1.5px solid var(--ink);
+    border-radius: var(--r-sm);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* ============ Tanya jawab ============ */
+.faq {
+    margin-top: 10px;
+    border-top: 1px solid var(--line);
+}
+
+.faq details {
+    border-bottom: 1px solid var(--line);
+}
+
+.faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 52px;
+    padding: 10px 0;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: "+";
+    flex-shrink: 0;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.faq details[open] summary::after {
+    content: "−";
+}
+
+.faq summary:hover {
+    color: var(--red-dark);
+}
+
+.faq details p {
+    padding: 0 0 14px;
+    max-width: 62ch;
+    color: var(--ink-soft);
+}
+
+.faq a {
+    font-weight: 700;
+    color: var(--ink);
+}
+
+/* ============ Form pengajuan ============ */
+.apply {
+    padding: 20px 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    background: var(--paper);
+    border-top: 1.5px solid var(--ink);
+    border-bottom: 1.5px solid var(--ink);
+}
+
+.apply .order-form {
+    max-width: 520px;
+}
+
+.apply .cart-note {
+    text-align: left;
+}
+
+/* ============ Tablet ke atas ============ */
+@media (min-width: 640px) {
+    .split {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .earn {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+
+    .apply {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 28px;
+        border: 1.5px solid var(--ink);
+        border-radius: var(--r-md);
+    }
+}
+
+@media (min-width: 880px) {
+    .page {
+        padding: 0 24px 64px;
+    }
+
+    .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 32px;
+        align-items: center;
+        padding-top: 48px;
+    }
+
+    .hero-photos {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 0;
+    }
+
+    .block {
+        margin-top: 56px;
+    }
+}

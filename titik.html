@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Titik Jualan KOPIGO | Jual KOPIGO di Lokasimu</title>
+    <meta name="description"
+        content="Punya toko, kios, atau tempat ramai di Makassar dan sekitarnya? Jual minuman KOPIGO siap minum di lokasimu. Komisi per gelas dan bagi hasil 30% dari laba bersih titik.">
+    <link rel="canonical" href="https://www.kopigo.id/titik.html">
+    <link rel="icon" type="image/svg+xml" href="assets/kopigo-logo.svg?v=2026111101">
+    <meta property="og:title" content="Titik Jualan KOPIGO">
+    <meta property="og:description" content="Punya tempat kosong? Jual KOPIGO siap minum di lokasimu, dengan komisi per gelas dan bagi hasil.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kopigo.id/titik.html">
+    <meta property="og:image" content="https://www.kopigo.id/assets/kopigo-og.png">
+    <meta name="theme-color" content="#faf3e7">
+    <link rel="stylesheet" href="css/pesan.css?v=2026111101">
+    <link rel="stylesheet" href="css/titik.css?v=2026111201">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <a class="topbar-brand" href="index.html" aria-label="KOPIGO, kembali ke beranda">
+            <img src="assets/kopigo-logo.svg?v=2026111101" alt="" width="96" height="96">
+        </a>
+        <a class="topbar-cta" href="#ajukan">Ajukan lokasi</a>
+    </header>
+
+    <main class="page">
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Punya tempat kosong? Jadikan titik jualan KOPIGO.</h1>
+                <p>Kamu punya lokasinya, KOPIGO mengirim minuman siap minum. Kamu memajang dan menjual, lalu
+                    menerima komisi per gelas dan bagi hasil.</p>
+                <div class="hero-actions">
+                    <a class="btn-send" href="#ajukan">Ajukan lokasi saya</a>
+                    <a class="btn-outline" href="#hitung">Hitung komisinya</a>
+                </div>
+            </div>
+            <ul class="hero-photos" aria-label="Contoh produk KOPIGO">
+                <li><img src="assets/menu/kopi-aren-premium.jpg" alt="Kopi Aren Premium" width="400" height="400"
+                        fetchpriority="high"></li>
+                <li><img src="assets/menu/matcha-creamy-latte.jpg" alt="Matcha Creamy Latte" width="400"
+                        height="400"></li>
+                <li><img src="assets/menu/kopi-susu-creamy.jpg" alt="Kopi Susu Creamy" width="400" height="400"></li>
+                <li><img src="assets/menu/citrus-cold-brew.jpg" alt="Citrus Cold Brew" width="400" height="400"></li>
+            </ul>
+        </section>
+
+        <section class="block" aria-labelledby="bagi-title">
+            <h2 id="bagi-title">Siapa menyiapkan apa</h2>
+            <div class="split">
+                <div class="split-col split-kopigo">
+                    <h3>KOPIGO menyiapkan</h3>
+                    <ul>
+                        <li>Minuman siap minum dari Central Kitchen</li>
+                        <li>Spanduk, banner, dan daftar menu</li>
+                        <li>Aplikasi pencatatan penjualan</li>
+                        <li>Pembayaran QRIS</li>
+                        <li>Web Laporan Mitra untuk melihat penjualan dan bagianmu</li>
+                    </ul>
+                </div>
+                <div class="split-col">
+                    <h3>Kamu menyiapkan</h3>
+                    <ul>
+                        <li>Lokasi yang dilewati banyak orang</li>
+                        <li>Lemari pendingin atau showcase</li>
+                        <li>Meja atau tempat memajang</li>
+                        <li>Sambungan listrik</li>
+                        <li>Waktu untuk mengambil stok, menjual, dan mencatat penjualan</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="note">Harga jual ditetapkan KOPIGO, Rp8.000 sampai Rp13.000 per gelas. Kamu tidak perlu membuat
+                kopinya sendiri.</p>
+        </section>
+
+        <section class="block" id="hitung" aria-labelledby="hitung-title">
+            <h2 id="hitung-title">Yang kamu terima</h2>
+            <p class="lead">Ada dua sumber: komisi untuk setiap gelas yang terjual, dan bagi hasil dari laba bersih
+                titikmu.</p>
+
+            <div class="earn">
+                <div class="earn-rates">
+                    <h3>Komisi per gelas</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Rata-rata terjual per hari</th>
+                                <th scope="col">Komisi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kurang dari 30 gelas</td>
+                                <td>Rp1.000 per gelas</td>
+                            </tr>
+                            <tr>
+                                <td>30 sampai 49 gelas</td>
+                                <td>Rp1.500 per gelas</td>
+                            </tr>
+                            <tr>
+                                <td>50 gelas atau lebih</td>
+                                <td>Rp2.000 per gelas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="note">Tarif berlaku untuk semua gelas dalam satu periode, sesuai rata-rata harianmu di
+                        periode itu.</p>
+                </div>
+
+                <form class="calc" id="calc" aria-labelledby="calc-title">
+                    <h3 id="calc-title">Hitung komisimu</h3>
+                    <div class="calc-field">
+                        <label for="c-cups">Gelas terjual per hari</label>
+                        <div class="calc-range">
+                            <input type="range" id="c-cups" min="5" max="100" step="5" value="30">
+                            <output id="c-cups-out" for="c-cups">30</output>
+                        </div>
+                    </div>
+                    <div class="calc-field">
+                        <label for="c-days">Hari jualan dalam satu periode</label>
+                        <input type="number" id="c-days" min="1" max="31" value="26" inputmode="numeric">
+                        <p class="calc-error" id="c-days-error" hidden>Isi 1 sampai 31 hari.</p>
+                    </div>
+                    <div class="calc-result" aria-live="polite">
+                        <span class="calc-label">Komisi satu periode</span>
+                        <strong id="c-total">Rp1.170.000</strong>
+                        <span class="calc-detail" id="c-detail">780 gelas × Rp1.500</span>
+                    </div>
+                    <p class="calc-note">Belum termasuk bagi hasil.</p>
+                </form>
+            </div>
+
+            <div class="share">
+                <h3>Bagi hasil 30%</h3>
+                <p>Selain komisi, kamu menerima 30% dari laba bersih titikmu. Laba bersih adalah omzet dikurangi
+                    harga pokok produk, beban operasional titik, dan komisi. Rinciannya tertulis di perjanjian dan
+                    terlihat di Web Laporan Mitra.</p>
+                <p>Persentase ini bisa dievaluasi setelah beberapa bulan jika penjualan dan setoran berjalan baik.</p>
+            </div>
+        </section>
+
+        <section class="block" aria-labelledby="mulai-title">
+            <h2 id="mulai-title">Cara mulai</h2>
+            <ol class="steps">
+                <li><strong>Ajukan lokasimu.</strong> Isi form di bawah, lalu kirim foto tempatnya lewat WhatsApp.</li>
+                <li><strong>Kami hubungi kamu.</strong> Tim KOPIGO membalas di WhatsApp untuk membahas lokasi dan
+                    perjanjiannya.</li>
+                <li><strong>Tanda tangan perjanjian.</strong> Kerja sama awal berlaku 3 bulan dan bisa
+                    diperpanjang.</li>
+                <li><strong>Ambil stok dan mulai jual.</strong> Stok diambil di Central Kitchen KOPIGO di Panaikang,
+                    Makassar.</li>
+            </ol>
+        </section>
+
+        <section class="block" aria-labelledby="cocok-title">
+            <h2 id="cocok-title">Cocok untuk</h2>
+            <ul class="tags">
+                <li>Toko atau kios</li>
+                <li>Rumah di lokasi ramai</li>
+                <li>Kantor</li>
+                <li>Area usaha</li>
+            </ul>
+            <p class="note">Titik yang sudah berjalan: Racing Center dan Jalan Malino, Gowa.</p>
+        </section>
+
+        <section class="block" aria-labelledby="tanya-title">
+            <h2 id="tanya-title">Yang sering ditanyakan</h2>
+            <div class="faq">
+                <details>
+                    <summary>Listrik dan es batu siapa yang bayar?</summary>
+                    <p>Kamu membayarnya dulu dari uang hasil penjualan dan menyimpan notanya. Biaya itu dicatat
+                        sebagai beban operasional titik, lalu dikurangkan sebelum bagi hasil dihitung.</p>
+                </details>
+                <details>
+                    <summary>Apakah saya harus membuat kopinya?</summary>
+                    <p>Tidak. Produk datang siap minum dari Central Kitchen KOPIGO. Kamu mengambil stok,
+                        menyimpannya dingin, dan menjualnya.</p>
+                </details>
+                <details>
+                    <summary>Bagaimana saya tahu hitungannya benar?</summary>
+                    <p>Kamu mendapat akses ke Web Laporan Mitra. Di sana terlihat omzet, harga pokok, beban
+                        operasional, komisi, dan bagianmu untuk tiap periode.</p>
+                </details>
+                <details>
+                    <summary>Pembeli bayar pakai apa?</summary>
+                    <p>Tunai atau QRIS. Pembayaran QRIS masuk langsung ke KOPIGO dan kamu menerima notifikasi saat
+                        pembayaran berhasil. Uang tunai kamu setorkan sesuai jadwal di perjanjian.</p>
+                </details>
+                <details>
+                    <summary>Apa bedanya dengan Franchise Signature?</summary>
+                    <p>Di Titik Jualan kamu menjual produk jadi dari KOPIGO dan tidak memproduksi sendiri. Untuk
+                        membuka gerai KOPIGO sendiri, lihat <a href="https://kemitraan.kopigo.id" target="_blank"
+                            rel="noopener">halaman kemitraan</a>.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="block apply" id="ajukan" aria-labelledby="ajukan-title">
+            <h2 id="ajukan-title">Ajukan lokasimu</h2>
+            <p class="lead">Isi data di bawah. WhatsApp akan terbuka dengan pesan yang sudah terisi.</p>
+
+            <form class="order-form" id="apply-form" novalidate>
+                <div class="field">
+                    <label for="a-name">Nama kamu</label>
+                    <input type="text" id="a-name" autocomplete="name" maxlength="60" required
+                        aria-describedby="ae-name">
+                    <p class="field-error" id="ae-name" hidden>Isi nama kamu dulu ya.</p>
+                </div>
+
+                <fieldset class="choice" id="afs-type">
+                    <legend>Jenis tempat</legend>
+                    <label class="choice-item"><input type="radio" name="type" value="Toko atau kios"><span><strong>Toko
+                                atau kios</strong></span></label>
+                    <label class="choice-item"><input type="radio" name="type"
+                            value="Rumah di lokasi ramai"><span><strong>Rumah di lokasi ramai</strong></span></label>
+                    <label class="choice-item"><input type="radio" name="type"
+                            value="Kantor"><span><strong>Kantor</strong></span></label>
+                    <label class="choice-item"><input type="radio" name="type" value="Area usaha"><span><strong>Area
+                                usaha</strong></span></label>
+                    <label class="choice-item"><input type="radio" name="type"
+                            value="Lainnya"><span><strong>Lainnya</strong><small>Jelaskan di
+                                catatan</small></span></label>
+                    <p class="field-error" id="ae-type" hidden>Pilih jenis tempatnya.</p>
+                </fieldset>
+
+                <div class="field">
+                    <label for="a-place">Alamat lokasi</label>
+                    <textarea id="a-place" rows="3" maxlength="300" required
+                        aria-describedby="ah-place ae-place"></textarea>
+                    <p class="field-hint" id="ah-place">Alamat atau patokan. Kalau sedang di lokasi, pakai tombol di
+                        bawah.</p>
+                    <button type="button" class="btn-outline" id="a-geo">Pakai lokasi saya sekarang</button>
+                    <p class="field-hint" id="a-geo-status" role="status"></p>
+                    <p class="field-error" id="ae-place" hidden>Isi alamat lokasinya dulu ya.</p>
+                </div>
+
+                <fieldset class="choice" id="afs-cooler">
+                    <legend>Sudah ada lemari pendingin atau showcase?</legend>
+                    <label class="choice-item"><input type="radio" name="cooler" value="Sudah ada"><span><strong>Sudah
+                                ada</strong></span></label>
+                    <label class="choice-item"><input type="radio" name="cooler" value="Belum ada"><span><strong>Belum
+                                ada</strong><small>Saat ini kami mendahulukan lokasi yang sudah punya pendingin
+                                sendiri</small></span></label>
+                    <p class="field-error" id="ae-cooler" hidden>Pilih salah satu.</p>
+                </fieldset>
+
+                <div class="field">
+                    <label for="a-traffic">Seberapa ramai lokasinya? <span class="optional">(opsional)</span></label>
+                    <input type="text" id="a-traffic" maxlength="120" aria-describedby="ah-traffic">
+                    <p class="field-hint" id="ah-traffic">Misalnya: depan sekolah, ramai pagi dan sore.</p>
+                </div>
+
+                <div class="field">
+                    <label for="a-note">Catatan <span class="optional">(opsional)</span></label>
+                    <textarea id="a-note" rows="2" maxlength="300"></textarea>
+                </div>
+
+                <button type="submit" class="btn-send">Kirim pengajuan via WhatsApp</button>
+                <p class="cart-note">Setelah pesan terkirim, lampirkan foto lokasimu di chat yang sama.</p>
+            </form>
+        </section>
+
+        <footer class="foot">
+            <p>Halal Indonesia No. 73110019353770824</p>
+            <p>© 2026 KOPIGO · <a href="index.html">kopigo.id</a> · <a href="pesan.html">Pesan kopi</a> · <a
+                    href="https://www.instagram.com/kopigo.makassar" target="_blank" rel="noopener">@kopigo.makassar</a>
+            </p>
+        </footer>
+
+    </main>
+
+    <script src="js/titik.js?v=2026111201" defer></script>
+</body>
+
+</html>
